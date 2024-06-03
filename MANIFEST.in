@@ -1,0 +1,7 @@
+include src/humon *.py
+include LICENSE
+recursive-include src/humon *.h *.c *.pxd *.pyx
+recursive-include clib/humon/include *.h *.c
+recursive-include clib/humon/src *.h *.c
+recursive-include tests *.hu
+recursive-include tests *.py

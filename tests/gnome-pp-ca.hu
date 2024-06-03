@@ -1,0 +1,34 @@
+[34m@ [34m{ [35mapp[34m: [95mgamin'-djinn [35mcomponent[34m: [95massets-gnome [35mversion[34m: [95m0.1.0 [34m}
+[97m{
+    [36mmodel[97m: [96mgnome-generic.mesh
+    [36mtextures[97m: [97m[
+        [96mgnome-generic-albedo.png
+        [96mgnome-generic-bump.png [34m@ [35munits[34m: [95mmodel-space
+        [96mgnome-generic-metallic.png
+    [97m]
+    [36mskeleton[97m: [96mgnome-generic-bones.skel
+    [36manimations[97m: [97m{
+        [36midle[97m: [97m{
+            [36manimation[97m: [96mgnome-idle_0.anim
+            [36maudio[97m: [97m[
+                [96mgnome-sigh.ogg
+                [96mgnome-stretch.ogg
+            [97m]
+        [97m}
+        [36mwalk[97m: [97m{
+            [36manimation[97m: [96mgnome-walk_0-anim
+            [36maudo[97m: [97m[
+                [96mgnome-footfall-left-quiet.ogg
+                [96mgnome-footfall-right-quiet.ogg
+            [97m]
+        [97m}
+        [36midle[97m: [97m{
+            [36manimation[97m: [96mgnome-idle_1.anim
+            [36maudio[97m: [97m[
+                [96mgnome-idle-mumble.ogg
+                [96mgnome-scratch.ogg
+            [97m]
+        [97m}
+    [97m}
+[97m}
+[0m

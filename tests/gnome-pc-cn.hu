@@ -1,0 +1,33 @@
+@ { app: gamin'-djinn, component: assets-gnome, version: 0.1.0 }
+{
+    model: gnome-generic.mesh
+    textures: [
+        gnome-generic-albedo.png
+        gnome-generic-bump.png          @ units: model-space
+        gnome-generic-metallic.png
+    ]
+    skeleton: gnome-generic-bones.skel
+    animations: {
+        idle: {
+            animation: gnome-idle_0.anim
+            audio: [
+                gnome-sigh.ogg
+                gnome-stretch.ogg
+            ]
+        }
+        walk: {
+            animation: gnome-walk_0-anim
+            audo: [
+                gnome-footfall-left-quiet.ogg
+                gnome-footfall-right-quiet.ogg
+            ]
+        }
+        idle: {
+            animation: gnome-idle_1.anim
+            audio: [
+                gnome-idle-mumble.ogg
+                gnome-scratch.ogg
+            ]
+        }
+    }
+}
