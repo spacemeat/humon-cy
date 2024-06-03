@@ -15,13 +15,13 @@ def path_of(filename: str):
 
 class TroveApiTestCase(unittest.TestCase):
     def setUp(self):
-        self.inane = h.trove_from_string('')
-        self.comment_only = h.trove_from_string('// snark')
-        self.metatag_only = h.trove_from_string('@ foo: bar')
-        self.value_only = h.trove_from_string('dreams')
-        self.list_only = h.trove_from_string('[]')
-        self.dict_only = h.trove_from_string('{}')
-        self.gnome = h.trove_from_file(path_of('gnome.hu'))
+        self.inane = h.from_string('')
+        self.comment_only = h.from_string('// snark')
+        self.metatag_only = h.from_string('@ foo: bar')
+        self.value_only = h.from_string('dreams')
+        self.list_only = h.from_string('[]')
+        self.dict_only = h.from_string('{}')
+        self.gnome = h.from_file(path_of('gnome.hu'))
 
 
 class TestTroveRoot(TroveApiTestCase):

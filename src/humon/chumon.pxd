@@ -157,10 +157,10 @@ cdef extern from "humon/humon.h":
 
     huNodeKind huGetNodeKind(const huNode * node)
     huSize_t huGetNodeIndex(const huNode * node)
-    huSize_t huGetChildOrdinal(const huNode * node)
+    huSize_t huGetChildIndex(const huNode * node)
     const huNode * huGetParent(const huNode * node)
     huSize_t huGetNumChildren(const huNode * node)
-    const huNode * huGetChildByIndex(const huNode * node, huSize_t childOrdinal)
+    const huNode * huGetChildByIndex(const huNode * node, huSize_t childIndex)
     const huNode * huGetChildByKeyZ(const huNode * node, const char * key)
     const huNode * huGetChildByKeyN(const huNode * node, const char * key, huSize_t keyLen)
     const huNode * huGetFirstChild(const huNode * node)

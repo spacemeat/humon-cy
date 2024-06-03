@@ -119,7 +119,11 @@ cdef Trove _make_trove(c.huErrorCode res, c.huTrove * c_trove):
     t._c_trove = c_trove;
     return t
 
-def trove_from_string(code: str, tab_size: int = 4) -> Trove:
+def from_string(code: str, tab_size: int = 4) -> Trove:
+    if not isinstance(code, str):
+        raise TypeError(code)
+    if not isinstance(tab_size, int):
+        raise TypeError(tab_size)
     cdef const char * ccode
     bcode = code.encode('utf-8')
     ccode, len_ccode = bcode, len(bcode)
@@ -131,7 +135,13 @@ def trove_from_string(code: str, tab_size: int = 4) -> Trove:
     res = c.huDeserializeTroveN(& c_trove, ccode, len_ccode, & opts, c.HU_ERRORRESPONSE_MUM)
     return _make_trove(res, c_trove)
 
-def trove_from_file(path: Path, encoding: Encoding = Encoding.UNKNOWN, tab_size: int = 4) -> Trove:
+def from_file(path: str | Path, encoding: Encoding = Encoding.UNKNOWN, tab_size: int = 4) -> Trove:
+    if not isinstance(path, (str, Path)):
+        raise TypeError(path)
+    if not isinstance(encoding, Encoding):
+        raise TypeError(encoding)
+    if not isinstance(tab_size, int):
+        raise TypeError(tab_size)
     cdef const char * cpath
     bpath = str(path).encode('utf-8')
     cpath, len_cpath = bpath, len(bpath)
@@ -286,7 +296,10 @@ cdef class Trove:
             bidx = idx.encode('utf-8')
             caddr, len_caddr = bidx, len(bidx)
             return Node().c(c.huGetNodeByAddressN(self._c_trove, caddr, len_caddr))
-        return Node().c(c.huGetNodeByIndex(self._c_trove, idx))
+        elif isinstance(idx, int):
+            return Node().c(c.huGetNodeByIndex(self._c_trove, idx))
+        else:
+            raise TypeError(idx)
 
     @property
     def source_text(self) -> str | None:
@@ -356,7 +369,7 @@ cdef class Node:
     def child_index(self) -> int:
         if self.isnull:
             return -1
-        return c.huGetChildOrdinal(self._c_node)
+        return c.huGetChildIndex(self._c_node)
 
     def __eq__(self, rhs: Node):
         cdef const c.huNode * pn = rhs._c_node
@@ -389,7 +402,10 @@ cdef class Node:
             bidx = idx.encode('utf-8')
             caddr, len_caddr = bidx, len(bidx)
             return Node().c(c.huGetNodeByRelativeAddressN(self._c_node, caddr, len_caddr))
-        return Node().c(c.huGetChildByIndex(self._c_node, idx))
+        elif isinstance(idx, int):
+            return Node().c(c.huGetChildByIndex(self._c_node, idx))
+        else:
+            raise TypeError(idx)
 
     def get_sibling(self, key: str | None = None) -> Node | None:
         if self.isnull:
@@ -399,9 +415,12 @@ cdef class Node:
         if key is None:
             return Node().c(c.huGetNextSibling(self._c_node))
         cdef char * ckey = NULL
-        bkey = key.encode('utf-8')
-        ckey, len_ckey = bkey, len(bkey)
-        return Node().c(c.huGetNextSiblingWithKeyN(self._c_node, ckey, len_ckey))
+        if isinstance(key, str):
+            bkey = key.encode('utf-8')
+            ckey, len_ckey = bkey, len(bkey)
+            return Node().c(c.huGetNextSiblingWithKeyN(self._c_node, ckey, len_ckey))
+        else:
+            raise TypeError(key)
 
     @property
     def address(self) -> str | None:

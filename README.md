@@ -21,7 +21,7 @@ It's best practice to emplace it in a virtual environment.
 
 ## API overview
 
-See the (Humon project readme)[https://github.com/spacemeat/humon] for comprehensive details about Humon's format. This readme only describes the Python interface. The API is not strictly 1-1 with the C/C++ APIs.
+See the [Humon project readme](https://github.com/spacemeat/humon) for comprehensive details about Humon's format. This readme only describes the Python interface. The API is not strictly 1-1 with the C/C++ APIs.
 
 ### Loading troves
 
@@ -29,13 +29,13 @@ Easy. There are two ways:
 
 ```python
 import humon as h
-eqipment_trove = h.trove_from_file('equipment.hu') # default encoding = h.Encoding.UNKNOWN
-quests_trove = h.trove_from_file('equipment.hu', h.Encoding.UTF8)
+eqipment_trove = h.from_file('equipment.hu') # default encoding = h.Encoding.UNKNOWN
+quests_trove = h.from_file('equipment.hu', h.Encoding.UTF8)
 ```
 
 ```python
 import humon as h
-trove = h.trove_from_string('{foo: bar}')
+trove = h.from_string('{foo: bar}')
 ```
 
 The file on disk may be encoded with any UTF-n format, as in the C API. Python strings are already Unicode-encoded, and will be converted to UTF-8 (Humon's internal format) if need be.
@@ -67,13 +67,13 @@ $ cat gnome.hu
 }
 ```
 
-Humon data is a tree of nodes: lists, dicts, and values, organized like JSON data. There are also comments and annotations, and all of this is described in the (Humon project readme)[https://github.com/spacemeat/humon]. Currently, comments cannot be accessed through the API, though that is forthcoming.
+Humon data is a tree of nodes: lists, dicts, and values, organized like JSON data. There are also comments and annotations, and all of this is described in the [Humon project readme](https://github.com/spacemeat/humon). Currently, comments cannot be accessed through the API, though that is forthcoming.
 
 Getting the root node is done through the `root` property of a trove:
 
 ```python
 import humon as h
-trove = h.trove_from_string('{foo: [a b c d]}')
+trove = h.from_string('{foo: [a b c d]}')
 root = trove.root
 ```
 
@@ -81,7 +81,7 @@ The returned object is of type `Node`. You can access its kind--list, dict, valu
 
 ```python
 import humon as h
-trove = h.trove_from_string('{foo: [a b c d]}')
+trove = h.from_string('{foo: [a b c d]}')
 root = trove.root
 assert root.kind == NodeKind.DICT
 lnode = root['foo']
@@ -93,7 +93,7 @@ A minor difference between Humon and JSON is that Humon dict entries can be acce
 
 ```python
 import humon as h
-trove = h.trove_from_string('{foo: foofoo, bar: barbar, baz: bazbaz}')
+trove = h.from_string('{foo: foofoo, bar: barbar, baz: bazbaz}')
 vnode = trove.root[2]
 print (vnode.value)  # prints bazbaz
 ```
@@ -102,7 +102,7 @@ Another minor difference between Humon and JSON is that Humon dicts do not have 
 
 ```python
 import humon as h
-trove = h.trove_from_string('''{ foo: [a b c d]
+trove = h.from_string('''{ foo: [a b c d]
                                  bar: snaa
                                  foo: [e f g h]
                                  baz: plugh
@@ -115,7 +115,7 @@ You can also access nodes via address:
 
 ```python
 import humon as h
-trove = h.trove_from_string('{foo: [a b c d]}')
+trove = h.from_string('{foo: [a b c d]}')
 vnode = trove.get_node('/foo/2')
 print (f'{vnode.address}: {vnode.value}') # prints: /foo/2: c
 vnode = vnode.get_node('../3')
@@ -126,7 +126,7 @@ Nodes which share a parent are `sibling` nodes:
 
 ```python
 import humon as h
-trove = h.trove_from_string('{foo: [a b c d] bar: [e f g h]}')
+trove = h.from_string('{foo: [a b c d] bar: [e f g h]}')
 vnode = trove.get_node('/foo')
 print (f'{vnode.address}: {vnode.value}') # prints: /foo: [a b c d]
 vnode = vnode.get_sibling('bar')
@@ -139,7 +139,7 @@ A trove stores nodes as a linear array internally, and nodes can be accessed by 
 
 ```python
 import humon as h
-trove = h.trove_from_string('{foo: [a b c d]}')
+trove = h.from_string('{foo: [a b c d]}')
 print (trove.get_node(4).value) # prints: c
 ```
 
@@ -166,7 +166,7 @@ data = '''@ { app: gamin'-djinn, component: assets-gnome, version: 0.1.0 }
     }
 }'''
 
-trove = h.trove_from_string(data)
+trove = h.from_string(data)
 to = trove.annotations
 assert to['app'] == "gamin'-djinn"
 if Version(to['version']).in_range('0.0.4', '0.1.3'):
@@ -244,7 +244,7 @@ You can also access full text in a node or trove with `token_string`:
 
 ```python
 import humon as h
-trove = h.trove_from_string('{foo: [a b {color: {green: [froggy, leafy]}} d]}')
+trove = h.from_string('{foo: [a b {color: {green: [froggy, leafy]}} d]}')
 print (trove.get_node('/foo/2').token_string)   # prints: {green: [froggy, leafy]}}
 print (trove.token_string)                      # prints the whole trove
 ```

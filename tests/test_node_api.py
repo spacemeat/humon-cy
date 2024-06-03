@@ -10,12 +10,15 @@ import humon as h
 def path_of(filename: str):
     return str(Path(__file__).parent / filename)
 
+class Foo:
+    pass
+
 class NodeApiTestCase(unittest.TestCase):
     def setUp(self):
-        self.value_only = h.trove_from_string('dreams')
-        self.list_only = h.trove_from_string('[]')
-        self.dict_only = h.trove_from_string('{}')
-        self.gnome = h.trove_from_file(path_of('gnome.hu'))
+        self.value_only = h.from_string('dreams')
+        self.list_only = h.from_string('[]')
+        self.dict_only = h.from_string('{}')
+        self.gnome = h.from_file(path_of('gnome.hu'))
 
 class TestNodeKind(NodeApiTestCase):
     def test_root(self):
@@ -190,6 +193,30 @@ class TestNodeGetNode(NodeApiTestCase):
         self.assertEqual(self.gnome.root.get_node(
             'textures/0/../../model/../animations/idle:1/audio/1').value, 'gnome-scratch.ogg')
 
+    def test_wrong(self):
+        at = self.gnome.get_node('/textures')
+        an = self.gnome.get_node('/animations')
+        self.assertEqual(at.get_node(3), None)
+        self.assertEqual(at.get_node('foo'), None)
+        self.assertEqual(an.get_node(3), None)
+        self.assertEqual(an.get_node('foo'), None)
+        self.assertEqual(self.gnome.root.get_node('..'), None)
+
+    def test_pathological(self):
+        with self.assertRaises(TypeError):
+            self.value_only.root.get_node(Foo())
+        with self.assertRaises(TypeError):
+            self.list_only.root.get_node(Foo())
+        with self.assertRaises(TypeError):
+            self.dict_only.root.get_node(Foo())
+        with self.assertRaises(TypeError):
+            self.gnome.root.get_node(Foo())
+        self.assertEqual(self.gnome.root.get_node(''), self.gnome.root)
+        self.assertEqual(self.gnome.root.get_node(-1), None)
+        with self.assertRaises(TypeError):
+            self.gnome.root.get_node(1.5)
+        self.assertEqual(self.gnome.root.get_node(1000000000000000), None)
+
 class TestNodeAddress(NodeApiTestCase):
     def test_root(self):
         self.assertEqual(self.value_only.root.address, '/')
@@ -210,10 +237,6 @@ class TestNodeAddress(NodeApiTestCase):
         self.assertEqual(self.gnome.get_node('/animations/idle:0').address, '/animations/idle:0')
         self.assertEqual(self.gnome.get_node('/animations/walk').address, '/animations/walk')
         self.assertEqual(self.gnome.get_node('/animations/idle:1').address, '/animations/idle:1')
-
-    def test_pathological(self):
-        # TODO: this
-        pass
 
 class TestNodeGetSibling(NodeApiTestCase):
     def test_root(self):
@@ -254,9 +277,16 @@ class TestNodeGetSibling(NodeApiTestCase):
                          '/animations/idle:1')
         self.assertEqual(self.gnome.get_node('/animations/idle:1').get_sibling(), None)
 
+    def test_wrong(self):
+        self.assertEqual(self.gnome.get_node('/animations/idle:0').get_sibling('trot'), None)
+
     def test_pathological(self):
-        # TODO: this
-        pass
+        with self.assertRaises(TypeError):
+            self.assertEqual(self.gnome.get_node('/animations/idle:0').get_sibling(0), None)
+        with self.assertRaises(TypeError):
+            self.assertEqual(self.gnome.get_node('/animations/idle:0').get_sibling(-1), None)
+        with self.assertRaises(TypeError):
+            self.assertEqual(self.gnome.get_node('/animations/idle:0').get_sibling(Foo()), None)
 
 class TestNodeKey(NodeApiTestCase):
     def test_root(self):

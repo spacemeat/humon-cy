@@ -1526,7 +1526,7 @@ typedef struct __pyx_defaults __pyx_defaults;
 struct __pyx_defaults1;
 typedef struct __pyx_defaults1 __pyx_defaults1;
 
-/* "humon.pyx":152
+/* "humon.pyx":162
  *         free(mpath)
  * 
  * ctypedef c.huStringView[<c.huSize_t> c.huColorCode.HU_COLORCODE_NUMCOLORS] c_color_table_t             # <<<<<<<<<<<<<<
@@ -1542,7 +1542,7 @@ struct __pyx_defaults1 {
   PyObject *__pyx_arg_tab_size;
 };
 
-/* "humon.pyx":154
+/* "humon.pyx":164
  * ctypedef c.huStringView[<c.huSize_t> c.huColorCode.HU_COLORCODE_NUMCOLORS] c_color_table_t
  * 
  * cdef class Trove:             # <<<<<<<<<<<<<<
@@ -1556,7 +1556,7 @@ struct __pyx_obj_5humon_Trove {
 };
 
 
-/* "humon.pyx":315
+/* "humon.pyx":328
  * 
  * 
  * cdef class Node:             # <<<<<<<<<<<<<<
@@ -1571,7 +1571,7 @@ struct __pyx_obj_5humon_Node {
 
 
 
-/* "humon.pyx":154
+/* "humon.pyx":164
  * ctypedef c.huStringView[<c.huSize_t> c.huColorCode.HU_COLORCODE_NUMCOLORS] c_color_table_t
  * 
  * cdef class Trove:             # <<<<<<<<<<<<<<
@@ -1585,7 +1585,7 @@ struct __pyx_vtabstruct_5humon_Trove {
 static struct __pyx_vtabstruct_5humon_Trove *__pyx_vtabptr_5humon_Trove;
 
 
-/* "humon.pyx":315
+/* "humon.pyx":328
  * 
  * 
  * cdef class Node:             # <<<<<<<<<<<<<<
@@ -2038,6 +2038,9 @@ static CYTHON_INLINE int __Pyx_PyList_Append(PyObject* list, PyObject* x) {
 /* PyObjectCallNoArg.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func);
 
+/* PyObjectCallOneArg.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg);
+
 /* PyObject_Str.proto */
 #define __Pyx_PyObject_Str(obj)\
     (likely(PyString_CheckExact(obj)) ? __Pyx_NewRef(obj) : PyObject_Str(obj))
@@ -2129,9 +2132,6 @@ static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i,
 
 /* RaiseUnexpectedTypeError.proto */
 static int __Pyx_RaiseUnexpectedTypeError(const char *expected, PyObject *obj);
-
-/* PyObjectCallOneArg.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg);
 
 /* IncludeStructmemberH.proto */
 #include <structmember.h>
@@ -2520,9 +2520,9 @@ int __pyx_module_is_main_humon = 0;
 /* Implementation of "humon" */
 /* #### Code section: global_var ### */
 static PyObject *__pyx_builtin_range;
+static PyObject *__pyx_builtin_TypeError;
 static PyObject *__pyx_builtin_AssertionError;
 static PyObject *__pyx_builtin_MemoryError;
-static PyObject *__pyx_builtin_TypeError;
 /* #### Code section: string_decls ### */
 static const char __pyx_k_[] = ": ";
 static const char __pyx_k_e[] = "e";
@@ -2631,12 +2631,14 @@ static const char __pyx_k_qualname[] = "__qualname__";
 static const char __pyx_k_set_name[] = "__set_name__";
 static const char __pyx_k_setstate[] = "__setstate__";
 static const char __pyx_k_str_None[] = "str | None";
+static const char __pyx_k_str_Path[] = "str | Path";
 static const char __pyx_k_tab_size[] = "tab_size";
 static const char __pyx_k_ColorCode[] = "ColorCode";
 static const char __pyx_k_ErrorCode[] = "ErrorCode";
 static const char __pyx_k_NUMCOLORS[] = "NUMCOLORS";
 static const char __pyx_k_Node_None[] = "Node | None";
 static const char __pyx_k_TypeError[] = "TypeError";
+static const char __pyx_k_from_file[] = "from_file";
 static const char __pyx_k_isenabled[] = "isenabled";
 static const char __pyx_k_len_caddr[] = "len_caddr";
 static const char __pyx_k_len_ccode[] = "len_ccode";
@@ -2663,6 +2665,7 @@ static const char __pyx_k_OUTOFMEMORY[] = "OUTOFMEMORY";
 static const char __pyx_k_PUNCMETATAG[] = "PUNCMETATAG";
 static const char __pyx_k_SYNTAXERROR[] = "SYNTAXERROR";
 static const char __pyx_k_color_table[] = "color_table";
+static const char __pyx_k_from_string[] = "from_string";
 static const char __pyx_k_get_sibling[] = "get_sibling";
 static const char __pyx_k_indent_size[] = "indent_size";
 static const char __pyx_k_mro_entries[] = "__mro_entries__";
@@ -2699,14 +2702,12 @@ static const char __pyx_k_STDOUTANSICOLOR[] = "STDOUTANSICOLOR";
 static const char __pyx_k_Trove_to_string[] = "Trove.to_string";
 static const char __pyx_k_UNFINISHEDQUOTE[] = "UNFINISHEDQUOTE";
 static const char __pyx_k_setstate_cython[] = "__setstate_cython__";
-static const char __pyx_k_trove_from_file[] = "trove_from_file";
 static const char __pyx_k_BufferManagement[] = "BufferManagement";
 static const char __pyx_k_DeserializeError[] = "DeserializeError";
 static const char __pyx_k_Node_get_sibling[] = "Node.get_sibling";
 static const char __pyx_k_TOKENSTREAMBEGIN[] = "TOKENSTREAMBEGIN";
 static const char __pyx_k_WhitespaceFormat[] = "WhitespaceFormat";
 static const char __pyx_k_indent_with_tabs[] = "indent_with_tabs";
-static const char __pyx_k_trove_from_string[] = "trove_from_string";
 static const char __pyx_k_whitespace_format[] = "whitespace_format";
 static const char __pyx_k_asyncio_coroutines[] = "asyncio.coroutines";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
@@ -2726,9 +2727,9 @@ static const char __pyx_k_no_default___reduce___due_to_non[] = "no default __red
 static PyObject *__pyx_pf_5humon_5Error___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_error_code, PyObject *__pyx_v_line, PyObject *__pyx_v_col); /* proto */
 static PyObject *__pyx_pf_5humon_5Error_2__repr__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5humon_4__defaults__(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static struct __pyx_obj_5humon_Trove *__pyx_pf_5humon_trove_from_string(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_code, PyObject *__pyx_v_tab_size); /* proto */
+static struct __pyx_obj_5humon_Trove *__pyx_pf_5humon_from_string(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_code, PyObject *__pyx_v_tab_size); /* proto */
 static PyObject *__pyx_pf_5humon_6__defaults__(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static struct __pyx_obj_5humon_Trove *__pyx_pf_5humon_2trove_from_file(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_encoding, PyObject *__pyx_v_tab_size); /* proto */
+static struct __pyx_obj_5humon_Trove *__pyx_pf_5humon_2from_file(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_encoding, PyObject *__pyx_v_tab_size); /* proto */
 static int __pyx_pf_5humon_5Trove___cinit__(struct __pyx_obj_5humon_Trove *__pyx_v_self); /* proto */
 static void __pyx_pf_5humon_5Trove_2__dealloc__(struct __pyx_obj_5humon_Trove *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED struct __pyx_obj_5humon_Trove *__pyx_v_self, PyObject *__pyx_v_color_table); /* proto */
@@ -2927,6 +2928,8 @@ typedef struct {
   PyObject *__pyx_n_s_encoding;
   PyObject *__pyx_n_s_enum;
   PyObject *__pyx_n_s_error_code;
+  PyObject *__pyx_n_s_from_file;
+  PyObject *__pyx_n_s_from_string;
   PyObject *__pyx_kp_u_gc;
   PyObject *__pyx_n_s_get;
   PyObject *__pyx_n_s_get_node;
@@ -2987,14 +2990,13 @@ typedef struct {
   PyObject *__pyx_kp_s_src_humon_humon_pyx;
   PyObject *__pyx_n_s_str;
   PyObject *__pyx_kp_s_str_None;
+  PyObject *__pyx_kp_s_str_Path;
   PyObject *__pyx_kp_s_stringsource;
   PyObject *__pyx_n_s_super;
   PyObject *__pyx_n_s_tab_size;
   PyObject *__pyx_n_s_test;
   PyObject *__pyx_n_s_to_file;
   PyObject *__pyx_n_s_to_string;
-  PyObject *__pyx_n_s_trove_from_file;
-  PyObject *__pyx_n_s_trove_from_string;
   PyObject *__pyx_n_s_use_colors;
   PyObject *__pyx_kp_u_utf_8;
   PyObject *__pyx_n_s_value;
@@ -3204,6 +3206,8 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_encoding);
   Py_CLEAR(clear_module_state->__pyx_n_s_enum);
   Py_CLEAR(clear_module_state->__pyx_n_s_error_code);
+  Py_CLEAR(clear_module_state->__pyx_n_s_from_file);
+  Py_CLEAR(clear_module_state->__pyx_n_s_from_string);
   Py_CLEAR(clear_module_state->__pyx_kp_u_gc);
   Py_CLEAR(clear_module_state->__pyx_n_s_get);
   Py_CLEAR(clear_module_state->__pyx_n_s_get_node);
@@ -3264,14 +3268,13 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_kp_s_src_humon_humon_pyx);
   Py_CLEAR(clear_module_state->__pyx_n_s_str);
   Py_CLEAR(clear_module_state->__pyx_kp_s_str_None);
+  Py_CLEAR(clear_module_state->__pyx_kp_s_str_Path);
   Py_CLEAR(clear_module_state->__pyx_kp_s_stringsource);
   Py_CLEAR(clear_module_state->__pyx_n_s_super);
   Py_CLEAR(clear_module_state->__pyx_n_s_tab_size);
   Py_CLEAR(clear_module_state->__pyx_n_s_test);
   Py_CLEAR(clear_module_state->__pyx_n_s_to_file);
   Py_CLEAR(clear_module_state->__pyx_n_s_to_string);
-  Py_CLEAR(clear_module_state->__pyx_n_s_trove_from_file);
-  Py_CLEAR(clear_module_state->__pyx_n_s_trove_from_string);
   Py_CLEAR(clear_module_state->__pyx_n_s_use_colors);
   Py_CLEAR(clear_module_state->__pyx_kp_u_utf_8);
   Py_CLEAR(clear_module_state->__pyx_n_s_value);
@@ -3459,6 +3462,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_encoding);
   Py_VISIT(traverse_module_state->__pyx_n_s_enum);
   Py_VISIT(traverse_module_state->__pyx_n_s_error_code);
+  Py_VISIT(traverse_module_state->__pyx_n_s_from_file);
+  Py_VISIT(traverse_module_state->__pyx_n_s_from_string);
   Py_VISIT(traverse_module_state->__pyx_kp_u_gc);
   Py_VISIT(traverse_module_state->__pyx_n_s_get);
   Py_VISIT(traverse_module_state->__pyx_n_s_get_node);
@@ -3519,14 +3524,13 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_kp_s_src_humon_humon_pyx);
   Py_VISIT(traverse_module_state->__pyx_n_s_str);
   Py_VISIT(traverse_module_state->__pyx_kp_s_str_None);
+  Py_VISIT(traverse_module_state->__pyx_kp_s_str_Path);
   Py_VISIT(traverse_module_state->__pyx_kp_s_stringsource);
   Py_VISIT(traverse_module_state->__pyx_n_s_super);
   Py_VISIT(traverse_module_state->__pyx_n_s_tab_size);
   Py_VISIT(traverse_module_state->__pyx_n_s_test);
   Py_VISIT(traverse_module_state->__pyx_n_s_to_file);
   Py_VISIT(traverse_module_state->__pyx_n_s_to_string);
-  Py_VISIT(traverse_module_state->__pyx_n_s_trove_from_file);
-  Py_VISIT(traverse_module_state->__pyx_n_s_trove_from_string);
   Py_VISIT(traverse_module_state->__pyx_n_s_use_colors);
   Py_VISIT(traverse_module_state->__pyx_kp_u_utf_8);
   Py_VISIT(traverse_module_state->__pyx_n_s_value);
@@ -3730,6 +3734,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_encoding __pyx_mstate_global->__pyx_n_s_encoding
 #define __pyx_n_s_enum __pyx_mstate_global->__pyx_n_s_enum
 #define __pyx_n_s_error_code __pyx_mstate_global->__pyx_n_s_error_code
+#define __pyx_n_s_from_file __pyx_mstate_global->__pyx_n_s_from_file
+#define __pyx_n_s_from_string __pyx_mstate_global->__pyx_n_s_from_string
 #define __pyx_kp_u_gc __pyx_mstate_global->__pyx_kp_u_gc
 #define __pyx_n_s_get __pyx_mstate_global->__pyx_n_s_get
 #define __pyx_n_s_get_node __pyx_mstate_global->__pyx_n_s_get_node
@@ -3790,14 +3796,13 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_kp_s_src_humon_humon_pyx __pyx_mstate_global->__pyx_kp_s_src_humon_humon_pyx
 #define __pyx_n_s_str __pyx_mstate_global->__pyx_n_s_str
 #define __pyx_kp_s_str_None __pyx_mstate_global->__pyx_kp_s_str_None
+#define __pyx_kp_s_str_Path __pyx_mstate_global->__pyx_kp_s_str_Path
 #define __pyx_kp_s_stringsource __pyx_mstate_global->__pyx_kp_s_stringsource
 #define __pyx_n_s_super __pyx_mstate_global->__pyx_n_s_super
 #define __pyx_n_s_tab_size __pyx_mstate_global->__pyx_n_s_tab_size
 #define __pyx_n_s_test __pyx_mstate_global->__pyx_n_s_test
 #define __pyx_n_s_to_file __pyx_mstate_global->__pyx_n_s_to_file
 #define __pyx_n_s_to_string __pyx_mstate_global->__pyx_n_s_to_string
-#define __pyx_n_s_trove_from_file __pyx_mstate_global->__pyx_n_s_trove_from_file
-#define __pyx_n_s_trove_from_string __pyx_mstate_global->__pyx_n_s_trove_from_string
 #define __pyx_n_s_use_colors __pyx_mstate_global->__pyx_n_s_use_colors
 #define __pyx_kp_u_utf_8 __pyx_mstate_global->__pyx_kp_u_utf_8
 #define __pyx_n_s_value __pyx_mstate_global->__pyx_n_s_value
@@ -4749,7 +4754,7 @@ static struct __pyx_obj_5humon_Trove *__pyx_f_5humon__make_trove(huErrorCode __p
  *     t._c_trove = c_trove;
  *     return t             # <<<<<<<<<<<<<<
  * 
- * def trove_from_string(code: str, tab_size: int = 4) -> Trove:
+ * def from_string(code: str, tab_size: int = 4) -> Trove:
  */
   __Pyx_XDECREF((PyObject *)__pyx_r);
   __Pyx_INCREF((PyObject *)__pyx_v_t);
@@ -4785,9 +4790,9 @@ static struct __pyx_obj_5humon_Trove *__pyx_f_5humon__make_trove(huErrorCode __p
 /* "humon.pyx":122
  *     return t
  * 
- * def trove_from_string(code: str, tab_size: int = 4) -> Trove:             # <<<<<<<<<<<<<<
- *     cdef const char * ccode
- *     bcode = code.encode('utf-8')
+ * def from_string(code: str, tab_size: int = 4) -> Trove:             # <<<<<<<<<<<<<<
+ *     if not isinstance(code, str):
+ *         raise TypeError(code)
  */
 
 static PyObject *__pyx_pf_5humon_4__defaults__(CYTHON_UNUSED PyObject *__pyx_self) {
@@ -4830,15 +4835,15 @@ static PyObject *__pyx_pf_5humon_4__defaults__(CYTHON_UNUSED PyObject *__pyx_sel
 }
 
 /* Python wrapper */
-static struct __pyx_obj_5humon_Trove *__pyx_pw_5humon_1trove_from_string(PyObject *__pyx_self, 
+static struct __pyx_obj_5humon_Trove *__pyx_pw_5humon_1from_string(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_5humon_1trove_from_string = {"trove_from_string", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_5humon_1trove_from_string, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static struct __pyx_obj_5humon_Trove *__pyx_pw_5humon_1trove_from_string(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_5humon_1from_string = {"from_string", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_5humon_1from_string, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static struct __pyx_obj_5humon_Trove *__pyx_pw_5humon_1from_string(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4857,7 +4862,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   int __pyx_clineno = 0;
   struct __pyx_obj_5humon_Trove *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("trove_from_string (wrapper)", 0);
+  __Pyx_RefNannySetupContext("from_string (wrapper)", 0);
   #if !CYTHON_METH_FASTCALL
   #if CYTHON_ASSUME_SAFE_MACROS
   __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
@@ -4899,7 +4904,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "trove_from_string") < 0)) __PYX_ERR(0, 122, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "from_string") < 0)) __PYX_ERR(0, 122, __pyx_L3_error)
       }
     } else {
       switch (__pyx_nargs) {
@@ -4915,7 +4920,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("trove_from_string", 0, 1, 2, __pyx_nargs); __PYX_ERR(0, 122, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("from_string", 0, 1, 2, __pyx_nargs); __PYX_ERR(0, 122, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4925,13 +4930,13 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("humon.trove_from_string", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("humon.from_string", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_code), (&PyUnicode_Type), 0, "code", 1))) __PYX_ERR(0, 122, __pyx_L1_error)
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_tab_size), (&PyInt_Type), 0, "tab_size", 1))) __PYX_ERR(0, 122, __pyx_L1_error)
-  __pyx_r = __pyx_pf_5humon_trove_from_string(__pyx_self, __pyx_v_code, __pyx_v_tab_size);
+  __pyx_r = __pyx_pf_5humon_from_string(__pyx_self, __pyx_v_code, __pyx_v_tab_size);
 
   /* function exit code */
   goto __pyx_L0;
@@ -4948,7 +4953,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static struct __pyx_obj_5humon_Trove *__pyx_pf_5humon_trove_from_string(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_code, PyObject *__pyx_v_tab_size) {
+static struct __pyx_obj_5humon_Trove *__pyx_pf_5humon_from_string(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_code, PyObject *__pyx_v_tab_size) {
   char const *__pyx_v_ccode;
   PyObject *__pyx_v_bcode = NULL;
   Py_ssize_t __pyx_v_len_ccode;
@@ -4957,58 +4962,126 @@ static struct __pyx_obj_5humon_Trove *__pyx_pf_5humon_trove_from_string(CYTHON_U
   huErrorCode __pyx_v_res;
   struct __pyx_obj_5humon_Trove *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  char const *__pyx_t_2;
-  Py_ssize_t __pyx_t_3;
-  huCol_t __pyx_t_4;
+  int __pyx_t_1;
+  int __pyx_t_2;
+  PyObject *__pyx_t_3 = NULL;
+  char const *__pyx_t_4;
+  Py_ssize_t __pyx_t_5;
+  huCol_t __pyx_t_6;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("trove_from_string", 1);
+  __Pyx_RefNannySetupContext("from_string", 1);
 
-  /* "humon.pyx":124
- * def trove_from_string(code: str, tab_size: int = 4) -> Trove:
+  /* "humon.pyx":123
+ * 
+ * def from_string(code: str, tab_size: int = 4) -> Trove:
+ *     if not isinstance(code, str):             # <<<<<<<<<<<<<<
+ *         raise TypeError(code)
+ *     if not isinstance(tab_size, int):
+ */
+  __pyx_t_1 = PyUnicode_Check(__pyx_v_code); 
+  __pyx_t_2 = (!__pyx_t_1);
+  if (unlikely(__pyx_t_2)) {
+
+    /* "humon.pyx":124
+ * def from_string(code: str, tab_size: int = 4) -> Trove:
+ *     if not isinstance(code, str):
+ *         raise TypeError(code)             # <<<<<<<<<<<<<<
+ *     if not isinstance(tab_size, int):
+ *         raise TypeError(tab_size)
+ */
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_TypeError, __pyx_v_code); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_Raise(__pyx_t_3, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __PYX_ERR(0, 124, __pyx_L1_error)
+
+    /* "humon.pyx":123
+ * 
+ * def from_string(code: str, tab_size: int = 4) -> Trove:
+ *     if not isinstance(code, str):             # <<<<<<<<<<<<<<
+ *         raise TypeError(code)
+ *     if not isinstance(tab_size, int):
+ */
+  }
+
+  /* "humon.pyx":125
+ *     if not isinstance(code, str):
+ *         raise TypeError(code)
+ *     if not isinstance(tab_size, int):             # <<<<<<<<<<<<<<
+ *         raise TypeError(tab_size)
+ *     cdef const char * ccode
+ */
+  __pyx_t_2 = PyInt_Check(__pyx_v_tab_size); 
+  __pyx_t_1 = (!__pyx_t_2);
+  if (unlikely(__pyx_t_1)) {
+
+    /* "humon.pyx":126
+ *         raise TypeError(code)
+ *     if not isinstance(tab_size, int):
+ *         raise TypeError(tab_size)             # <<<<<<<<<<<<<<
+ *     cdef const char * ccode
+ *     bcode = code.encode('utf-8')
+ */
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_TypeError, __pyx_v_tab_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 126, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_Raise(__pyx_t_3, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __PYX_ERR(0, 126, __pyx_L1_error)
+
+    /* "humon.pyx":125
+ *     if not isinstance(code, str):
+ *         raise TypeError(code)
+ *     if not isinstance(tab_size, int):             # <<<<<<<<<<<<<<
+ *         raise TypeError(tab_size)
+ *     cdef const char * ccode
+ */
+  }
+
+  /* "humon.pyx":128
+ *         raise TypeError(tab_size)
  *     cdef const char * ccode
  *     bcode = code.encode('utf-8')             # <<<<<<<<<<<<<<
  *     ccode, len_ccode = bcode, len(bcode)
  *     cdef c.huDeserializeOptions opts
  */
-  __pyx_t_1 = PyUnicode_AsUTF8String(__pyx_v_code); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_bcode = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __pyx_t_3 = PyUnicode_AsUTF8String(__pyx_v_code); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 128, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_v_bcode = __pyx_t_3;
+  __pyx_t_3 = 0;
 
-  /* "humon.pyx":125
+  /* "humon.pyx":129
  *     cdef const char * ccode
  *     bcode = code.encode('utf-8')
  *     ccode, len_ccode = bcode, len(bcode)             # <<<<<<<<<<<<<<
  *     cdef c.huDeserializeOptions opts
  *     c.huInitDeserializeOptions(& opts, c.HU_ENCODING_UTF8, False, tab_size, NULL,
  */
-  __pyx_t_2 = __Pyx_PyObject_AsString(__pyx_v_bcode); if (unlikely((!__pyx_t_2) && PyErr_Occurred())) __PYX_ERR(0, 125, __pyx_L1_error)
-  __pyx_t_3 = PyObject_Length(__pyx_v_bcode); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 125, __pyx_L1_error)
-  __pyx_v_ccode = __pyx_t_2;
-  __pyx_v_len_ccode = __pyx_t_3;
+  __pyx_t_4 = __Pyx_PyObject_AsString(__pyx_v_bcode); if (unlikely((!__pyx_t_4) && PyErr_Occurred())) __PYX_ERR(0, 129, __pyx_L1_error)
+  __pyx_t_5 = PyObject_Length(__pyx_v_bcode); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 129, __pyx_L1_error)
+  __pyx_v_ccode = __pyx_t_4;
+  __pyx_v_len_ccode = __pyx_t_5;
 
-  /* "humon.pyx":127
+  /* "humon.pyx":131
  *     ccode, len_ccode = bcode, len(bcode)
  *     cdef c.huDeserializeOptions opts
  *     c.huInitDeserializeOptions(& opts, c.HU_ENCODING_UTF8, False, tab_size, NULL,             # <<<<<<<<<<<<<<
  *                                   c.HU_BUFFERMANAGEMENT_COPYANDOWN)
  *     cdef c.huTrove * c_trove
  */
-  __pyx_t_4 = __Pyx_PyInt_As_huCol_t(__pyx_v_tab_size); if (unlikely((__pyx_t_4 == ((huCol_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 127, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyInt_As_huCol_t(__pyx_v_tab_size); if (unlikely((__pyx_t_6 == ((huCol_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 131, __pyx_L1_error)
 
-  /* "humon.pyx":128
+  /* "humon.pyx":132
  *     cdef c.huDeserializeOptions opts
  *     c.huInitDeserializeOptions(& opts, c.HU_ENCODING_UTF8, False, tab_size, NULL,
  *                                   c.HU_BUFFERMANAGEMENT_COPYANDOWN)             # <<<<<<<<<<<<<<
  *     cdef c.huTrove * c_trove
  *     cdef c.huErrorCode res
  */
-  huInitDeserializeOptions((&__pyx_v_opts), HU_ENCODING_UTF8, 0, __pyx_t_4, NULL, HU_BUFFERMANAGEMENT_COPYANDOWN);
+  huInitDeserializeOptions((&__pyx_v_opts), HU_ENCODING_UTF8, 0, __pyx_t_6, NULL, HU_BUFFERMANAGEMENT_COPYANDOWN);
 
-  /* "humon.pyx":131
+  /* "humon.pyx":135
  *     cdef c.huTrove * c_trove
  *     cdef c.huErrorCode res
  *     res = c.huDeserializeTroveN(& c_trove, ccode, len_ccode, & opts, c.HU_ERRORRESPONSE_MUM)             # <<<<<<<<<<<<<<
@@ -5017,32 +5090,32 @@ static struct __pyx_obj_5humon_Trove *__pyx_pf_5humon_trove_from_string(CYTHON_U
  */
   __pyx_v_res = huDeserializeTroveN((&__pyx_v_c_trove), __pyx_v_ccode, __pyx_v_len_ccode, (&__pyx_v_opts), HU_ERRORRESPONSE_MUM);
 
-  /* "humon.pyx":132
+  /* "humon.pyx":136
  *     cdef c.huErrorCode res
  *     res = c.huDeserializeTroveN(& c_trove, ccode, len_ccode, & opts, c.HU_ERRORRESPONSE_MUM)
  *     return _make_trove(res, c_trove)             # <<<<<<<<<<<<<<
  * 
- * def trove_from_file(path: Path, encoding: Encoding = Encoding.UNKNOWN, tab_size: int = 4) -> Trove:
+ * def from_file(path: str | Path, encoding: Encoding = Encoding.UNKNOWN, tab_size: int = 4) -> Trove:
  */
   __Pyx_XDECREF((PyObject *)__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_5humon__make_trove(__pyx_v_res, __pyx_v_c_trove)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 132, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = ((struct __pyx_obj_5humon_Trove *)__pyx_t_1);
-  __pyx_t_1 = 0;
+  __pyx_t_3 = ((PyObject *)__pyx_f_5humon__make_trove(__pyx_v_res, __pyx_v_c_trove)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 136, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_r = ((struct __pyx_obj_5humon_Trove *)__pyx_t_3);
+  __pyx_t_3 = 0;
   goto __pyx_L0;
 
   /* "humon.pyx":122
  *     return t
  * 
- * def trove_from_string(code: str, tab_size: int = 4) -> Trove:             # <<<<<<<<<<<<<<
- *     cdef const char * ccode
- *     bcode = code.encode('utf-8')
+ * def from_string(code: str, tab_size: int = 4) -> Trove:             # <<<<<<<<<<<<<<
+ *     if not isinstance(code, str):
+ *         raise TypeError(code)
  */
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("humon.trove_from_string", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_AddTraceback("humon.from_string", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_bcode);
@@ -5051,12 +5124,12 @@ static struct __pyx_obj_5humon_Trove *__pyx_pf_5humon_trove_from_string(CYTHON_U
   return __pyx_r;
 }
 
-/* "humon.pyx":134
+/* "humon.pyx":138
  *     return _make_trove(res, c_trove)
  * 
- * def trove_from_file(path: Path, encoding: Encoding = Encoding.UNKNOWN, tab_size: int = 4) -> Trove:             # <<<<<<<<<<<<<<
- *     cdef const char * cpath
- *     bpath = str(path).encode('utf-8')
+ * def from_file(path: str | Path, encoding: Encoding = Encoding.UNKNOWN, tab_size: int = 4) -> Trove:             # <<<<<<<<<<<<<<
+ *     if not isinstance(path, (str, Path)):
+ *         raise TypeError(path)
  */
 
 static PyObject *__pyx_pf_5humon_6__defaults__(CYTHON_UNUSED PyObject *__pyx_self) {
@@ -5069,21 +5142,21 @@ static PyObject *__pyx_pf_5humon_6__defaults__(CYTHON_UNUSED PyObject *__pyx_sel
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__defaults__", 1);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__Pyx_CyFunction_Defaults(__pyx_defaults1, __pyx_self)->__pyx_arg_encoding);
   __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(__pyx_defaults1, __pyx_self)->__pyx_arg_encoding);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __Pyx_CyFunction_Defaults(__pyx_defaults1, __pyx_self)->__pyx_arg_encoding)) __PYX_ERR(0, 134, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __Pyx_CyFunction_Defaults(__pyx_defaults1, __pyx_self)->__pyx_arg_encoding)) __PYX_ERR(0, 138, __pyx_L1_error);
   __Pyx_INCREF(__Pyx_CyFunction_Defaults(__pyx_defaults1, __pyx_self)->__pyx_arg_tab_size);
   __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(__pyx_defaults1, __pyx_self)->__pyx_arg_tab_size);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __Pyx_CyFunction_Defaults(__pyx_defaults1, __pyx_self)->__pyx_arg_tab_size)) __PYX_ERR(0, 134, __pyx_L1_error);
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __Pyx_CyFunction_Defaults(__pyx_defaults1, __pyx_self)->__pyx_arg_tab_size)) __PYX_ERR(0, 138, __pyx_L1_error);
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_1);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1)) __PYX_ERR(0, 134, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1)) __PYX_ERR(0, 138, __pyx_L1_error);
   __Pyx_INCREF(Py_None);
   __Pyx_GIVEREF(Py_None);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, Py_None)) __PYX_ERR(0, 134, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, Py_None)) __PYX_ERR(0, 138, __pyx_L1_error);
   __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
@@ -5102,15 +5175,15 @@ static PyObject *__pyx_pf_5humon_6__defaults__(CYTHON_UNUSED PyObject *__pyx_sel
 }
 
 /* Python wrapper */
-static struct __pyx_obj_5humon_Trove *__pyx_pw_5humon_3trove_from_file(PyObject *__pyx_self, 
+static struct __pyx_obj_5humon_Trove *__pyx_pw_5humon_3from_file(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_5humon_3trove_from_file = {"trove_from_file", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_5humon_3trove_from_file, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static struct __pyx_obj_5humon_Trove *__pyx_pw_5humon_3trove_from_file(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_5humon_3from_file = {"from_file", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_5humon_3from_file, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static struct __pyx_obj_5humon_Trove *__pyx_pw_5humon_3from_file(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5130,7 +5203,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   int __pyx_clineno = 0;
   struct __pyx_obj_5humon_Trove *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("trove_from_file (wrapper)", 0);
+  __Pyx_RefNannySetupContext("from_file (wrapper)", 0);
   #if !CYTHON_METH_FASTCALL
   #if CYTHON_ASSUME_SAFE_MACROS
   __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
@@ -5163,26 +5236,26 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 138, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_encoding);
           if (value) { values[1] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 138, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_tab_size);
           if (value) { values[2] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 138, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "trove_from_file") < 0)) __PYX_ERR(0, 134, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "from_file") < 0)) __PYX_ERR(0, 138, __pyx_L3_error)
       }
     } else {
       switch (__pyx_nargs) {
@@ -5201,7 +5274,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("trove_from_file", 0, 1, 3, __pyx_nargs); __PYX_ERR(0, 134, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("from_file", 0, 1, 3, __pyx_nargs); __PYX_ERR(0, 138, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5211,12 +5284,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("humon.trove_from_file", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("humon.from_file", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_tab_size), (&PyInt_Type), 0, "tab_size", 1))) __PYX_ERR(0, 134, __pyx_L1_error)
-  __pyx_r = __pyx_pf_5humon_2trove_from_file(__pyx_self, __pyx_v_path, __pyx_v_encoding, __pyx_v_tab_size);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_tab_size), (&PyInt_Type), 0, "tab_size", 1))) __PYX_ERR(0, 138, __pyx_L1_error)
+  __pyx_r = __pyx_pf_5humon_2from_file(__pyx_self, __pyx_v_path, __pyx_v_encoding, __pyx_v_tab_size);
 
   /* function exit code */
   goto __pyx_L0;
@@ -5233,7 +5306,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static struct __pyx_obj_5humon_Trove *__pyx_pf_5humon_2trove_from_file(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_encoding, PyObject *__pyx_v_tab_size) {
+static struct __pyx_obj_5humon_Trove *__pyx_pf_5humon_2from_file(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_encoding, PyObject *__pyx_v_tab_size) {
   char const *__pyx_v_cpath;
   PyObject *__pyx_v_bpath = NULL;
   PyObject *__pyx_v_len_cpath = NULL;
@@ -5244,122 +5317,237 @@ static struct __pyx_obj_5humon_Trove *__pyx_pf_5humon_2trove_from_file(CYTHON_UN
   struct __pyx_obj_5humon_Trove *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  int __pyx_t_4;
-  char const *__pyx_t_5;
-  Py_ssize_t __pyx_t_6;
-  huEncoding __pyx_t_7;
-  huCol_t __pyx_t_8;
-  size_t __pyx_t_9;
-  int __pyx_t_10;
-  char const *__pyx_t_11;
-  PyObject *__pyx_t_12 = NULL;
-  PyObject *__pyx_t_13 = NULL;
+  int __pyx_t_2;
+  int __pyx_t_3;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  int __pyx_t_6;
+  char const *__pyx_t_7;
+  Py_ssize_t __pyx_t_8;
+  huEncoding __pyx_t_9;
+  huCol_t __pyx_t_10;
+  size_t __pyx_t_11;
+  int __pyx_t_12;
+  char const *__pyx_t_13;
   PyObject *__pyx_t_14 = NULL;
   PyObject *__pyx_t_15 = NULL;
   PyObject *__pyx_t_16 = NULL;
   PyObject *__pyx_t_17 = NULL;
-  struct __pyx_obj_5humon_Trove *__pyx_t_18 = NULL;
+  PyObject *__pyx_t_18 = NULL;
+  PyObject *__pyx_t_19 = NULL;
+  struct __pyx_obj_5humon_Trove *__pyx_t_20 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("trove_from_file", 1);
+  __Pyx_RefNannySetupContext("from_file", 1);
 
-  /* "humon.pyx":136
- * def trove_from_file(path: Path, encoding: Encoding = Encoding.UNKNOWN, tab_size: int = 4) -> Trove:
+  /* "humon.pyx":139
+ * 
+ * def from_file(path: str | Path, encoding: Encoding = Encoding.UNKNOWN, tab_size: int = 4) -> Trove:
+ *     if not isinstance(path, (str, Path)):             # <<<<<<<<<<<<<<
+ *         raise TypeError(path)
+ *     if not isinstance(encoding, Encoding):
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_Path); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_3 = PyUnicode_Check(__pyx_v_path); 
+  if (!__pyx_t_3) {
+  } else {
+    __pyx_t_2 = __pyx_t_3;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_3 = PyObject_IsInstance(__pyx_v_path, __pyx_t_1); 
+  __pyx_t_2 = __pyx_t_3;
+  __pyx_L4_bool_binop_done:;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_3 = (!__pyx_t_2);
+  if (unlikely(__pyx_t_3)) {
+
+    /* "humon.pyx":140
+ * def from_file(path: str | Path, encoding: Encoding = Encoding.UNKNOWN, tab_size: int = 4) -> Trove:
+ *     if not isinstance(path, (str, Path)):
+ *         raise TypeError(path)             # <<<<<<<<<<<<<<
+ *     if not isinstance(encoding, Encoding):
+ *         raise TypeError(encoding)
+ */
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_TypeError, __pyx_v_path); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 140, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __PYX_ERR(0, 140, __pyx_L1_error)
+
+    /* "humon.pyx":139
+ * 
+ * def from_file(path: str | Path, encoding: Encoding = Encoding.UNKNOWN, tab_size: int = 4) -> Trove:
+ *     if not isinstance(path, (str, Path)):             # <<<<<<<<<<<<<<
+ *         raise TypeError(path)
+ *     if not isinstance(encoding, Encoding):
+ */
+  }
+
+  /* "humon.pyx":141
+ *     if not isinstance(path, (str, Path)):
+ *         raise TypeError(path)
+ *     if not isinstance(encoding, Encoding):             # <<<<<<<<<<<<<<
+ *         raise TypeError(encoding)
+ *     if not isinstance(tab_size, int):
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_Encoding); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 141, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_3 = PyObject_IsInstance(__pyx_v_encoding, __pyx_t_1); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 141, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_2 = (!__pyx_t_3);
+  if (unlikely(__pyx_t_2)) {
+
+    /* "humon.pyx":142
+ *         raise TypeError(path)
+ *     if not isinstance(encoding, Encoding):
+ *         raise TypeError(encoding)             # <<<<<<<<<<<<<<
+ *     if not isinstance(tab_size, int):
+ *         raise TypeError(tab_size)
+ */
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_TypeError, __pyx_v_encoding); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 142, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __PYX_ERR(0, 142, __pyx_L1_error)
+
+    /* "humon.pyx":141
+ *     if not isinstance(path, (str, Path)):
+ *         raise TypeError(path)
+ *     if not isinstance(encoding, Encoding):             # <<<<<<<<<<<<<<
+ *         raise TypeError(encoding)
+ *     if not isinstance(tab_size, int):
+ */
+  }
+
+  /* "humon.pyx":143
+ *     if not isinstance(encoding, Encoding):
+ *         raise TypeError(encoding)
+ *     if not isinstance(tab_size, int):             # <<<<<<<<<<<<<<
+ *         raise TypeError(tab_size)
+ *     cdef const char * cpath
+ */
+  __pyx_t_2 = PyInt_Check(__pyx_v_tab_size); 
+  __pyx_t_3 = (!__pyx_t_2);
+  if (unlikely(__pyx_t_3)) {
+
+    /* "humon.pyx":144
+ *         raise TypeError(encoding)
+ *     if not isinstance(tab_size, int):
+ *         raise TypeError(tab_size)             # <<<<<<<<<<<<<<
+ *     cdef const char * cpath
+ *     bpath = str(path).encode('utf-8')
+ */
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_TypeError, __pyx_v_tab_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 144, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __PYX_ERR(0, 144, __pyx_L1_error)
+
+    /* "humon.pyx":143
+ *     if not isinstance(encoding, Encoding):
+ *         raise TypeError(encoding)
+ *     if not isinstance(tab_size, int):             # <<<<<<<<<<<<<<
+ *         raise TypeError(tab_size)
+ *     cdef const char * cpath
+ */
+  }
+
+  /* "humon.pyx":146
+ *         raise TypeError(tab_size)
  *     cdef const char * cpath
  *     bpath = str(path).encode('utf-8')             # <<<<<<<<<<<<<<
  *     cpath, len_cpath = bpath, len(bpath)
  *     cdef c.huDeserializeOptions opts
  */
-  __pyx_t_2 = __Pyx_PyObject_Str(__pyx_v_path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 136, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 136, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = NULL;
-  __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyObject_Str(__pyx_v_path); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 146, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_encode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 146, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = NULL;
+  __pyx_t_6 = 0;
   #if CYTHON_UNPACK_METHODS
-  if (likely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_2)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_2);
+  if (likely(PyMethod_Check(__pyx_t_5))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_5);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
+      __Pyx_INCREF(__pyx_t_4);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
-      __pyx_t_4 = 1;
+      __Pyx_DECREF_SET(__pyx_t_5, function);
+      __pyx_t_6 = 1;
     }
   }
   #endif
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_kp_u_utf_8};
-    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
-    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 136, __pyx_L1_error)
+    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_kp_u_utf_8};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_6, 1+__pyx_t_6);
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 146, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
   __pyx_v_bpath = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "humon.pyx":137
+  /* "humon.pyx":147
  *     cdef const char * cpath
  *     bpath = str(path).encode('utf-8')
  *     cpath, len_cpath = bpath, len(bpath)             # <<<<<<<<<<<<<<
  *     cdef c.huDeserializeOptions opts
  *     c.huInitDeserializeOptions(& opts, encoding.value, False, tab_size, NULL,
  */
-  __pyx_t_5 = __Pyx_PyObject_AsString(__pyx_v_bpath); if (unlikely((!__pyx_t_5) && PyErr_Occurred())) __PYX_ERR(0, 137, __pyx_L1_error)
-  __pyx_t_6 = PyObject_Length(__pyx_v_bpath); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 137, __pyx_L1_error)
-  __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 137, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_AsString(__pyx_v_bpath); if (unlikely((!__pyx_t_7) && PyErr_Occurred())) __PYX_ERR(0, 147, __pyx_L1_error)
+  __pyx_t_8 = PyObject_Length(__pyx_v_bpath); if (unlikely(__pyx_t_8 == ((Py_ssize_t)-1))) __PYX_ERR(0, 147, __pyx_L1_error)
+  __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 147, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_cpath = __pyx_t_5;
+  __pyx_v_cpath = __pyx_t_7;
   __pyx_v_len_cpath = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "humon.pyx":139
+  /* "humon.pyx":149
  *     cpath, len_cpath = bpath, len(bpath)
  *     cdef c.huDeserializeOptions opts
  *     c.huInitDeserializeOptions(& opts, encoding.value, False, tab_size, NULL,             # <<<<<<<<<<<<<<
  *                                   c.HU_BUFFERMANAGEMENT_COPYANDOWN)
  *     cdef c.huTrove * c_trove
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_encoding, __pyx_n_s_value); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_encoding, __pyx_n_s_value); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 149, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_7 = ((enum huEncoding_tag)__Pyx_PyInt_As_enum__huEncoding_tag(__pyx_t_1)); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_t_9 = ((enum huEncoding_tag)__Pyx_PyInt_As_enum__huEncoding_tag(__pyx_t_1)); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_8 = __Pyx_PyInt_As_huCol_t(__pyx_v_tab_size); if (unlikely((__pyx_t_8 == ((huCol_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyInt_As_huCol_t(__pyx_v_tab_size); if (unlikely((__pyx_t_10 == ((huCol_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L1_error)
 
-  /* "humon.pyx":140
+  /* "humon.pyx":150
  *     cdef c.huDeserializeOptions opts
  *     c.huInitDeserializeOptions(& opts, encoding.value, False, tab_size, NULL,
  *                                   c.HU_BUFFERMANAGEMENT_COPYANDOWN)             # <<<<<<<<<<<<<<
  *     cdef c.huTrove * c_trove
  *     cdef c.huErrorCode res
  */
-  huInitDeserializeOptions((&__pyx_v_opts), __pyx_t_7, 0, __pyx_t_8, NULL, HU_BUFFERMANAGEMENT_COPYANDOWN);
+  huInitDeserializeOptions((&__pyx_v_opts), __pyx_t_9, 0, __pyx_t_10, NULL, HU_BUFFERMANAGEMENT_COPYANDOWN);
 
-  /* "humon.pyx":143
+  /* "humon.pyx":153
  *     cdef c.huTrove * c_trove
  *     cdef c.huErrorCode res
  *     mpath = <char *> malloc((len_cpath + 1) * sizeof(char))             # <<<<<<<<<<<<<<
  *     try:
  *         strncpy(mpath, cpath, len_cpath)
  */
-  __pyx_t_1 = __Pyx_PyInt_AddObjC(__pyx_v_len_cpath, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 143, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_AddObjC(__pyx_v_len_cpath, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyInt_FromSize_t((sizeof(char))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 143, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = PyNumber_Multiply(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 143, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_5 = __Pyx_PyInt_FromSize_t((sizeof(char))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_4 = PyNumber_Multiply(__pyx_t_1, __pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_9 = __Pyx_PyInt_As_size_t(__pyx_t_2); if (unlikely((__pyx_t_9 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 143, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_v_mpath = ((char *)malloc(__pyx_t_9));
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_11 = __Pyx_PyInt_As_size_t(__pyx_t_4); if (unlikely((__pyx_t_11 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 153, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_v_mpath = ((char *)malloc(__pyx_t_11));
 
-  /* "humon.pyx":144
+  /* "humon.pyx":154
  *     cdef c.huErrorCode res
  *     mpath = <char *> malloc((len_cpath + 1) * sizeof(char))
  *     try:             # <<<<<<<<<<<<<<
@@ -5368,27 +5556,27 @@ static struct __pyx_obj_5humon_Trove *__pyx_pf_5humon_2trove_from_file(CYTHON_UN
  */
   /*try:*/ {
 
-    /* "humon.pyx":145
+    /* "humon.pyx":155
  *     mpath = <char *> malloc((len_cpath + 1) * sizeof(char))
  *     try:
  *         strncpy(mpath, cpath, len_cpath)             # <<<<<<<<<<<<<<
  *         mpath[len_cpath] = 0
  *         res = c.huDeserializeTroveFromFile(& c_trove, mpath, & opts, c.HU_ERRORRESPONSE_MUM)
  */
-    __pyx_t_9 = __Pyx_PyInt_As_size_t(__pyx_v_len_cpath); if (unlikely((__pyx_t_9 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 145, __pyx_L4_error)
-    (void)(strncpy(__pyx_v_mpath, __pyx_v_cpath, __pyx_t_9));
+    __pyx_t_11 = __Pyx_PyInt_As_size_t(__pyx_v_len_cpath); if (unlikely((__pyx_t_11 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 155, __pyx_L9_error)
+    (void)(strncpy(__pyx_v_mpath, __pyx_v_cpath, __pyx_t_11));
 
-    /* "humon.pyx":146
+    /* "humon.pyx":156
  *     try:
  *         strncpy(mpath, cpath, len_cpath)
  *         mpath[len_cpath] = 0             # <<<<<<<<<<<<<<
  *         res = c.huDeserializeTroveFromFile(& c_trove, mpath, & opts, c.HU_ERRORRESPONSE_MUM)
  *         return _make_trove(res, c_trove)
  */
-    __pyx_t_6 = __Pyx_PyIndex_AsSsize_t(__pyx_v_len_cpath); if (unlikely((__pyx_t_6 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 146, __pyx_L4_error)
-    (__pyx_v_mpath[__pyx_t_6]) = 0;
+    __pyx_t_8 = __Pyx_PyIndex_AsSsize_t(__pyx_v_len_cpath); if (unlikely((__pyx_t_8 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 156, __pyx_L9_error)
+    (__pyx_v_mpath[__pyx_t_8]) = 0;
 
-    /* "humon.pyx":147
+    /* "humon.pyx":157
  *         strncpy(mpath, cpath, len_cpath)
  *         mpath[len_cpath] = 0
  *         res = c.huDeserializeTroveFromFile(& c_trove, mpath, & opts, c.HU_ERRORRESPONSE_MUM)             # <<<<<<<<<<<<<<
@@ -5397,7 +5585,7 @@ static struct __pyx_obj_5humon_Trove *__pyx_pf_5humon_2trove_from_file(CYTHON_UN
  */
     __pyx_v_res = huDeserializeTroveFromFile((&__pyx_v_c_trove), __pyx_v_mpath, (&__pyx_v_opts), HU_ERRORRESPONSE_MUM);
 
-    /* "humon.pyx":148
+    /* "humon.pyx":158
  *         mpath[len_cpath] = 0
  *         res = c.huDeserializeTroveFromFile(& c_trove, mpath, & opts, c.HU_ERRORRESPONSE_MUM)
  *         return _make_trove(res, c_trove)             # <<<<<<<<<<<<<<
@@ -5405,14 +5593,14 @@ static struct __pyx_obj_5humon_Trove *__pyx_pf_5humon_2trove_from_file(CYTHON_UN
  *         free(mpath)
  */
     __Pyx_XDECREF((PyObject *)__pyx_r);
-    __pyx_t_2 = ((PyObject *)__pyx_f_5humon__make_trove(__pyx_v_res, __pyx_v_c_trove)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 148, __pyx_L4_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_r = ((struct __pyx_obj_5humon_Trove *)__pyx_t_2);
-    __pyx_t_2 = 0;
-    goto __pyx_L3_return;
+    __pyx_t_4 = ((PyObject *)__pyx_f_5humon__make_trove(__pyx_v_res, __pyx_v_c_trove)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 158, __pyx_L9_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_r = ((struct __pyx_obj_5humon_Trove *)__pyx_t_4);
+    __pyx_t_4 = 0;
+    goto __pyx_L8_return;
   }
 
-  /* "humon.pyx":150
+  /* "humon.pyx":160
  *         return _make_trove(res, c_trove)
  *     finally:
  *         free(mpath)             # <<<<<<<<<<<<<<
@@ -5420,64 +5608,64 @@ static struct __pyx_obj_5humon_Trove *__pyx_pf_5humon_2trove_from_file(CYTHON_UN
  * ctypedef c.huStringView[<c.huSize_t> c.huColorCode.HU_COLORCODE_NUMCOLORS] c_color_table_t
  */
   /*finally:*/ {
-    __pyx_L4_error:;
+    __pyx_L9_error:;
     /*exception exit:*/{
       __Pyx_PyThreadState_declare
       __Pyx_PyThreadState_assign
-      __pyx_t_12 = 0; __pyx_t_13 = 0; __pyx_t_14 = 0; __pyx_t_15 = 0; __pyx_t_16 = 0; __pyx_t_17 = 0;
+      __pyx_t_14 = 0; __pyx_t_15 = 0; __pyx_t_16 = 0; __pyx_t_17 = 0; __pyx_t_18 = 0; __pyx_t_19 = 0;
       __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (PY_MAJOR_VERSION >= 3) __Pyx_ExceptionSwap(&__pyx_t_15, &__pyx_t_16, &__pyx_t_17);
-      if ((PY_MAJOR_VERSION < 3) || unlikely(__Pyx_GetException(&__pyx_t_12, &__pyx_t_13, &__pyx_t_14) < 0)) __Pyx_ErrFetch(&__pyx_t_12, &__pyx_t_13, &__pyx_t_14);
-      __Pyx_XGOTREF(__pyx_t_12);
-      __Pyx_XGOTREF(__pyx_t_13);
+      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+      if (PY_MAJOR_VERSION >= 3) __Pyx_ExceptionSwap(&__pyx_t_17, &__pyx_t_18, &__pyx_t_19);
+      if ((PY_MAJOR_VERSION < 3) || unlikely(__Pyx_GetException(&__pyx_t_14, &__pyx_t_15, &__pyx_t_16) < 0)) __Pyx_ErrFetch(&__pyx_t_14, &__pyx_t_15, &__pyx_t_16);
       __Pyx_XGOTREF(__pyx_t_14);
       __Pyx_XGOTREF(__pyx_t_15);
       __Pyx_XGOTREF(__pyx_t_16);
       __Pyx_XGOTREF(__pyx_t_17);
-      __pyx_t_4 = __pyx_lineno; __pyx_t_10 = __pyx_clineno; __pyx_t_11 = __pyx_filename;
+      __Pyx_XGOTREF(__pyx_t_18);
+      __Pyx_XGOTREF(__pyx_t_19);
+      __pyx_t_6 = __pyx_lineno; __pyx_t_12 = __pyx_clineno; __pyx_t_13 = __pyx_filename;
       {
         free(__pyx_v_mpath);
       }
       if (PY_MAJOR_VERSION >= 3) {
-        __Pyx_XGIVEREF(__pyx_t_15);
-        __Pyx_XGIVEREF(__pyx_t_16);
         __Pyx_XGIVEREF(__pyx_t_17);
-        __Pyx_ExceptionReset(__pyx_t_15, __pyx_t_16, __pyx_t_17);
+        __Pyx_XGIVEREF(__pyx_t_18);
+        __Pyx_XGIVEREF(__pyx_t_19);
+        __Pyx_ExceptionReset(__pyx_t_17, __pyx_t_18, __pyx_t_19);
       }
-      __Pyx_XGIVEREF(__pyx_t_12);
-      __Pyx_XGIVEREF(__pyx_t_13);
       __Pyx_XGIVEREF(__pyx_t_14);
-      __Pyx_ErrRestore(__pyx_t_12, __pyx_t_13, __pyx_t_14);
-      __pyx_t_12 = 0; __pyx_t_13 = 0; __pyx_t_14 = 0; __pyx_t_15 = 0; __pyx_t_16 = 0; __pyx_t_17 = 0;
-      __pyx_lineno = __pyx_t_4; __pyx_clineno = __pyx_t_10; __pyx_filename = __pyx_t_11;
+      __Pyx_XGIVEREF(__pyx_t_15);
+      __Pyx_XGIVEREF(__pyx_t_16);
+      __Pyx_ErrRestore(__pyx_t_14, __pyx_t_15, __pyx_t_16);
+      __pyx_t_14 = 0; __pyx_t_15 = 0; __pyx_t_16 = 0; __pyx_t_17 = 0; __pyx_t_18 = 0; __pyx_t_19 = 0;
+      __pyx_lineno = __pyx_t_6; __pyx_clineno = __pyx_t_12; __pyx_filename = __pyx_t_13;
       goto __pyx_L1_error;
     }
-    __pyx_L3_return: {
-      __pyx_t_18 = __pyx_r;
+    __pyx_L8_return: {
+      __pyx_t_20 = __pyx_r;
       __pyx_r = 0;
       free(__pyx_v_mpath);
-      __pyx_r = __pyx_t_18;
-      __pyx_t_18 = 0;
+      __pyx_r = __pyx_t_20;
+      __pyx_t_20 = 0;
       goto __pyx_L0;
     }
   }
 
-  /* "humon.pyx":134
+  /* "humon.pyx":138
  *     return _make_trove(res, c_trove)
  * 
- * def trove_from_file(path: Path, encoding: Encoding = Encoding.UNKNOWN, tab_size: int = 4) -> Trove:             # <<<<<<<<<<<<<<
- *     cdef const char * cpath
- *     bpath = str(path).encode('utf-8')
+ * def from_file(path: str | Path, encoding: Encoding = Encoding.UNKNOWN, tab_size: int = 4) -> Trove:             # <<<<<<<<<<<<<<
+ *     if not isinstance(path, (str, Path)):
+ *         raise TypeError(path)
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("humon.trove_from_file", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_AddTraceback("humon.from_file", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_bpath);
@@ -5487,7 +5675,7 @@ static struct __pyx_obj_5humon_Trove *__pyx_pf_5humon_2trove_from_file(CYTHON_UN
   return __pyx_r;
 }
 
-/* "humon.pyx":157
+/* "humon.pyx":167
  *     cdef c.huTrove * _c_trove
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -5522,7 +5710,7 @@ static int __pyx_pw_5humon_5Trove_1__cinit__(PyObject *__pyx_v_self, PyObject *_
 static int __pyx_pf_5humon_5Trove___cinit__(struct __pyx_obj_5humon_Trove *__pyx_v_self) {
   int __pyx_r;
 
-  /* "humon.pyx":158
+  /* "humon.pyx":168
  * 
  *     def __cinit__(self):
  *         self._c_trove = NULL             # <<<<<<<<<<<<<<
@@ -5531,7 +5719,7 @@ static int __pyx_pf_5humon_5Trove___cinit__(struct __pyx_obj_5humon_Trove *__pyx
  */
   __pyx_v_self->_c_trove = NULL;
 
-  /* "humon.pyx":157
+  /* "humon.pyx":167
  *     cdef c.huTrove * _c_trove
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -5544,7 +5732,7 @@ static int __pyx_pf_5humon_5Trove___cinit__(struct __pyx_obj_5humon_Trove *__pyx
   return __pyx_r;
 }
 
-/* "humon.pyx":160
+/* "humon.pyx":170
  *         self._c_trove = NULL
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -5567,7 +5755,7 @@ static void __pyx_pw_5humon_5Trove_3__dealloc__(PyObject *__pyx_v_self) {
 
 static void __pyx_pf_5humon_5Trove_2__dealloc__(struct __pyx_obj_5humon_Trove *__pyx_v_self) {
 
-  /* "humon.pyx":161
+  /* "humon.pyx":171
  * 
  *     def __dealloc__(self):
  *         c.huDestroyTrove(self._c_trove)             # <<<<<<<<<<<<<<
@@ -5576,7 +5764,7 @@ static void __pyx_pf_5humon_5Trove_2__dealloc__(struct __pyx_obj_5humon_Trove *_
  */
   huDestroyTrove(__pyx_v_self->_c_trove);
 
-  /* "humon.pyx":160
+  /* "humon.pyx":170
  *         self._c_trove = NULL
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -5587,7 +5775,7 @@ static void __pyx_pf_5humon_5Trove_2__dealloc__(struct __pyx_obj_5humon_Trove *_
   /* function exit code */
 }
 
-/* "humon.pyx":163
+/* "humon.pyx":173
  *         c.huDestroyTrove(self._c_trove)
  * 
  *     def _arrange_color_table(self, color_table: dict | list | None) -> list[bytes]:             # <<<<<<<<<<<<<<
@@ -5648,12 +5836,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 163, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 173, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "_arrange_color_table") < 0)) __PYX_ERR(0, 163, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "_arrange_color_table") < 0)) __PYX_ERR(0, 173, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -5664,7 +5852,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_arrange_color_table", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 163, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_arrange_color_table", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 173, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5711,19 +5899,19 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_arrange_color_table", 1);
 
-  /* "humon.pyx":164
+  /* "humon.pyx":174
  * 
  *     def _arrange_color_table(self, color_table: dict | list | None) -> list[bytes]:
  *         arr = []             # <<<<<<<<<<<<<<
  *         if isinstance(color_table, dict):
  *             arr.append(color_table.get(ColorCode.TOKENSTREAMBEGIN, '').encode('utf-8'))
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 174, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_arr = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "humon.pyx":165
+  /* "humon.pyx":175
  *     def _arrange_color_table(self, color_table: dict | list | None) -> list[bytes]:
  *         arr = []
  *         if isinstance(color_table, dict):             # <<<<<<<<<<<<<<
@@ -5733,668 +5921,18 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
   __pyx_t_2 = PyDict_Check(__pyx_v_color_table); 
   if (__pyx_t_2) {
 
-    /* "humon.pyx":166
+    /* "humon.pyx":176
  *         arr = []
  *         if isinstance(color_table, dict):
  *             arr.append(color_table.get(ColorCode.TOKENSTREAMBEGIN, '').encode('utf-8'))             # <<<<<<<<<<<<<<
  *             arr.append(color_table.get(ColorCode.TOKENSTREAMEND, '').encode('utf-8'))
  *             arr.append(color_table.get(ColorCode.TOKENEND, '').encode('utf-8'))
  */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 166, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 166, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_TOKENSTREAMBEGIN); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 166, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
-      if (likely(__pyx_t_5)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-        __Pyx_INCREF(__pyx_t_5);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_4, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[3] = {__pyx_t_5, __pyx_t_6, __pyx_kp_u__2};
-      __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 166, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    }
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_encode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 166, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
-      if (likely(__pyx_t_3)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-        __Pyx_INCREF(__pyx_t_3);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_4, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_kp_u_utf_8};
-      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 166, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    }
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 166, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "humon.pyx":167
- *         if isinstance(color_table, dict):
- *             arr.append(color_table.get(ColorCode.TOKENSTREAMBEGIN, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.TOKENSTREAMEND, '').encode('utf-8'))             # <<<<<<<<<<<<<<
- *             arr.append(color_table.get(ColorCode.TOKENEND, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.PUNCLIST, '').encode('utf-8'))
- */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 167, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 167, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_TOKENSTREAMEND); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 167, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_3))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
-      if (likely(__pyx_t_6)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-        __Pyx_INCREF(__pyx_t_6);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_3, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[3] = {__pyx_t_6, __pyx_t_5, __pyx_kp_u__2};
-      __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 167, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    }
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 167, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_3))) {
-      __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
-      if (likely(__pyx_t_4)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-        __Pyx_INCREF(__pyx_t_4);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_3, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_kp_u_utf_8};
-      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 167, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    }
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 167, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "humon.pyx":168
- *             arr.append(color_table.get(ColorCode.TOKENSTREAMBEGIN, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.TOKENSTREAMEND, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.TOKENEND, '').encode('utf-8'))             # <<<<<<<<<<<<<<
- *             arr.append(color_table.get(ColorCode.PUNCLIST, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.PUNCDICT, '').encode('utf-8'))
- */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 168, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 168, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_TOKENEND); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 168, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
-      if (likely(__pyx_t_5)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-        __Pyx_INCREF(__pyx_t_5);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_4, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[3] = {__pyx_t_5, __pyx_t_6, __pyx_kp_u__2};
-      __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 168, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    }
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_encode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 168, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
-      if (likely(__pyx_t_3)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-        __Pyx_INCREF(__pyx_t_3);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_4, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_kp_u_utf_8};
-      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 168, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    }
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 168, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "humon.pyx":169
- *             arr.append(color_table.get(ColorCode.TOKENSTREAMEND, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.TOKENEND, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.PUNCLIST, '').encode('utf-8'))             # <<<<<<<<<<<<<<
- *             arr.append(color_table.get(ColorCode.PUNCDICT, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.PUNCKEYVALUESEP, '').encode('utf-8'))
- */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 169, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 169, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_PUNCLIST); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 169, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_3))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
-      if (likely(__pyx_t_6)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-        __Pyx_INCREF(__pyx_t_6);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_3, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[3] = {__pyx_t_6, __pyx_t_5, __pyx_kp_u__2};
-      __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 169, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    }
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 169, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_3))) {
-      __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
-      if (likely(__pyx_t_4)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-        __Pyx_INCREF(__pyx_t_4);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_3, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_kp_u_utf_8};
-      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 169, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    }
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 169, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "humon.pyx":170
- *             arr.append(color_table.get(ColorCode.TOKENEND, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.PUNCLIST, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.PUNCDICT, '').encode('utf-8'))             # <<<<<<<<<<<<<<
- *             arr.append(color_table.get(ColorCode.PUNCKEYVALUESEP, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.PUNCMETATAG, '').encode('utf-8'))
- */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 170, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 170, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_PUNCDICT); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 170, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
-      if (likely(__pyx_t_5)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-        __Pyx_INCREF(__pyx_t_5);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_4, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[3] = {__pyx_t_5, __pyx_t_6, __pyx_kp_u__2};
-      __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 170, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    }
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_encode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 170, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
-      if (likely(__pyx_t_3)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-        __Pyx_INCREF(__pyx_t_3);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_4, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_kp_u_utf_8};
-      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 170, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    }
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 170, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "humon.pyx":171
- *             arr.append(color_table.get(ColorCode.PUNCLIST, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.PUNCDICT, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.PUNCKEYVALUESEP, '').encode('utf-8'))             # <<<<<<<<<<<<<<
- *             arr.append(color_table.get(ColorCode.PUNCMETATAG, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.PUNCMETATAGDICT, '').encode('utf-8'))
- */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 171, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 171, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_PUNCKEYVALUESEP); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 171, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_3))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
-      if (likely(__pyx_t_6)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-        __Pyx_INCREF(__pyx_t_6);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_3, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[3] = {__pyx_t_6, __pyx_t_5, __pyx_kp_u__2};
-      __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 171, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    }
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 171, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_3))) {
-      __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
-      if (likely(__pyx_t_4)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-        __Pyx_INCREF(__pyx_t_4);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_3, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_kp_u_utf_8};
-      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 171, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    }
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 171, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "humon.pyx":172
- *             arr.append(color_table.get(ColorCode.PUNCDICT, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.PUNCKEYVALUESEP, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.PUNCMETATAG, '').encode('utf-8'))             # <<<<<<<<<<<<<<
- *             arr.append(color_table.get(ColorCode.PUNCMETATAGDICT, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.PUNCMETATAGKEYVALUESEP, '').encode('utf-8'))
- */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 172, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 172, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_PUNCMETATAG); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 172, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
-      if (likely(__pyx_t_5)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-        __Pyx_INCREF(__pyx_t_5);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_4, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[3] = {__pyx_t_5, __pyx_t_6, __pyx_kp_u__2};
-      __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 172, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    }
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_encode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 172, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
-      if (likely(__pyx_t_3)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-        __Pyx_INCREF(__pyx_t_3);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_4, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_kp_u_utf_8};
-      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 172, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    }
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 172, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "humon.pyx":173
- *             arr.append(color_table.get(ColorCode.PUNCKEYVALUESEP, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.PUNCMETATAG, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.PUNCMETATAGDICT, '').encode('utf-8'))             # <<<<<<<<<<<<<<
- *             arr.append(color_table.get(ColorCode.PUNCMETATAGKEYVALUESEP, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.KEY, '').encode('utf-8'))
- */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 173, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 173, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_PUNCMETATAGDICT); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 173, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_3))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
-      if (likely(__pyx_t_6)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-        __Pyx_INCREF(__pyx_t_6);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_3, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[3] = {__pyx_t_6, __pyx_t_5, __pyx_kp_u__2};
-      __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 173, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    }
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 173, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_3))) {
-      __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
-      if (likely(__pyx_t_4)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-        __Pyx_INCREF(__pyx_t_4);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_3, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_kp_u_utf_8};
-      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 173, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    }
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 173, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "humon.pyx":174
- *             arr.append(color_table.get(ColorCode.PUNCMETATAG, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.PUNCMETATAGDICT, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.PUNCMETATAGKEYVALUESEP, '').encode('utf-8'))             # <<<<<<<<<<<<<<
- *             arr.append(color_table.get(ColorCode.KEY, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.VALUE, '').encode('utf-8'))
- */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 174, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 174, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_PUNCMETATAGKEYVALUESEP); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 174, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
-      if (likely(__pyx_t_5)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-        __Pyx_INCREF(__pyx_t_5);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_4, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[3] = {__pyx_t_5, __pyx_t_6, __pyx_kp_u__2};
-      __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 174, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    }
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_encode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 174, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
-      if (likely(__pyx_t_3)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-        __Pyx_INCREF(__pyx_t_3);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_4, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_kp_u_utf_8};
-      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 174, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    }
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 174, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "humon.pyx":175
- *             arr.append(color_table.get(ColorCode.PUNCMETATAGDICT, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.PUNCMETATAGKEYVALUESEP, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.KEY, '').encode('utf-8'))             # <<<<<<<<<<<<<<
- *             arr.append(color_table.get(ColorCode.VALUE, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.COMMENT, '').encode('utf-8'))
- */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 175, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 175, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_KEY); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 175, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_3))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
-      if (likely(__pyx_t_6)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-        __Pyx_INCREF(__pyx_t_6);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_3, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[3] = {__pyx_t_6, __pyx_t_5, __pyx_kp_u__2};
-      __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 175, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    }
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 175, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_3))) {
-      __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
-      if (likely(__pyx_t_4)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-        __Pyx_INCREF(__pyx_t_4);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_3, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_kp_u_utf_8};
-      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    }
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 175, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "humon.pyx":176
- *             arr.append(color_table.get(ColorCode.PUNCMETATAGKEYVALUESEP, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.KEY, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.VALUE, '').encode('utf-8'))             # <<<<<<<<<<<<<<
- *             arr.append(color_table.get(ColorCode.COMMENT, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.METATAGKEY, '').encode('utf-8'))
- */
     __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 176, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 176, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_VALUE); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 176, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_TOKENSTREAMBEGIN); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 176, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_5 = NULL;
@@ -6449,17 +5987,17 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "humon.pyx":177
- *             arr.append(color_table.get(ColorCode.KEY, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.VALUE, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.COMMENT, '').encode('utf-8'))             # <<<<<<<<<<<<<<
- *             arr.append(color_table.get(ColorCode.METATAGKEY, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.METATAGVALUE, '').encode('utf-8'))
+ *         if isinstance(color_table, dict):
+ *             arr.append(color_table.get(ColorCode.TOKENSTREAMBEGIN, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.TOKENSTREAMEND, '').encode('utf-8'))             # <<<<<<<<<<<<<<
+ *             arr.append(color_table.get(ColorCode.TOKENEND, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.PUNCLIST, '').encode('utf-8'))
  */
     __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 177, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 177, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_COMMENT); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 177, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_TOKENSTREAMEND); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 177, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_6 = NULL;
@@ -6514,17 +6052,17 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "humon.pyx":178
- *             arr.append(color_table.get(ColorCode.VALUE, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.COMMENT, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.METATAGKEY, '').encode('utf-8'))             # <<<<<<<<<<<<<<
- *             arr.append(color_table.get(ColorCode.METATAGVALUE, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.WHITESPACE, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.TOKENSTREAMBEGIN, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.TOKENSTREAMEND, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.TOKENEND, '').encode('utf-8'))             # <<<<<<<<<<<<<<
+ *             arr.append(color_table.get(ColorCode.PUNCLIST, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.PUNCDICT, '').encode('utf-8'))
  */
     __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 178, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 178, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_METATAGKEY); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 178, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_TOKENEND); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 178, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_5 = NULL;
@@ -6579,17 +6117,17 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "humon.pyx":179
- *             arr.append(color_table.get(ColorCode.COMMENT, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.METATAGKEY, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.METATAGVALUE, '').encode('utf-8'))             # <<<<<<<<<<<<<<
- *             arr.append(color_table.get(ColorCode.WHITESPACE, '').encode('utf-8'))
- *         elif isinstance(color_table, list):
+ *             arr.append(color_table.get(ColorCode.TOKENSTREAMEND, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.TOKENEND, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.PUNCLIST, '').encode('utf-8'))             # <<<<<<<<<<<<<<
+ *             arr.append(color_table.get(ColorCode.PUNCDICT, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.PUNCKEYVALUESEP, '').encode('utf-8'))
  */
     __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 179, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 179, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_METATAGVALUE); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 179, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_PUNCLIST); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 179, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_6 = NULL;
@@ -6644,17 +6182,17 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "humon.pyx":180
- *             arr.append(color_table.get(ColorCode.METATAGKEY, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.METATAGVALUE, '').encode('utf-8'))
- *             arr.append(color_table.get(ColorCode.WHITESPACE, '').encode('utf-8'))             # <<<<<<<<<<<<<<
- *         elif isinstance(color_table, list):
- *             assert len(color_table) == ColorCode.NUMCOLORS.value
+ *             arr.append(color_table.get(ColorCode.TOKENEND, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.PUNCLIST, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.PUNCDICT, '').encode('utf-8'))             # <<<<<<<<<<<<<<
+ *             arr.append(color_table.get(ColorCode.PUNCKEYVALUESEP, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.PUNCMETATAG, '').encode('utf-8'))
  */
     __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 180, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 180, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_WHITESPACE); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 180, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_PUNCDICT); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 180, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_5 = NULL;
@@ -6708,7 +6246,657 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
     __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 180, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "humon.pyx":165
+    /* "humon.pyx":181
+ *             arr.append(color_table.get(ColorCode.PUNCLIST, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.PUNCDICT, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.PUNCKEYVALUESEP, '').encode('utf-8'))             # <<<<<<<<<<<<<<
+ *             arr.append(color_table.get(ColorCode.PUNCMETATAG, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.PUNCMETATAGDICT, '').encode('utf-8'))
+ */
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 181, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 181, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_PUNCKEYVALUESEP); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 181, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __pyx_t_6 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_3))) {
+      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
+      if (likely(__pyx_t_6)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+        __Pyx_INCREF(__pyx_t_6);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_3, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[3] = {__pyx_t_6, __pyx_t_5, __pyx_kp_u__2};
+      __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 181, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    }
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 181, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_4 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_3))) {
+      __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+      if (likely(__pyx_t_4)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+        __Pyx_INCREF(__pyx_t_4);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_3, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_kp_u_utf_8};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 181, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    }
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 181, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "humon.pyx":182
+ *             arr.append(color_table.get(ColorCode.PUNCDICT, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.PUNCKEYVALUESEP, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.PUNCMETATAG, '').encode('utf-8'))             # <<<<<<<<<<<<<<
+ *             arr.append(color_table.get(ColorCode.PUNCMETATAGDICT, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.PUNCMETATAGKEYVALUESEP, '').encode('utf-8'))
+ */
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 182, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 182, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_PUNCMETATAG); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 182, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_5 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_4))) {
+      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+      if (likely(__pyx_t_5)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+        __Pyx_INCREF(__pyx_t_5);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_4, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[3] = {__pyx_t_5, __pyx_t_6, __pyx_kp_u__2};
+      __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 182, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    }
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_encode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 182, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_3 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_4))) {
+      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
+      if (likely(__pyx_t_3)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+        __Pyx_INCREF(__pyx_t_3);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_4, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_kp_u_utf_8};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 182, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    }
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 182, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "humon.pyx":183
+ *             arr.append(color_table.get(ColorCode.PUNCKEYVALUESEP, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.PUNCMETATAG, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.PUNCMETATAGDICT, '').encode('utf-8'))             # <<<<<<<<<<<<<<
+ *             arr.append(color_table.get(ColorCode.PUNCMETATAGKEYVALUESEP, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.KEY, '').encode('utf-8'))
+ */
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 183, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 183, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_PUNCMETATAGDICT); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 183, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __pyx_t_6 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_3))) {
+      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
+      if (likely(__pyx_t_6)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+        __Pyx_INCREF(__pyx_t_6);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_3, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[3] = {__pyx_t_6, __pyx_t_5, __pyx_kp_u__2};
+      __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 183, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    }
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 183, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_4 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_3))) {
+      __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+      if (likely(__pyx_t_4)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+        __Pyx_INCREF(__pyx_t_4);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_3, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_kp_u_utf_8};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 183, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    }
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 183, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "humon.pyx":184
+ *             arr.append(color_table.get(ColorCode.PUNCMETATAG, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.PUNCMETATAGDICT, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.PUNCMETATAGKEYVALUESEP, '').encode('utf-8'))             # <<<<<<<<<<<<<<
+ *             arr.append(color_table.get(ColorCode.KEY, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.VALUE, '').encode('utf-8'))
+ */
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 184, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 184, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_PUNCMETATAGKEYVALUESEP); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 184, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_5 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_4))) {
+      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+      if (likely(__pyx_t_5)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+        __Pyx_INCREF(__pyx_t_5);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_4, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[3] = {__pyx_t_5, __pyx_t_6, __pyx_kp_u__2};
+      __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 184, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    }
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_encode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 184, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_3 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_4))) {
+      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
+      if (likely(__pyx_t_3)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+        __Pyx_INCREF(__pyx_t_3);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_4, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_kp_u_utf_8};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 184, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    }
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 184, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "humon.pyx":185
+ *             arr.append(color_table.get(ColorCode.PUNCMETATAGDICT, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.PUNCMETATAGKEYVALUESEP, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.KEY, '').encode('utf-8'))             # <<<<<<<<<<<<<<
+ *             arr.append(color_table.get(ColorCode.VALUE, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.COMMENT, '').encode('utf-8'))
+ */
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 185, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 185, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_KEY); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 185, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __pyx_t_6 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_3))) {
+      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
+      if (likely(__pyx_t_6)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+        __Pyx_INCREF(__pyx_t_6);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_3, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[3] = {__pyx_t_6, __pyx_t_5, __pyx_kp_u__2};
+      __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 185, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    }
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 185, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_4 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_3))) {
+      __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+      if (likely(__pyx_t_4)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+        __Pyx_INCREF(__pyx_t_4);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_3, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_kp_u_utf_8};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 185, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    }
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 185, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "humon.pyx":186
+ *             arr.append(color_table.get(ColorCode.PUNCMETATAGKEYVALUESEP, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.KEY, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.VALUE, '').encode('utf-8'))             # <<<<<<<<<<<<<<
+ *             arr.append(color_table.get(ColorCode.COMMENT, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.METATAGKEY, '').encode('utf-8'))
+ */
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 186, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 186, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_VALUE); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 186, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_5 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_4))) {
+      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+      if (likely(__pyx_t_5)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+        __Pyx_INCREF(__pyx_t_5);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_4, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[3] = {__pyx_t_5, __pyx_t_6, __pyx_kp_u__2};
+      __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 186, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    }
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_encode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 186, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_3 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_4))) {
+      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
+      if (likely(__pyx_t_3)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+        __Pyx_INCREF(__pyx_t_3);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_4, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_kp_u_utf_8};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 186, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    }
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 186, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "humon.pyx":187
+ *             arr.append(color_table.get(ColorCode.KEY, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.VALUE, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.COMMENT, '').encode('utf-8'))             # <<<<<<<<<<<<<<
+ *             arr.append(color_table.get(ColorCode.METATAGKEY, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.METATAGVALUE, '').encode('utf-8'))
+ */
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 187, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 187, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_COMMENT); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 187, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __pyx_t_6 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_3))) {
+      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
+      if (likely(__pyx_t_6)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+        __Pyx_INCREF(__pyx_t_6);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_3, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[3] = {__pyx_t_6, __pyx_t_5, __pyx_kp_u__2};
+      __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 187, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    }
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 187, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_4 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_3))) {
+      __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+      if (likely(__pyx_t_4)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+        __Pyx_INCREF(__pyx_t_4);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_3, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_kp_u_utf_8};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 187, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    }
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 187, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "humon.pyx":188
+ *             arr.append(color_table.get(ColorCode.VALUE, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.COMMENT, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.METATAGKEY, '').encode('utf-8'))             # <<<<<<<<<<<<<<
+ *             arr.append(color_table.get(ColorCode.METATAGVALUE, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.WHITESPACE, '').encode('utf-8'))
+ */
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 188, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 188, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_METATAGKEY); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 188, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_5 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_4))) {
+      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+      if (likely(__pyx_t_5)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+        __Pyx_INCREF(__pyx_t_5);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_4, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[3] = {__pyx_t_5, __pyx_t_6, __pyx_kp_u__2};
+      __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 188, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    }
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_encode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 188, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_3 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_4))) {
+      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
+      if (likely(__pyx_t_3)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+        __Pyx_INCREF(__pyx_t_3);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_4, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_kp_u_utf_8};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 188, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    }
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 188, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "humon.pyx":189
+ *             arr.append(color_table.get(ColorCode.COMMENT, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.METATAGKEY, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.METATAGVALUE, '').encode('utf-8'))             # <<<<<<<<<<<<<<
+ *             arr.append(color_table.get(ColorCode.WHITESPACE, '').encode('utf-8'))
+ *         elif isinstance(color_table, list):
+ */
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 189, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 189, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_METATAGVALUE); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 189, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __pyx_t_6 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_3))) {
+      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
+      if (likely(__pyx_t_6)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+        __Pyx_INCREF(__pyx_t_6);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_3, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[3] = {__pyx_t_6, __pyx_t_5, __pyx_kp_u__2};
+      __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 189, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    }
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 189, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_4 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_3))) {
+      __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+      if (likely(__pyx_t_4)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+        __Pyx_INCREF(__pyx_t_4);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_3, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_kp_u_utf_8};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 189, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    }
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 189, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "humon.pyx":190
+ *             arr.append(color_table.get(ColorCode.METATAGKEY, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.METATAGVALUE, '').encode('utf-8'))
+ *             arr.append(color_table.get(ColorCode.WHITESPACE, '').encode('utf-8'))             # <<<<<<<<<<<<<<
+ *         elif isinstance(color_table, list):
+ *             assert len(color_table) == ColorCode.NUMCOLORS.value
+ */
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_color_table, __pyx_n_s_get); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 190, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 190, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_WHITESPACE); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 190, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_5 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_4))) {
+      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+      if (likely(__pyx_t_5)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+        __Pyx_INCREF(__pyx_t_5);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_4, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[3] = {__pyx_t_5, __pyx_t_6, __pyx_kp_u__2};
+      __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 190, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    }
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_encode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 190, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_3 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_4))) {
+      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
+      if (likely(__pyx_t_3)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+        __Pyx_INCREF(__pyx_t_3);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_4, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_kp_u_utf_8};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 190, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    }
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_arr, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 190, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "humon.pyx":175
  *     def _arrange_color_table(self, color_table: dict | list | None) -> list[bytes]:
  *         arr = []
  *         if isinstance(color_table, dict):             # <<<<<<<<<<<<<<
@@ -6718,7 +6906,7 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
     goto __pyx_L3;
   }
 
-  /* "humon.pyx":181
+  /* "humon.pyx":191
  *             arr.append(color_table.get(ColorCode.METATAGVALUE, '').encode('utf-8'))
  *             arr.append(color_table.get(ColorCode.WHITESPACE, '').encode('utf-8'))
  *         elif isinstance(color_table, list):             # <<<<<<<<<<<<<<
@@ -6728,7 +6916,7 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
   __pyx_t_2 = PyList_Check(__pyx_v_color_table); 
   if (__pyx_t_2) {
 
-    /* "humon.pyx":182
+    /* "humon.pyx":192
  *             arr.append(color_table.get(ColorCode.WHITESPACE, '').encode('utf-8'))
  *         elif isinstance(color_table, list):
  *             assert len(color_table) == ColorCode.NUMCOLORS.value             # <<<<<<<<<<<<<<
@@ -6737,32 +6925,32 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
  */
     #ifndef CYTHON_WITHOUT_ASSERTIONS
     if (unlikely(__pyx_assertions_enabled())) {
-      __pyx_t_9 = PyObject_Length(__pyx_v_color_table); if (unlikely(__pyx_t_9 == ((Py_ssize_t)-1))) __PYX_ERR(0, 182, __pyx_L1_error)
-      __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 182, __pyx_L1_error)
+      __pyx_t_9 = PyObject_Length(__pyx_v_color_table); if (unlikely(__pyx_t_9 == ((Py_ssize_t)-1))) __PYX_ERR(0, 192, __pyx_L1_error)
+      __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 192, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 182, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 192, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_NUMCOLORS); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 182, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_NUMCOLORS); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 192, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_value); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 182, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_value); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 192, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 182, __pyx_L1_error)
+      __pyx_t_3 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 192, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 182, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 192, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (unlikely(!__pyx_t_2)) {
         __Pyx_Raise(__pyx_builtin_AssertionError, 0, 0, 0);
-        __PYX_ERR(0, 182, __pyx_L1_error)
+        __PYX_ERR(0, 192, __pyx_L1_error)
       }
     }
     #else
-    if ((1)); else __PYX_ERR(0, 182, __pyx_L1_error)
+    if ((1)); else __PYX_ERR(0, 192, __pyx_L1_error)
     #endif
 
-    /* "humon.pyx":183
+    /* "humon.pyx":193
  *         elif isinstance(color_table, list):
  *             assert len(color_table) == ColorCode.NUMCOLORS.value
  *             arr = [ce.encode('utf-8') for ce in color_table if isinstance(ce, str)]             # <<<<<<<<<<<<<<
@@ -6770,16 +6958,16 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
  *             arr = [b''] * ColorCode.NUMCOLORS.value
  */
     { /* enter inner scope */
-      __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 183, __pyx_L6_error)
+      __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 193, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_3);
       if (likely(PyList_CheckExact(__pyx_v_color_table)) || PyTuple_CheckExact(__pyx_v_color_table)) {
         __pyx_t_4 = __pyx_v_color_table; __Pyx_INCREF(__pyx_t_4);
         __pyx_t_9 = 0;
         __pyx_t_10 = NULL;
       } else {
-        __pyx_t_9 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_v_color_table); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 183, __pyx_L6_error)
+        __pyx_t_9 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_v_color_table); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 193, __pyx_L6_error)
         __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_10 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_4); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 183, __pyx_L6_error)
+        __pyx_t_10 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_4); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 193, __pyx_L6_error)
       }
       for (;;) {
         if (likely(!__pyx_t_10)) {
@@ -6787,28 +6975,28 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
             {
               Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_4);
               #if !CYTHON_ASSUME_SAFE_MACROS
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 183, __pyx_L6_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 193, __pyx_L6_error)
               #endif
               if (__pyx_t_9 >= __pyx_temp) break;
             }
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_1 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_9); __Pyx_INCREF(__pyx_t_1); __pyx_t_9++; if (unlikely((0 < 0))) __PYX_ERR(0, 183, __pyx_L6_error)
+            __pyx_t_1 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_9); __Pyx_INCREF(__pyx_t_1); __pyx_t_9++; if (unlikely((0 < 0))) __PYX_ERR(0, 193, __pyx_L6_error)
             #else
-            __pyx_t_1 = __Pyx_PySequence_ITEM(__pyx_t_4, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 183, __pyx_L6_error)
+            __pyx_t_1 = __Pyx_PySequence_ITEM(__pyx_t_4, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 193, __pyx_L6_error)
             __Pyx_GOTREF(__pyx_t_1);
             #endif
           } else {
             {
               Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_4);
               #if !CYTHON_ASSUME_SAFE_MACROS
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 183, __pyx_L6_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 193, __pyx_L6_error)
               #endif
               if (__pyx_t_9 >= __pyx_temp) break;
             }
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_9); __Pyx_INCREF(__pyx_t_1); __pyx_t_9++; if (unlikely((0 < 0))) __PYX_ERR(0, 183, __pyx_L6_error)
+            __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_9); __Pyx_INCREF(__pyx_t_1); __pyx_t_9++; if (unlikely((0 < 0))) __PYX_ERR(0, 193, __pyx_L6_error)
             #else
-            __pyx_t_1 = __Pyx_PySequence_ITEM(__pyx_t_4, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 183, __pyx_L6_error)
+            __pyx_t_1 = __Pyx_PySequence_ITEM(__pyx_t_4, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 193, __pyx_L6_error)
             __Pyx_GOTREF(__pyx_t_1);
             #endif
           }
@@ -6818,7 +7006,7 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 183, __pyx_L6_error)
+              else __PYX_ERR(0, 193, __pyx_L6_error)
             }
             break;
           }
@@ -6828,7 +7016,7 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
         __pyx_t_1 = 0;
         __pyx_t_2 = PyUnicode_Check(__pyx_7genexpr__pyx_v_ce); 
         if (__pyx_t_2) {
-          __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_7genexpr__pyx_v_ce, __pyx_n_s_encode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 183, __pyx_L6_error)
+          __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_7genexpr__pyx_v_ce, __pyx_n_s_encode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 193, __pyx_L6_error)
           __Pyx_GOTREF(__pyx_t_6);
           __pyx_t_5 = NULL;
           __pyx_t_7 = 0;
@@ -6848,11 +7036,11 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
             PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_kp_u_utf_8};
             __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
             __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-            if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 183, __pyx_L6_error)
+            if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 193, __pyx_L6_error)
             __Pyx_GOTREF(__pyx_t_1);
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
           }
-          if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_1))) __PYX_ERR(0, 183, __pyx_L6_error)
+          if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_1))) __PYX_ERR(0, 193, __pyx_L6_error)
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         }
       }
@@ -6867,7 +7055,7 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
     __Pyx_DECREF_SET(__pyx_v_arr, ((PyObject*)__pyx_t_3));
     __pyx_t_3 = 0;
 
-    /* "humon.pyx":181
+    /* "humon.pyx":191
  *             arr.append(color_table.get(ColorCode.METATAGVALUE, '').encode('utf-8'))
  *             arr.append(color_table.get(ColorCode.WHITESPACE, '').encode('utf-8'))
  *         elif isinstance(color_table, list):             # <<<<<<<<<<<<<<
@@ -6877,7 +7065,7 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
     goto __pyx_L3;
   }
 
-  /* "humon.pyx":185
+  /* "humon.pyx":195
  *             arr = [ce.encode('utf-8') for ce in color_table if isinstance(ce, str)]
  *         else:
  *             arr = [b''] * ColorCode.NUMCOLORS.value             # <<<<<<<<<<<<<<
@@ -6885,20 +7073,20 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
  * 
  */
   /*else*/ {
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 185, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_ColorCode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 195, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_NUMCOLORS); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 185, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_NUMCOLORS); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 195, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_value); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 185, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_value); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 195, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = PyList_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 185, __pyx_L1_error)
+    __pyx_t_4 = PyList_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 195, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_INCREF(__pyx_kp_b__2);
     __Pyx_GIVEREF(__pyx_kp_b__2);
-    if (__Pyx_PyList_SET_ITEM(__pyx_t_4, 0, __pyx_kp_b__2)) __PYX_ERR(0, 185, __pyx_L1_error);
-    { PyObject* __pyx_temp = PyNumber_InPlaceMultiply(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_temp)) __PYX_ERR(0, 185, __pyx_L1_error)
+    if (__Pyx_PyList_SET_ITEM(__pyx_t_4, 0, __pyx_kp_b__2)) __PYX_ERR(0, 195, __pyx_L1_error);
+    { PyObject* __pyx_temp = PyNumber_InPlaceMultiply(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_temp)) __PYX_ERR(0, 195, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_temp);
       __Pyx_DECREF(__pyx_t_4);
       __pyx_t_4 = __pyx_temp;
@@ -6909,7 +7097,7 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
   }
   __pyx_L3:;
 
-  /* "humon.pyx":186
+  /* "humon.pyx":196
  *         else:
  *             arr = [b''] * ColorCode.NUMCOLORS.value
  *         return arr             # <<<<<<<<<<<<<<
@@ -6921,7 +7109,7 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
   __pyx_r = __pyx_v_arr;
   goto __pyx_L0;
 
-  /* "humon.pyx":163
+  /* "humon.pyx":173
  *         c.huDestroyTrove(self._c_trove)
  * 
  *     def _arrange_color_table(self, color_table: dict | list | None) -> list[bytes]:             # <<<<<<<<<<<<<<
@@ -6946,7 +7134,7 @@ static PyObject *__pyx_pf_5humon_5Trove_4_arrange_color_table(CYTHON_UNUSED stru
   return __pyx_r;
 }
 
-/* "humon.pyx":188
+/* "humon.pyx":198
  *         return arr
  * 
  *     cdef void _make_serialize_options(self, c.huSerializeOptions * opts,             # <<<<<<<<<<<<<<
@@ -6979,7 +7167,7 @@ static void __pyx_f_5humon_5Trove__make_serialize_options(CYTHON_UNUSED struct _
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_make_serialize_options", 1);
 
-  /* "humon.pyx":197
+  /* "humon.pyx":207
  *                                       len_cnewline: int,
  *                                       print_bom: bool):
  *         cdef c.huStringView * pcolor_table = NULL             # <<<<<<<<<<<<<<
@@ -6988,17 +7176,17 @@ static void __pyx_f_5humon_5Trove__make_serialize_options(CYTHON_UNUSED struct _
  */
   __pyx_v_pcolor_table = NULL;
 
-  /* "humon.pyx":198
+  /* "humon.pyx":208
  *                                       print_bom: bool):
  *         cdef c.huStringView * pcolor_table = NULL
  *         if use_colors:             # <<<<<<<<<<<<<<
  *             pcolor_table = & c_color_table[0]
  *             if make_ansi_colors:
  */
-  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_use_colors); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 198, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_use_colors); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 208, __pyx_L1_error)
   if (__pyx_t_1) {
 
-    /* "humon.pyx":199
+    /* "humon.pyx":209
  *         cdef c.huStringView * pcolor_table = NULL
  *         if use_colors:
  *             pcolor_table = & c_color_table[0]             # <<<<<<<<<<<<<<
@@ -7007,17 +7195,17 @@ static void __pyx_f_5humon_5Trove__make_serialize_options(CYTHON_UNUSED struct _
  */
     __pyx_v_pcolor_table = (&(__pyx_v_c_color_table[0]));
 
-    /* "humon.pyx":200
+    /* "humon.pyx":210
  *         if use_colors:
  *             pcolor_table = & c_color_table[0]
  *             if make_ansi_colors:             # <<<<<<<<<<<<<<
  *                 c.huFillAnsiColorTable(c_color_table)
  *             else:
  */
-    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_make_ansi_colors); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_make_ansi_colors); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 210, __pyx_L1_error)
     if (__pyx_t_1) {
 
-      /* "humon.pyx":201
+      /* "humon.pyx":211
  *             pcolor_table = & c_color_table[0]
  *             if make_ansi_colors:
  *                 c.huFillAnsiColorTable(c_color_table)             # <<<<<<<<<<<<<<
@@ -7026,7 +7214,7 @@ static void __pyx_f_5humon_5Trove__make_serialize_options(CYTHON_UNUSED struct _
  */
       huFillAnsiColorTable(__pyx_v_c_color_table);
 
-      /* "humon.pyx":200
+      /* "humon.pyx":210
  *         if use_colors:
  *             pcolor_table = & c_color_table[0]
  *             if make_ansi_colors:             # <<<<<<<<<<<<<<
@@ -7036,7 +7224,7 @@ static void __pyx_f_5humon_5Trove__make_serialize_options(CYTHON_UNUSED struct _
       goto __pyx_L4;
     }
 
-    /* "humon.pyx":203
+    /* "humon.pyx":213
  *                 c.huFillAnsiColorTable(c_color_table)
  *             else:
  *                 for i in range(<int> c.huColorCode.HU_COLORCODE_NUMCOLORS):             # <<<<<<<<<<<<<<
@@ -7049,22 +7237,22 @@ static void __pyx_f_5humon_5Trove__make_serialize_options(CYTHON_UNUSED struct _
       for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
         __pyx_v_i = __pyx_t_4;
 
-        /* "humon.pyx":205
+        /* "humon.pyx":215
  *                 for i in range(<int> c.huColorCode.HU_COLORCODE_NUMCOLORS):
  *                     c_color_table[i].ptr, c_color_table[i].size = (
  *                             b_color_table[i], len(b_color_table[i]))             # <<<<<<<<<<<<<<
  *         wsf = whitespace_format.value
  *         c.huInitSerializeOptionsN(opts, wsf, indent_size, indent_with_tabs,
  */
-        __pyx_t_5 = __Pyx_GetItemInt_List(__pyx_v_b_color_table, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 205, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_GetItemInt_List(__pyx_v_b_color_table, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 215, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_6 = __Pyx_PyObject_AsString(__pyx_t_5); if (unlikely((!__pyx_t_6) && PyErr_Occurred())) __PYX_ERR(0, 205, __pyx_L1_error)
-        __pyx_t_7 = __Pyx_GetItemInt_List(__pyx_v_b_color_table, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 205, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_AsString(__pyx_t_5); if (unlikely((!__pyx_t_6) && PyErr_Occurred())) __PYX_ERR(0, 215, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_GetItemInt_List(__pyx_v_b_color_table, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 215, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_8 = PyObject_Length(__pyx_t_7); if (unlikely(__pyx_t_8 == ((Py_ssize_t)-1))) __PYX_ERR(0, 205, __pyx_L1_error)
+        __pyx_t_8 = PyObject_Length(__pyx_t_7); if (unlikely(__pyx_t_8 == ((Py_ssize_t)-1))) __PYX_ERR(0, 215, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-        /* "humon.pyx":204
+        /* "humon.pyx":214
  *             else:
  *                 for i in range(<int> c.huColorCode.HU_COLORCODE_NUMCOLORS):
  *                     c_color_table[i].ptr, c_color_table[i].size = (             # <<<<<<<<<<<<<<
@@ -7078,7 +7266,7 @@ static void __pyx_f_5humon_5Trove__make_serialize_options(CYTHON_UNUSED struct _
     }
     __pyx_L4:;
 
-    /* "humon.pyx":198
+    /* "humon.pyx":208
  *                                       print_bom: bool):
  *         cdef c.huStringView * pcolor_table = NULL
  *         if use_colors:             # <<<<<<<<<<<<<<
@@ -7087,58 +7275,58 @@ static void __pyx_f_5humon_5Trove__make_serialize_options(CYTHON_UNUSED struct _
  */
   }
 
-  /* "humon.pyx":206
+  /* "humon.pyx":216
  *                     c_color_table[i].ptr, c_color_table[i].size = (
  *                             b_color_table[i], len(b_color_table[i]))
  *         wsf = whitespace_format.value             # <<<<<<<<<<<<<<
  *         c.huInitSerializeOptionsN(opts, wsf, indent_size, indent_with_tabs,
  *                                   use_colors, pcolor_table,
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_whitespace_format, __pyx_n_s_value); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 206, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_whitespace_format, __pyx_n_s_value); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 216, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_v_wsf = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "humon.pyx":207
+  /* "humon.pyx":217
  *                             b_color_table[i], len(b_color_table[i]))
  *         wsf = whitespace_format.value
  *         c.huInitSerializeOptionsN(opts, wsf, indent_size, indent_with_tabs,             # <<<<<<<<<<<<<<
  *                                   use_colors, pcolor_table,
  *                                   print_comments, cnewline, len_cnewline, c.HU_ENCODING_UTF8,
  */
-  __pyx_t_9 = ((enum huWhitespaceFormat_tag)__Pyx_PyInt_As_enum__huWhitespaceFormat_tag(__pyx_v_wsf)); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 207, __pyx_L1_error)
-  __pyx_t_10 = __Pyx_PyInt_As_huCol_t(__pyx_v_indent_size); if (unlikely((__pyx_t_10 == ((huCol_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 207, __pyx_L1_error)
-  __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_v_indent_with_tabs); if (unlikely((__pyx_t_11 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 207, __pyx_L1_error)
+  __pyx_t_9 = ((enum huWhitespaceFormat_tag)__Pyx_PyInt_As_enum__huWhitespaceFormat_tag(__pyx_v_wsf)); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyInt_As_huCol_t(__pyx_v_indent_size); if (unlikely((__pyx_t_10 == ((huCol_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_v_indent_with_tabs); if (unlikely((__pyx_t_11 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 217, __pyx_L1_error)
 
-  /* "humon.pyx":208
+  /* "humon.pyx":218
  *         wsf = whitespace_format.value
  *         c.huInitSerializeOptionsN(opts, wsf, indent_size, indent_with_tabs,
  *                                   use_colors, pcolor_table,             # <<<<<<<<<<<<<<
  *                                   print_comments, cnewline, len_cnewline, c.HU_ENCODING_UTF8,
  *                                   print_bom)
  */
-  __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_v_use_colors); if (unlikely((__pyx_t_12 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 208, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_v_use_colors); if (unlikely((__pyx_t_12 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 218, __pyx_L1_error)
 
-  /* "humon.pyx":209
+  /* "humon.pyx":219
  *         c.huInitSerializeOptionsN(opts, wsf, indent_size, indent_with_tabs,
  *                                   use_colors, pcolor_table,
  *                                   print_comments, cnewline, len_cnewline, c.HU_ENCODING_UTF8,             # <<<<<<<<<<<<<<
  *                                   print_bom)
  * 
  */
-  __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_print_comments); if (unlikely((__pyx_t_13 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 209, __pyx_L1_error)
-  __pyx_t_14 = __Pyx_PyInt_As_huSize_t(__pyx_v_len_cnewline); if (unlikely((__pyx_t_14 == ((huSize_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 209, __pyx_L1_error)
+  __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_print_comments); if (unlikely((__pyx_t_13 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_t_14 = __Pyx_PyInt_As_huSize_t(__pyx_v_len_cnewline); if (unlikely((__pyx_t_14 == ((huSize_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 219, __pyx_L1_error)
 
-  /* "humon.pyx":210
+  /* "humon.pyx":220
  *                                   use_colors, pcolor_table,
  *                                   print_comments, cnewline, len_cnewline, c.HU_ENCODING_UTF8,
  *                                   print_bom)             # <<<<<<<<<<<<<<
  * 
  *     def to_string(self, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,
  */
-  __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_v_print_bom); if (unlikely((__pyx_t_15 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 210, __pyx_L1_error)
+  __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_v_print_bom); if (unlikely((__pyx_t_15 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 220, __pyx_L1_error)
 
-  /* "humon.pyx":207
+  /* "humon.pyx":217
  *                             b_color_table[i], len(b_color_table[i]))
  *         wsf = whitespace_format.value
  *         c.huInitSerializeOptionsN(opts, wsf, indent_size, indent_with_tabs,             # <<<<<<<<<<<<<<
@@ -7147,7 +7335,7 @@ static void __pyx_f_5humon_5Trove__make_serialize_options(CYTHON_UNUSED struct _
  */
   huInitSerializeOptionsN(__pyx_v_opts, __pyx_t_9, __pyx_t_10, __pyx_t_11, __pyx_t_12, __pyx_v_pcolor_table, __pyx_t_13, __pyx_v_cnewline, __pyx_t_14, HU_ENCODING_UTF8, __pyx_t_15);
 
-  /* "humon.pyx":188
+  /* "humon.pyx":198
  *         return arr
  * 
  *     cdef void _make_serialize_options(self, c.huSerializeOptions * opts,             # <<<<<<<<<<<<<<
@@ -7166,7 +7354,7 @@ static void __pyx_f_5humon_5Trove__make_serialize_options(CYTHON_UNUSED struct _
   __Pyx_RefNannyFinishContext();
 }
 
-/* "humon.pyx":212
+/* "humon.pyx":222
  *                                   print_bom)
  * 
  *     def to_string(self, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,             # <<<<<<<<<<<<<<
@@ -7222,7 +7410,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
     values[0] = __Pyx_Arg_NewRef_FASTCALL(__pyx_k__3);
     values[1] = __Pyx_Arg_NewRef_FASTCALL(__pyx_k__4);
 
-    /* "humon.pyx":213
+    /* "humon.pyx":223
  * 
  *     def to_string(self, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,
  *                   indent_size: int = 4, indent_with_tabs: bool = False,             # <<<<<<<<<<<<<<
@@ -7231,7 +7419,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
  */
     values[2] = __Pyx_Arg_NewRef_FASTCALL(((PyObject *)Py_False));
 
-    /* "humon.pyx":214
+    /* "humon.pyx":224
  *     def to_string(self, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,
  *                   indent_size: int = 4, indent_with_tabs: bool = False,
  *                   use_colors: bool = False, color_table: dict | list | None = None,             # <<<<<<<<<<<<<<
@@ -7241,7 +7429,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
     values[3] = __Pyx_Arg_NewRef_FASTCALL(((PyObject *)Py_False));
     values[4] = __Pyx_Arg_NewRef_FASTCALL(((PyObject *)Py_None));
 
-    /* "humon.pyx":215
+    /* "humon.pyx":225
  *                   indent_size: int = 4, indent_with_tabs: bool = False,
  *                   use_colors: bool = False, color_table: dict | list | None = None,
  *                   print_comments: bool = True, newline = "\n",             # <<<<<<<<<<<<<<
@@ -7251,7 +7439,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
     values[5] = __Pyx_Arg_NewRef_FASTCALL(((PyObject *)Py_True));
     values[6] = __Pyx_Arg_NewRef_FASTCALL(((PyObject *)__pyx_kp_u__5));
 
-    /* "humon.pyx":216
+    /* "humon.pyx":226
  *                   use_colors: bool = False, color_table: dict | list | None = None,
  *                   print_comments: bool = True, newline = "\n",
  *                   print_bom: bool = False) -> str:             # <<<<<<<<<<<<<<
@@ -7287,61 +7475,61 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_whitespace_format);
           if (value) { values[0] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 212, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 222, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  1:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_indent_size);
           if (value) { values[1] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 212, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 222, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_indent_with_tabs);
           if (value) { values[2] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 212, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 222, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_use_colors);
           if (value) { values[3] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 212, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 222, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_color_table);
           if (value) { values[4] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 212, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 222, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_print_comments);
           if (value) { values[5] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 212, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 222, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_newline);
           if (value) { values[6] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 212, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 222, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  7:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_print_bom);
           if (value) { values[7] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 212, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 222, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "to_string") < 0)) __PYX_ERR(0, 212, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "to_string") < 0)) __PYX_ERR(0, 222, __pyx_L3_error)
       }
     } else {
       switch (__pyx_nargs) {
@@ -7376,7 +7564,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("to_string", 0, 0, 8, __pyx_nargs); __PYX_ERR(0, 212, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("to_string", 0, 0, 8, __pyx_nargs); __PYX_ERR(0, 222, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7390,10 +7578,10 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_indent_size), (&PyInt_Type), 0, "indent_size", 1))) __PYX_ERR(0, 213, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_indent_size), (&PyInt_Type), 0, "indent_size", 1))) __PYX_ERR(0, 223, __pyx_L1_error)
   __pyx_r = __pyx_pf_5humon_5Trove_6to_string(((struct __pyx_obj_5humon_Trove *)__pyx_v_self), __pyx_v_whitespace_format, __pyx_v_indent_size, __pyx_v_indent_with_tabs, __pyx_v_use_colors, __pyx_v_color_table, __pyx_v_print_comments, __pyx_v_newline, __pyx_v_print_bom);
 
-  /* "humon.pyx":212
+  /* "humon.pyx":222
  *                                   print_bom)
  * 
  *     def to_string(self, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,             # <<<<<<<<<<<<<<
@@ -7455,14 +7643,14 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("to_string", 1);
 
-  /* "humon.pyx":219
+  /* "humon.pyx":229
  *         cdef c.huSerializeOptions opts
  *         cdef const char * cnewline
  *         bnewline = newline.encode('utf-8')             # <<<<<<<<<<<<<<
  *         cnewline, len_cnewline = bnewline, len(bnewline)
  *         b_color_table = self._arrange_color_table(color_table)
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_newline, __pyx_n_s_encode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_newline, __pyx_n_s_encode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -7482,33 +7670,33 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_kp_u_utf_8};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 229, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_bnewline = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "humon.pyx":220
+  /* "humon.pyx":230
  *         cdef const char * cnewline
  *         bnewline = newline.encode('utf-8')
  *         cnewline, len_cnewline = bnewline, len(bnewline)             # <<<<<<<<<<<<<<
  *         b_color_table = self._arrange_color_table(color_table)
  *         cdef c.huStringView[<c.huSize_t> c.huColorCode.HU_COLORCODE_NUMCOLORS] c_color_table
  */
-  __pyx_t_5 = __Pyx_PyObject_AsString(__pyx_v_bnewline); if (unlikely((!__pyx_t_5) && PyErr_Occurred())) __PYX_ERR(0, 220, __pyx_L1_error)
-  __pyx_t_6 = PyObject_Length(__pyx_v_bnewline); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 220, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_AsString(__pyx_v_bnewline); if (unlikely((!__pyx_t_5) && PyErr_Occurred())) __PYX_ERR(0, 230, __pyx_L1_error)
+  __pyx_t_6 = PyObject_Length(__pyx_v_bnewline); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 230, __pyx_L1_error)
   __pyx_v_cnewline = __pyx_t_5;
   __pyx_v_len_cnewline = __pyx_t_6;
 
-  /* "humon.pyx":221
+  /* "humon.pyx":231
  *         bnewline = newline.encode('utf-8')
  *         cnewline, len_cnewline = bnewline, len(bnewline)
  *         b_color_table = self._arrange_color_table(color_table)             # <<<<<<<<<<<<<<
  *         cdef c.huStringView[<c.huSize_t> c.huColorCode.HU_COLORCODE_NUMCOLORS] c_color_table
  *         self._make_serialize_options(& opts, whitespace_format, indent_size, indent_with_tabs,
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_arrange_color_table); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 221, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_arrange_color_table); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -7528,21 +7716,21 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_color_table};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 221, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 231, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_b_color_table = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "humon.pyx":224
+  /* "humon.pyx":234
  *         cdef c.huStringView[<c.huSize_t> c.huColorCode.HU_COLORCODE_NUMCOLORS] c_color_table
  *         self._make_serialize_options(& opts, whitespace_format, indent_size, indent_with_tabs,
  *                                      use_colors, use_colors and color_table is None,             # <<<<<<<<<<<<<<
  *                                      b_color_table, c_color_table, print_comments, cnewline,
  *                                      len_cnewline, print_bom)
  */
-  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_use_colors); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 224, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_use_colors); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 234, __pyx_L1_error)
   if (__pyx_t_7) {
   } else {
     __Pyx_INCREF(__pyx_v_use_colors);
@@ -7550,44 +7738,44 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
     goto __pyx_L3_bool_binop_done;
   }
   __pyx_t_7 = (__pyx_v_color_table == Py_None);
-  __pyx_t_2 = __Pyx_PyBool_FromLong(__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 224, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyBool_FromLong(__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 234, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_1 = __pyx_t_2;
   __pyx_t_2 = 0;
   __pyx_L3_bool_binop_done:;
 
-  /* "humon.pyx":225
+  /* "humon.pyx":235
  *         self._make_serialize_options(& opts, whitespace_format, indent_size, indent_with_tabs,
  *                                      use_colors, use_colors and color_table is None,
  *                                      b_color_table, c_color_table, print_comments, cnewline,             # <<<<<<<<<<<<<<
  *                                      len_cnewline, print_bom)
  *         cdef c.huErrorCode res
  */
-  if (!(likely(PyList_CheckExact(__pyx_v_b_color_table))||((__pyx_v_b_color_table) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_v_b_color_table))) __PYX_ERR(0, 225, __pyx_L1_error)
+  if (!(likely(PyList_CheckExact(__pyx_v_b_color_table))||((__pyx_v_b_color_table) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_v_b_color_table))) __PYX_ERR(0, 235, __pyx_L1_error)
 
-  /* "humon.pyx":226
+  /* "humon.pyx":236
  *                                      use_colors, use_colors and color_table is None,
  *                                      b_color_table, c_color_table, print_comments, cnewline,
  *                                      len_cnewline, print_bom)             # <<<<<<<<<<<<<<
  *         cdef c.huErrorCode res
  *         cdef c.huSize_t size = 0
  */
-  __pyx_t_2 = PyInt_FromSsize_t(__pyx_v_len_cnewline); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 226, __pyx_L1_error)
+  __pyx_t_2 = PyInt_FromSsize_t(__pyx_v_len_cnewline); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 236, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_t_2)) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_t_2))) __PYX_ERR(0, 226, __pyx_L1_error)
+  if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_t_2)) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_t_2))) __PYX_ERR(0, 236, __pyx_L1_error)
 
-  /* "humon.pyx":223
+  /* "humon.pyx":233
  *         b_color_table = self._arrange_color_table(color_table)
  *         cdef c.huStringView[<c.huSize_t> c.huColorCode.HU_COLORCODE_NUMCOLORS] c_color_table
  *         self._make_serialize_options(& opts, whitespace_format, indent_size, indent_with_tabs,             # <<<<<<<<<<<<<<
  *                                      use_colors, use_colors and color_table is None,
  *                                      b_color_table, c_color_table, print_comments, cnewline,
  */
-  ((struct __pyx_vtabstruct_5humon_Trove *)__pyx_v_self->__pyx_vtab)->_make_serialize_options(__pyx_v_self, (&__pyx_v_opts), __pyx_v_whitespace_format, __pyx_v_indent_size, __pyx_v_indent_with_tabs, __pyx_v_use_colors, __pyx_t_1, ((PyObject*)__pyx_v_b_color_table), __pyx_v_c_color_table, __pyx_v_print_comments, __pyx_v_cnewline, ((PyObject*)__pyx_t_2), __pyx_v_print_bom); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 223, __pyx_L1_error)
+  ((struct __pyx_vtabstruct_5humon_Trove *)__pyx_v_self->__pyx_vtab)->_make_serialize_options(__pyx_v_self, (&__pyx_v_opts), __pyx_v_whitespace_format, __pyx_v_indent_size, __pyx_v_indent_with_tabs, __pyx_v_use_colors, __pyx_t_1, ((PyObject*)__pyx_v_b_color_table), __pyx_v_c_color_table, __pyx_v_print_comments, __pyx_v_cnewline, ((PyObject*)__pyx_t_2), __pyx_v_print_bom); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 233, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "humon.pyx":228
+  /* "humon.pyx":238
  *                                      len_cnewline, print_bom)
  *         cdef c.huErrorCode res
  *         cdef c.huSize_t size = 0             # <<<<<<<<<<<<<<
@@ -7596,7 +7784,7 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
  */
   __pyx_v_size = 0;
 
-  /* "humon.pyx":229
+  /* "humon.pyx":239
  *         cdef c.huErrorCode res
  *         cdef c.huSize_t size = 0
  *         cdef char * humon_string = NULL             # <<<<<<<<<<<<<<
@@ -7605,7 +7793,7 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
  */
   __pyx_v_humon_string = NULL;
 
-  /* "humon.pyx":230
+  /* "humon.pyx":240
  *         cdef c.huSize_t size = 0
  *         cdef char * humon_string = NULL
  *         res = c.huSerializeTrove(self._c_trove, humon_string, & size, & opts)             # <<<<<<<<<<<<<<
@@ -7614,7 +7802,7 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
  */
   __pyx_v_res = huSerializeTrove(__pyx_v_self->_c_trove, __pyx_v_humon_string, (&__pyx_v_size), (&__pyx_v_opts));
 
-  /* "humon.pyx":231
+  /* "humon.pyx":241
  *         cdef char * humon_string = NULL
  *         res = c.huSerializeTrove(self._c_trove, humon_string, & size, & opts)
  *         if res != c.huErrorCode.HU_ERROR_NOERROR:             # <<<<<<<<<<<<<<
@@ -7624,18 +7812,18 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
   __pyx_t_7 = (__pyx_v_res != HU_ERROR_NOERROR);
   if (unlikely(__pyx_t_7)) {
 
-    /* "humon.pyx":232
+    /* "humon.pyx":242
  *         res = c.huSerializeTrove(self._c_trove, humon_string, & size, & opts)
  *         if res != c.huErrorCode.HU_ERROR_NOERROR:
  *             raise SerializeError(f'Error code: {ErrorCode(res).name}')             # <<<<<<<<<<<<<<
  *         humon_string = <char *> malloc((size + 1) * sizeof(char))
  *         try:
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_SerializeError); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_SerializeError); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 242, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_ErrorCode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 232, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_ErrorCode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 242, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_9 = __Pyx_PyInt_From_enum__huErrorCode_tag(__pyx_v_res); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 232, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyInt_From_enum__huErrorCode_tag(__pyx_v_res); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 242, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __pyx_t_10 = NULL;
     __pyx_t_4 = 0;
@@ -7656,17 +7844,17 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 232, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 242, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
-    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_name); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 232, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_name); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 242, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_t_8, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 232, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_t_8, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 242, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __pyx_t_8 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Error_code, __pyx_t_3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 232, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Error_code, __pyx_t_3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 242, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_3 = NULL;
@@ -7688,15 +7876,15 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 232, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 242, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     }
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(0, 232, __pyx_L1_error)
+    __PYX_ERR(0, 242, __pyx_L1_error)
 
-    /* "humon.pyx":231
+    /* "humon.pyx":241
  *         cdef char * humon_string = NULL
  *         res = c.huSerializeTrove(self._c_trove, humon_string, & size, & opts)
  *         if res != c.huErrorCode.HU_ERROR_NOERROR:             # <<<<<<<<<<<<<<
@@ -7705,7 +7893,7 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
  */
   }
 
-  /* "humon.pyx":233
+  /* "humon.pyx":243
  *         if res != c.huErrorCode.HU_ERROR_NOERROR:
  *             raise SerializeError(f'Error code: {ErrorCode(res).name}')
  *         humon_string = <char *> malloc((size + 1) * sizeof(char))             # <<<<<<<<<<<<<<
@@ -7714,7 +7902,7 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
  */
   __pyx_v_humon_string = ((char *)malloc(((__pyx_v_size + 1) * (sizeof(char)))));
 
-  /* "humon.pyx":234
+  /* "humon.pyx":244
  *             raise SerializeError(f'Error code: {ErrorCode(res).name}')
  *         humon_string = <char *> malloc((size + 1) * sizeof(char))
  *         try:             # <<<<<<<<<<<<<<
@@ -7730,7 +7918,7 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
     __Pyx_XGOTREF(__pyx_t_13);
     /*try:*/ {
 
-      /* "humon.pyx":235
+      /* "humon.pyx":245
  *         humon_string = <char *> malloc((size + 1) * sizeof(char))
  *         try:
  *             if humon_string == NULL:             # <<<<<<<<<<<<<<
@@ -7740,16 +7928,16 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
       __pyx_t_7 = (__pyx_v_humon_string == NULL);
       if (unlikely(__pyx_t_7)) {
 
-        /* "humon.pyx":236
+        /* "humon.pyx":246
  *         try:
  *             if humon_string == NULL:
  *                 raise MemoryError()             # <<<<<<<<<<<<<<
  *             res = c.huSerializeTrove(self._c_trove, humon_string, & size, & opts)
  *             if res != c.huErrorCode.HU_ERROR_NOERROR:
  */
-        PyErr_NoMemory(); __PYX_ERR(0, 236, __pyx_L6_error)
+        PyErr_NoMemory(); __PYX_ERR(0, 246, __pyx_L6_error)
 
-        /* "humon.pyx":235
+        /* "humon.pyx":245
  *         humon_string = <char *> malloc((size + 1) * sizeof(char))
  *         try:
  *             if humon_string == NULL:             # <<<<<<<<<<<<<<
@@ -7758,7 +7946,7 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
  */
       }
 
-      /* "humon.pyx":237
+      /* "humon.pyx":247
  *             if humon_string == NULL:
  *                 raise MemoryError()
  *             res = c.huSerializeTrove(self._c_trove, humon_string, & size, & opts)             # <<<<<<<<<<<<<<
@@ -7767,7 +7955,7 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
  */
       __pyx_v_res = huSerializeTrove(__pyx_v_self->_c_trove, __pyx_v_humon_string, (&__pyx_v_size), (&__pyx_v_opts));
 
-      /* "humon.pyx":238
+      /* "humon.pyx":248
  *                 raise MemoryError()
  *             res = c.huSerializeTrove(self._c_trove, humon_string, & size, & opts)
  *             if res != c.huErrorCode.HU_ERROR_NOERROR:             # <<<<<<<<<<<<<<
@@ -7777,18 +7965,18 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
       __pyx_t_7 = (__pyx_v_res != HU_ERROR_NOERROR);
       if (unlikely(__pyx_t_7)) {
 
-        /* "humon.pyx":239
+        /* "humon.pyx":249
  *             res = c.huSerializeTrove(self._c_trove, humon_string, & size, & opts)
  *             if res != c.huErrorCode.HU_ERROR_NOERROR:
  *                 raise SerializeError(f'Error code: {ErrorCode(res).name}')             # <<<<<<<<<<<<<<
  *         except Exception as e:
  *             free(humon_string)
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_SerializeError); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 239, __pyx_L6_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_SerializeError); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 249, __pyx_L6_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_ErrorCode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 239, __pyx_L6_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_ErrorCode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 249, __pyx_L6_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_9 = __Pyx_PyInt_From_enum__huErrorCode_tag(__pyx_v_res); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 239, __pyx_L6_error)
+        __pyx_t_9 = __Pyx_PyInt_From_enum__huErrorCode_tag(__pyx_v_res); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 249, __pyx_L6_error)
         __Pyx_GOTREF(__pyx_t_9);
         __pyx_t_10 = NULL;
         __pyx_t_4 = 0;
@@ -7809,17 +7997,17 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
           __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
           __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 239, __pyx_L6_error)
+          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 249, __pyx_L6_error)
           __Pyx_GOTREF(__pyx_t_8);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         }
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_name); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 239, __pyx_L6_error)
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_name); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 249, __pyx_L6_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_t_3, __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 239, __pyx_L6_error)
+        __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_t_3, __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 249, __pyx_L6_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Error_code, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 239, __pyx_L6_error)
+        __pyx_t_3 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Error_code, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 249, __pyx_L6_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __pyx_t_8 = NULL;
@@ -7841,15 +8029,15 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
           __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
           __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 239, __pyx_L6_error)
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 249, __pyx_L6_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         }
         __Pyx_Raise(__pyx_t_2, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __PYX_ERR(0, 239, __pyx_L6_error)
+        __PYX_ERR(0, 249, __pyx_L6_error)
 
-        /* "humon.pyx":238
+        /* "humon.pyx":248
  *                 raise MemoryError()
  *             res = c.huSerializeTrove(self._c_trove, humon_string, & size, & opts)
  *             if res != c.huErrorCode.HU_ERROR_NOERROR:             # <<<<<<<<<<<<<<
@@ -7858,7 +8046,7 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
  */
       }
 
-      /* "humon.pyx":234
+      /* "humon.pyx":244
  *             raise SerializeError(f'Error code: {ErrorCode(res).name}')
  *         humon_string = <char *> malloc((size + 1) * sizeof(char))
  *         try:             # <<<<<<<<<<<<<<
@@ -7878,7 +8066,7 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "humon.pyx":240
+    /* "humon.pyx":250
  *             if res != c.huErrorCode.HU_ERROR_NOERROR:
  *                 raise SerializeError(f'Error code: {ErrorCode(res).name}')
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -7888,7 +8076,7 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
     __pyx_t_4 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])));
     if (__pyx_t_4) {
       __Pyx_AddTraceback("humon.Trove.to_string", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 240, __pyx_L8_except_error)
+      if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 250, __pyx_L8_except_error)
       __Pyx_XGOTREF(__pyx_t_2);
       __Pyx_XGOTREF(__pyx_t_1);
       __Pyx_XGOTREF(__pyx_t_3);
@@ -7896,7 +8084,7 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
       __pyx_v_e = __pyx_t_1;
       /*try:*/ {
 
-        /* "humon.pyx":241
+        /* "humon.pyx":251
  *                 raise SerializeError(f'Error code: {ErrorCode(res).name}')
  *         except Exception as e:
  *             free(humon_string)             # <<<<<<<<<<<<<<
@@ -7905,7 +8093,7 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
  */
         free(__pyx_v_humon_string);
 
-        /* "humon.pyx":242
+        /* "humon.pyx":252
  *         except Exception as e:
  *             free(humon_string)
  *             raise e             # <<<<<<<<<<<<<<
@@ -7913,10 +8101,10 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
  * 
  */
         __Pyx_Raise(__pyx_v_e, 0, 0, 0);
-        __PYX_ERR(0, 242, __pyx_L19_error)
+        __PYX_ERR(0, 252, __pyx_L19_error)
       }
 
-      /* "humon.pyx":240
+      /* "humon.pyx":250
  *             if res != c.huErrorCode.HU_ERROR_NOERROR:
  *                 raise SerializeError(f'Error code: {ErrorCode(res).name}')
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -7962,7 +8150,7 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
     }
     goto __pyx_L8_except_error;
 
-    /* "humon.pyx":234
+    /* "humon.pyx":244
  *             raise SerializeError(f'Error code: {ErrorCode(res).name}')
  *         humon_string = <char *> malloc((size + 1) * sizeof(char))
  *         try:             # <<<<<<<<<<<<<<
@@ -7978,7 +8166,7 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
     __pyx_L11_try_end:;
   }
 
-  /* "humon.pyx":243
+  /* "humon.pyx":253
  *             free(humon_string)
  *             raise e
  *         return to_pstr_l_free(humon_string, size)             # <<<<<<<<<<<<<<
@@ -7986,13 +8174,13 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
  *     def to_file(self, path: Path, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __pyx_f_5humon_to_pstr_l_free(__pyx_v_humon_string, __pyx_v_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 243, __pyx_L1_error)
+  __pyx_t_3 = __pyx_f_5humon_to_pstr_l_free(__pyx_v_humon_string, __pyx_v_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 253, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_r = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "humon.pyx":212
+  /* "humon.pyx":222
  *                                   print_bom)
  * 
  *     def to_string(self, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,             # <<<<<<<<<<<<<<
@@ -8019,7 +8207,7 @@ static PyObject *__pyx_pf_5humon_5Trove_6to_string(struct __pyx_obj_5humon_Trove
   return __pyx_r;
 }
 
-/* "humon.pyx":245
+/* "humon.pyx":255
  *         return to_pstr_l_free(humon_string, size)
  * 
  *     def to_file(self, path: Path, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,             # <<<<<<<<<<<<<<
@@ -8076,7 +8264,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
     values[1] = __Pyx_Arg_NewRef_FASTCALL(__pyx_k__6);
     values[2] = __Pyx_Arg_NewRef_FASTCALL(__pyx_k__7);
 
-    /* "humon.pyx":246
+    /* "humon.pyx":256
  * 
  *     def to_file(self, path: Path, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,
  *                 indent_size: int = 4, indent_with_tabs: bool = False,             # <<<<<<<<<<<<<<
@@ -8085,7 +8273,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
  */
     values[3] = __Pyx_Arg_NewRef_FASTCALL(((PyObject *)Py_False));
 
-    /* "humon.pyx":247
+    /* "humon.pyx":257
  *     def to_file(self, path: Path, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,
  *                 indent_size: int = 4, indent_with_tabs: bool = False,
  *                 use_colors: bool = False, color_table: dict | list | None = None,             # <<<<<<<<<<<<<<
@@ -8095,7 +8283,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
     values[4] = __Pyx_Arg_NewRef_FASTCALL(((PyObject *)Py_False));
     values[5] = __Pyx_Arg_NewRef_FASTCALL(((PyObject *)Py_None));
 
-    /* "humon.pyx":248
+    /* "humon.pyx":258
  *                 indent_size: int = 4, indent_with_tabs: bool = False,
  *                 use_colors: bool = False, color_table: dict | list | None = None,
  *                 print_comments: bool = True, newline = "\n",             # <<<<<<<<<<<<<<
@@ -8105,7 +8293,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
     values[6] = __Pyx_Arg_NewRef_FASTCALL(((PyObject *)Py_True));
     values[7] = __Pyx_Arg_NewRef_FASTCALL(((PyObject *)__pyx_kp_u__5));
 
-    /* "humon.pyx":249
+    /* "humon.pyx":259
  *                 use_colors: bool = False, color_table: dict | list | None = None,
  *                 print_comments: bool = True, newline = "\n",
  *                 print_bom: bool = False) -> ErrorCode:             # <<<<<<<<<<<<<<
@@ -8144,68 +8332,68 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 255, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_whitespace_format);
           if (value) { values[1] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 255, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_indent_size);
           if (value) { values[2] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 255, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_indent_with_tabs);
           if (value) { values[3] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 255, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_use_colors);
           if (value) { values[4] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 255, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_color_table);
           if (value) { values[5] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 255, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_print_comments);
           if (value) { values[6] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 255, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  7:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_newline);
           if (value) { values[7] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 255, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  8:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_print_bom);
           if (value) { values[8] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 255, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "to_file") < 0)) __PYX_ERR(0, 245, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "to_file") < 0)) __PYX_ERR(0, 255, __pyx_L3_error)
       }
     } else {
       switch (__pyx_nargs) {
@@ -8242,7 +8430,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("to_file", 0, 1, 9, __pyx_nargs); __PYX_ERR(0, 245, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("to_file", 0, 1, 9, __pyx_nargs); __PYX_ERR(0, 255, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -8256,10 +8444,10 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_indent_size), (&PyInt_Type), 0, "indent_size", 1))) __PYX_ERR(0, 246, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_indent_size), (&PyInt_Type), 0, "indent_size", 1))) __PYX_ERR(0, 256, __pyx_L1_error)
   __pyx_r = __pyx_pf_5humon_5Trove_8to_file(((struct __pyx_obj_5humon_Trove *)__pyx_v_self), __pyx_v_path, __pyx_v_whitespace_format, __pyx_v_indent_size, __pyx_v_indent_with_tabs, __pyx_v_use_colors, __pyx_v_color_table, __pyx_v_print_comments, __pyx_v_newline, __pyx_v_print_bom);
 
-  /* "humon.pyx":245
+  /* "humon.pyx":255
  *         return to_pstr_l_free(humon_string, size)
  * 
  *     def to_file(self, path: Path, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,             # <<<<<<<<<<<<<<
@@ -8321,14 +8509,14 @@ static PyObject *__pyx_pf_5humon_5Trove_8to_file(struct __pyx_obj_5humon_Trove *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("to_file", 1);
 
-  /* "humon.pyx":252
+  /* "humon.pyx":262
  *         cdef c.huSerializeOptions opts
  *         cdef const char * cnewline
  *         bnewline = newline.encode('utf-8')             # <<<<<<<<<<<<<<
  *         cnewline, len_cnewline = bnewline, len(bnewline)
  *         b_color_table = self._arrange_color_table(color_table)
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_newline, __pyx_n_s_encode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 252, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_newline, __pyx_n_s_encode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 262, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -8348,33 +8536,33 @@ static PyObject *__pyx_pf_5humon_5Trove_8to_file(struct __pyx_obj_5humon_Trove *
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_kp_u_utf_8};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 252, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 262, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_bnewline = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "humon.pyx":253
+  /* "humon.pyx":263
  *         cdef const char * cnewline
  *         bnewline = newline.encode('utf-8')
  *         cnewline, len_cnewline = bnewline, len(bnewline)             # <<<<<<<<<<<<<<
  *         b_color_table = self._arrange_color_table(color_table)
  *         cdef c.huStringView[<c.huSize_t> c.huColorCode.HU_COLORCODE_NUMCOLORS] c_color_table
  */
-  __pyx_t_5 = __Pyx_PyObject_AsString(__pyx_v_bnewline); if (unlikely((!__pyx_t_5) && PyErr_Occurred())) __PYX_ERR(0, 253, __pyx_L1_error)
-  __pyx_t_6 = PyObject_Length(__pyx_v_bnewline); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 253, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_AsString(__pyx_v_bnewline); if (unlikely((!__pyx_t_5) && PyErr_Occurred())) __PYX_ERR(0, 263, __pyx_L1_error)
+  __pyx_t_6 = PyObject_Length(__pyx_v_bnewline); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 263, __pyx_L1_error)
   __pyx_v_cnewline = __pyx_t_5;
   __pyx_v_len_cnewline = __pyx_t_6;
 
-  /* "humon.pyx":254
+  /* "humon.pyx":264
  *         bnewline = newline.encode('utf-8')
  *         cnewline, len_cnewline = bnewline, len(bnewline)
  *         b_color_table = self._arrange_color_table(color_table)             # <<<<<<<<<<<<<<
  *         cdef c.huStringView[<c.huSize_t> c.huColorCode.HU_COLORCODE_NUMCOLORS] c_color_table
  *         self._make_serialize_options(& opts, whitespace_format, indent_size, indent_with_tabs,
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_arrange_color_table); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 254, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_arrange_color_table); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 264, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -8394,21 +8582,21 @@ static PyObject *__pyx_pf_5humon_5Trove_8to_file(struct __pyx_obj_5humon_Trove *
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_color_table};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 254, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 264, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_b_color_table = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "humon.pyx":257
+  /* "humon.pyx":267
  *         cdef c.huStringView[<c.huSize_t> c.huColorCode.HU_COLORCODE_NUMCOLORS] c_color_table
  *         self._make_serialize_options(& opts, whitespace_format, indent_size, indent_with_tabs,
  *                                      use_colors, use_colors and color_table is None,             # <<<<<<<<<<<<<<
  *                                      b_color_table, c_color_table, print_comments, cnewline,
  *                                      len_cnewline, print_bom)
  */
-  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_use_colors); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 257, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_use_colors); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 267, __pyx_L1_error)
   if (__pyx_t_7) {
   } else {
     __Pyx_INCREF(__pyx_v_use_colors);
@@ -8416,53 +8604,53 @@ static PyObject *__pyx_pf_5humon_5Trove_8to_file(struct __pyx_obj_5humon_Trove *
     goto __pyx_L3_bool_binop_done;
   }
   __pyx_t_7 = (__pyx_v_color_table == Py_None);
-  __pyx_t_2 = __Pyx_PyBool_FromLong(__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 257, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyBool_FromLong(__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 267, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_1 = __pyx_t_2;
   __pyx_t_2 = 0;
   __pyx_L3_bool_binop_done:;
 
-  /* "humon.pyx":258
+  /* "humon.pyx":268
  *         self._make_serialize_options(& opts, whitespace_format, indent_size, indent_with_tabs,
  *                                      use_colors, use_colors and color_table is None,
  *                                      b_color_table, c_color_table, print_comments, cnewline,             # <<<<<<<<<<<<<<
  *                                      len_cnewline, print_bom)
  *         cdef c.huErrorCode res
  */
-  if (!(likely(PyList_CheckExact(__pyx_v_b_color_table))||((__pyx_v_b_color_table) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_v_b_color_table))) __PYX_ERR(0, 258, __pyx_L1_error)
+  if (!(likely(PyList_CheckExact(__pyx_v_b_color_table))||((__pyx_v_b_color_table) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_v_b_color_table))) __PYX_ERR(0, 268, __pyx_L1_error)
 
-  /* "humon.pyx":259
+  /* "humon.pyx":269
  *                                      use_colors, use_colors and color_table is None,
  *                                      b_color_table, c_color_table, print_comments, cnewline,
  *                                      len_cnewline, print_bom)             # <<<<<<<<<<<<<<
  *         cdef c.huErrorCode res
  *         cdef const char * cpath
  */
-  __pyx_t_2 = PyInt_FromSsize_t(__pyx_v_len_cnewline); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 259, __pyx_L1_error)
+  __pyx_t_2 = PyInt_FromSsize_t(__pyx_v_len_cnewline); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 269, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_t_2)) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_t_2))) __PYX_ERR(0, 259, __pyx_L1_error)
+  if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_t_2)) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_t_2))) __PYX_ERR(0, 269, __pyx_L1_error)
 
-  /* "humon.pyx":256
+  /* "humon.pyx":266
  *         b_color_table = self._arrange_color_table(color_table)
  *         cdef c.huStringView[<c.huSize_t> c.huColorCode.HU_COLORCODE_NUMCOLORS] c_color_table
  *         self._make_serialize_options(& opts, whitespace_format, indent_size, indent_with_tabs,             # <<<<<<<<<<<<<<
  *                                      use_colors, use_colors and color_table is None,
  *                                      b_color_table, c_color_table, print_comments, cnewline,
  */
-  ((struct __pyx_vtabstruct_5humon_Trove *)__pyx_v_self->__pyx_vtab)->_make_serialize_options(__pyx_v_self, (&__pyx_v_opts), __pyx_v_whitespace_format, __pyx_v_indent_size, __pyx_v_indent_with_tabs, __pyx_v_use_colors, __pyx_t_1, ((PyObject*)__pyx_v_b_color_table), __pyx_v_c_color_table, __pyx_v_print_comments, __pyx_v_cnewline, ((PyObject*)__pyx_t_2), __pyx_v_print_bom); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 256, __pyx_L1_error)
+  ((struct __pyx_vtabstruct_5humon_Trove *)__pyx_v_self->__pyx_vtab)->_make_serialize_options(__pyx_v_self, (&__pyx_v_opts), __pyx_v_whitespace_format, __pyx_v_indent_size, __pyx_v_indent_with_tabs, __pyx_v_use_colors, __pyx_t_1, ((PyObject*)__pyx_v_b_color_table), __pyx_v_c_color_table, __pyx_v_print_comments, __pyx_v_cnewline, ((PyObject*)__pyx_t_2), __pyx_v_print_bom); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 266, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "humon.pyx":262
+  /* "humon.pyx":272
  *         cdef c.huErrorCode res
  *         cdef const char * cpath
  *         bpath = str(path).encode('utf-8')             # <<<<<<<<<<<<<<
  *         cpath, len_cpath = bpath, len(bpath)
  *         mpath = <char *> malloc((len_cpath + 1) * sizeof(char))
  */
-  __pyx_t_1 = __Pyx_PyObject_Str(__pyx_v_path); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 262, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Str(__pyx_v_path); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 272, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 262, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 272, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = NULL;
@@ -8483,48 +8671,48 @@ static PyObject *__pyx_pf_5humon_5Trove_8to_file(struct __pyx_obj_5humon_Trove *
     PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_kp_u_utf_8};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 262, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 272, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __pyx_v_bpath = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "humon.pyx":263
+  /* "humon.pyx":273
  *         cdef const char * cpath
  *         bpath = str(path).encode('utf-8')
  *         cpath, len_cpath = bpath, len(bpath)             # <<<<<<<<<<<<<<
  *         mpath = <char *> malloc((len_cpath + 1) * sizeof(char))
  *         try:
  */
-  __pyx_t_8 = __Pyx_PyObject_AsString(__pyx_v_bpath); if (unlikely((!__pyx_t_8) && PyErr_Occurred())) __PYX_ERR(0, 263, __pyx_L1_error)
-  __pyx_t_6 = PyObject_Length(__pyx_v_bpath); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 263, __pyx_L1_error)
-  __pyx_t_2 = PyInt_FromSsize_t(__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 263, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_AsString(__pyx_v_bpath); if (unlikely((!__pyx_t_8) && PyErr_Occurred())) __PYX_ERR(0, 273, __pyx_L1_error)
+  __pyx_t_6 = PyObject_Length(__pyx_v_bpath); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 273, __pyx_L1_error)
+  __pyx_t_2 = PyInt_FromSsize_t(__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 273, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_v_cpath = __pyx_t_8;
   __pyx_v_len_cpath = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "humon.pyx":264
+  /* "humon.pyx":274
  *         bpath = str(path).encode('utf-8')
  *         cpath, len_cpath = bpath, len(bpath)
  *         mpath = <char *> malloc((len_cpath + 1) * sizeof(char))             # <<<<<<<<<<<<<<
  *         try:
  *             strncpy(mpath, cpath, len_cpath)
  */
-  __pyx_t_2 = __Pyx_PyInt_AddObjC(__pyx_v_len_cpath, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_AddObjC(__pyx_v_len_cpath, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 274, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyInt_FromSize_t((sizeof(char))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_FromSize_t((sizeof(char))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 274, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = PyNumber_Multiply(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Multiply(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 274, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_9 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_9 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 264, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_9 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 274, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_mpath = ((char *)malloc(__pyx_t_9));
 
-  /* "humon.pyx":265
+  /* "humon.pyx":275
  *         cpath, len_cpath = bpath, len(bpath)
  *         mpath = <char *> malloc((len_cpath + 1) * sizeof(char))
  *         try:             # <<<<<<<<<<<<<<
@@ -8533,27 +8721,27 @@ static PyObject *__pyx_pf_5humon_5Trove_8to_file(struct __pyx_obj_5humon_Trove *
  */
   /*try:*/ {
 
-    /* "humon.pyx":266
+    /* "humon.pyx":276
  *         mpath = <char *> malloc((len_cpath + 1) * sizeof(char))
  *         try:
  *             strncpy(mpath, cpath, len_cpath)             # <<<<<<<<<<<<<<
  *             mpath[len_cpath] = 0
  *             res = c.huSerializeTroveToFile(self._c_trove, mpath, NULL, & opts)
  */
-    __pyx_t_9 = __Pyx_PyInt_As_size_t(__pyx_v_len_cpath); if (unlikely((__pyx_t_9 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 266, __pyx_L6_error)
+    __pyx_t_9 = __Pyx_PyInt_As_size_t(__pyx_v_len_cpath); if (unlikely((__pyx_t_9 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 276, __pyx_L6_error)
     (void)(strncpy(__pyx_v_mpath, __pyx_v_cpath, __pyx_t_9));
 
-    /* "humon.pyx":267
+    /* "humon.pyx":277
  *         try:
  *             strncpy(mpath, cpath, len_cpath)
  *             mpath[len_cpath] = 0             # <<<<<<<<<<<<<<
  *             res = c.huSerializeTroveToFile(self._c_trove, mpath, NULL, & opts)
  *             if res != c.huErrorCode.HU_ERROR_NOERROR:
  */
-    __pyx_t_6 = __Pyx_PyIndex_AsSsize_t(__pyx_v_len_cpath); if (unlikely((__pyx_t_6 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 267, __pyx_L6_error)
+    __pyx_t_6 = __Pyx_PyIndex_AsSsize_t(__pyx_v_len_cpath); if (unlikely((__pyx_t_6 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 277, __pyx_L6_error)
     (__pyx_v_mpath[__pyx_t_6]) = 0;
 
-    /* "humon.pyx":268
+    /* "humon.pyx":278
  *             strncpy(mpath, cpath, len_cpath)
  *             mpath[len_cpath] = 0
  *             res = c.huSerializeTroveToFile(self._c_trove, mpath, NULL, & opts)             # <<<<<<<<<<<<<<
@@ -8562,7 +8750,7 @@ static PyObject *__pyx_pf_5humon_5Trove_8to_file(struct __pyx_obj_5humon_Trove *
  */
     __pyx_v_res = huSerializeTroveToFile(__pyx_v_self->_c_trove, __pyx_v_mpath, NULL, (&__pyx_v_opts));
 
-    /* "humon.pyx":269
+    /* "humon.pyx":279
  *             mpath[len_cpath] = 0
  *             res = c.huSerializeTroveToFile(self._c_trove, mpath, NULL, & opts)
  *             if res != c.huErrorCode.HU_ERROR_NOERROR:             # <<<<<<<<<<<<<<
@@ -8572,18 +8760,18 @@ static PyObject *__pyx_pf_5humon_5Trove_8to_file(struct __pyx_obj_5humon_Trove *
     __pyx_t_7 = (__pyx_v_res != HU_ERROR_NOERROR);
     if (unlikely(__pyx_t_7)) {
 
-      /* "humon.pyx":270
+      /* "humon.pyx":280
  *             res = c.huSerializeTroveToFile(self._c_trove, mpath, NULL, & opts)
  *             if res != c.huErrorCode.HU_ERROR_NOERROR:
  *                 raise SerializeError(f'Error code: {ErrorCode(res).name}')             # <<<<<<<<<<<<<<
  *         finally:
  *             free(mpath)
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_SerializeError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 270, __pyx_L6_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_SerializeError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 280, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_ErrorCode); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 270, __pyx_L6_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_ErrorCode); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 280, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_11 = __Pyx_PyInt_From_enum__huErrorCode_tag(__pyx_v_res); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 270, __pyx_L6_error)
+      __pyx_t_11 = __Pyx_PyInt_From_enum__huErrorCode_tag(__pyx_v_res); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 280, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_11);
       __pyx_t_12 = NULL;
       __pyx_t_4 = 0;
@@ -8604,17 +8792,17 @@ static PyObject *__pyx_pf_5humon_5Trove_8to_file(struct __pyx_obj_5humon_Trove *
         __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
         __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 270, __pyx_L6_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 280, __pyx_L6_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       }
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_name); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 270, __pyx_L6_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_name); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 280, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_t_10, __pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 270, __pyx_L6_error)
+      __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_t_10, __pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 280, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_10 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Error_code, __pyx_t_2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 270, __pyx_L6_error)
+      __pyx_t_10 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Error_code, __pyx_t_2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 280, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_2 = NULL;
@@ -8636,15 +8824,15 @@ static PyObject *__pyx_pf_5humon_5Trove_8to_file(struct __pyx_obj_5humon_Trove *
         __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 270, __pyx_L6_error)
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 280, __pyx_L6_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       }
       __Pyx_Raise(__pyx_t_1, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __PYX_ERR(0, 270, __pyx_L6_error)
+      __PYX_ERR(0, 280, __pyx_L6_error)
 
-      /* "humon.pyx":269
+      /* "humon.pyx":279
  *             mpath[len_cpath] = 0
  *             res = c.huSerializeTroveToFile(self._c_trove, mpath, NULL, & opts)
  *             if res != c.huErrorCode.HU_ERROR_NOERROR:             # <<<<<<<<<<<<<<
@@ -8654,7 +8842,7 @@ static PyObject *__pyx_pf_5humon_5Trove_8to_file(struct __pyx_obj_5humon_Trove *
     }
   }
 
-  /* "humon.pyx":272
+  /* "humon.pyx":282
  *                 raise SerializeError(f'Error code: {ErrorCode(res).name}')
  *         finally:
  *             free(mpath)             # <<<<<<<<<<<<<<
@@ -8706,7 +8894,7 @@ static PyObject *__pyx_pf_5humon_5Trove_8to_file(struct __pyx_obj_5humon_Trove *
     __pyx_L7:;
   }
 
-  /* "humon.pyx":273
+  /* "humon.pyx":283
  *         finally:
  *             free(mpath)
  *         return res             # <<<<<<<<<<<<<<
@@ -8714,13 +8902,13 @@ static PyObject *__pyx_pf_5humon_5Trove_8to_file(struct __pyx_obj_5humon_Trove *
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_enum__huErrorCode_tag(__pyx_v_res); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 273, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_enum__huErrorCode_tag(__pyx_v_res); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "humon.pyx":245
+  /* "humon.pyx":255
  *         return to_pstr_l_free(humon_string, size)
  * 
  *     def to_file(self, path: Path, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,             # <<<<<<<<<<<<<<
@@ -8748,7 +8936,7 @@ static PyObject *__pyx_pf_5humon_5Trove_8to_file(struct __pyx_obj_5humon_Trove *
   return __pyx_r;
 }
 
-/* "humon.pyx":275
+/* "humon.pyx":285
  *         return res
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -8780,7 +8968,7 @@ static PyObject *__pyx_pf_5humon_5Trove_9num_nodes___get__(struct __pyx_obj_5hum
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "humon.pyx":277
+  /* "humon.pyx":287
  *     @property
  *     def num_nodes(self) -> int:
  *         return c.huGetNumNodes(self._c_trove)             # <<<<<<<<<<<<<<
@@ -8788,13 +8976,13 @@ static PyObject *__pyx_pf_5humon_5Trove_9num_nodes___get__(struct __pyx_obj_5hum
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_huSize_t(huGetNumNodes(__pyx_v_self->_c_trove)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 277, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_huSize_t(huGetNumNodes(__pyx_v_self->_c_trove)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 287, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "humon.pyx":275
+  /* "humon.pyx":285
  *         return res
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -8813,7 +9001,7 @@ static PyObject *__pyx_pf_5humon_5Trove_9num_nodes___get__(struct __pyx_obj_5hum
   return __pyx_r;
 }
 
-/* "humon.pyx":279
+/* "humon.pyx":289
  *         return c.huGetNumNodes(self._c_trove)
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -8846,7 +9034,7 @@ static PyObject *__pyx_pf_5humon_5Trove_4root___get__(struct __pyx_obj_5humon_Tr
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "humon.pyx":281
+  /* "humon.pyx":291
  *     @property
  *     def root(self) -> Node | None:
  *         return Node().c(c.huGetRootNode(self._c_trove))             # <<<<<<<<<<<<<<
@@ -8854,16 +9042,16 @@ static PyObject *__pyx_pf_5humon_5Trove_4root___get__(struct __pyx_obj_5humon_Tr
  *     def get_node(self, idx: int | str) -> Node | None:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 281, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 291, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_1)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_1), huGetRootNode(__pyx_v_self->_c_trove))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 281, __pyx_L1_error)
+  __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_1)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_1), huGetRootNode(__pyx_v_self->_c_trove))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 291, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "humon.pyx":279
+  /* "humon.pyx":289
  *         return c.huGetNumNodes(self._c_trove)
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -8883,7 +9071,7 @@ static PyObject *__pyx_pf_5humon_5Trove_4root___get__(struct __pyx_obj_5humon_Tr
   return __pyx_r;
 }
 
-/* "humon.pyx":283
+/* "humon.pyx":293
  *         return Node().c(c.huGetRootNode(self._c_trove))
  * 
  *     def get_node(self, idx: int | str) -> Node | None:             # <<<<<<<<<<<<<<
@@ -8944,12 +9132,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 283, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 293, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_node") < 0)) __PYX_ERR(0, 283, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_node") < 0)) __PYX_ERR(0, 293, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -8960,7 +9148,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_node", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 283, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_node", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 293, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -9006,7 +9194,7 @@ static PyObject *__pyx_pf_5humon_5Trove_10get_node(struct __pyx_obj_5humon_Trove
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_node", 1);
 
-  /* "humon.pyx":284
+  /* "humon.pyx":294
  * 
  *     def get_node(self, idx: int | str) -> Node | None:
  *         cdef char * caddr = NULL             # <<<<<<<<<<<<<<
@@ -9015,7 +9203,7 @@ static PyObject *__pyx_pf_5humon_5Trove_10get_node(struct __pyx_obj_5humon_Trove
  */
   __pyx_v_caddr = NULL;
 
-  /* "humon.pyx":285
+  /* "humon.pyx":295
  *     def get_node(self, idx: int | str) -> Node | None:
  *         cdef char * caddr = NULL
  *         if isinstance(idx, str):             # <<<<<<<<<<<<<<
@@ -9025,14 +9213,14 @@ static PyObject *__pyx_pf_5humon_5Trove_10get_node(struct __pyx_obj_5humon_Trove
   __pyx_t_1 = PyUnicode_Check(__pyx_v_idx); 
   if (__pyx_t_1) {
 
-    /* "humon.pyx":286
+    /* "humon.pyx":296
  *         cdef char * caddr = NULL
  *         if isinstance(idx, str):
  *             bidx = idx.encode('utf-8')             # <<<<<<<<<<<<<<
  *             caddr, len_caddr = bidx, len(bidx)
  *             return Node().c(c.huGetNodeByAddressN(self._c_trove, caddr, len_caddr))
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_idx, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 286, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_idx, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 296, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -9052,43 +9240,43 @@ static PyObject *__pyx_pf_5humon_5Trove_10get_node(struct __pyx_obj_5humon_Trove
       PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_kp_u_utf_8};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 286, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 296, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
     __pyx_v_bidx = __pyx_t_2;
     __pyx_t_2 = 0;
 
-    /* "humon.pyx":287
+    /* "humon.pyx":297
  *         if isinstance(idx, str):
  *             bidx = idx.encode('utf-8')
  *             caddr, len_caddr = bidx, len(bidx)             # <<<<<<<<<<<<<<
  *             return Node().c(c.huGetNodeByAddressN(self._c_trove, caddr, len_caddr))
- *         return Node().c(c.huGetNodeByIndex(self._c_trove, idx))
+ *         elif isinstance(idx, int):
  */
-    __pyx_t_6 = __Pyx_PyObject_AsWritableString(__pyx_v_bidx); if (unlikely((!__pyx_t_6) && PyErr_Occurred())) __PYX_ERR(0, 287, __pyx_L1_error)
-    __pyx_t_7 = PyObject_Length(__pyx_v_bidx); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 287, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_AsWritableString(__pyx_v_bidx); if (unlikely((!__pyx_t_6) && PyErr_Occurred())) __PYX_ERR(0, 297, __pyx_L1_error)
+    __pyx_t_7 = PyObject_Length(__pyx_v_bidx); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 297, __pyx_L1_error)
     __pyx_v_caddr = __pyx_t_6;
     __pyx_v_len_caddr = __pyx_t_7;
 
-    /* "humon.pyx":288
+    /* "humon.pyx":298
  *             bidx = idx.encode('utf-8')
  *             caddr, len_caddr = bidx, len(bidx)
  *             return Node().c(c.huGetNodeByAddressN(self._c_trove, caddr, len_caddr))             # <<<<<<<<<<<<<<
- *         return Node().c(c.huGetNodeByIndex(self._c_trove, idx))
- * 
+ *         elif isinstance(idx, int):
+ *             return Node().c(c.huGetNodeByIndex(self._c_trove, idx))
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_2 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 288, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 298, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_2)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_2), huGetNodeByAddressN(__pyx_v_self->_c_trove, __pyx_v_caddr, __pyx_v_len_caddr))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 288, __pyx_L1_error)
+    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_2)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_2), huGetNodeByAddressN(__pyx_v_self->_c_trove, __pyx_v_caddr, __pyx_v_len_caddr))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 298, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "humon.pyx":285
+    /* "humon.pyx":295
  *     def get_node(self, idx: int | str) -> Node | None:
  *         cdef char * caddr = NULL
  *         if isinstance(idx, str):             # <<<<<<<<<<<<<<
@@ -9097,25 +9285,59 @@ static PyObject *__pyx_pf_5humon_5Trove_10get_node(struct __pyx_obj_5humon_Trove
  */
   }
 
-  /* "humon.pyx":289
+  /* "humon.pyx":299
  *             caddr, len_caddr = bidx, len(bidx)
  *             return Node().c(c.huGetNodeByAddressN(self._c_trove, caddr, len_caddr))
- *         return Node().c(c.huGetNodeByIndex(self._c_trove, idx))             # <<<<<<<<<<<<<<
+ *         elif isinstance(idx, int):             # <<<<<<<<<<<<<<
+ *             return Node().c(c.huGetNodeByIndex(self._c_trove, idx))
+ *         else:
+ */
+  __pyx_t_1 = PyInt_Check(__pyx_v_idx); 
+  if (likely(__pyx_t_1)) {
+
+    /* "humon.pyx":300
+ *             return Node().c(c.huGetNodeByAddressN(self._c_trove, caddr, len_caddr))
+ *         elif isinstance(idx, int):
+ *             return Node().c(c.huGetNodeByIndex(self._c_trove, idx))             # <<<<<<<<<<<<<<
+ *         else:
+ *             raise TypeError(idx)
+ */
+    __Pyx_XDECREF(__pyx_r);
+    __pyx_t_3 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 300, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_8 = __Pyx_PyInt_As_huSize_t(__pyx_v_idx); if (unlikely((__pyx_t_8 == ((huSize_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 300, __pyx_L1_error)
+    __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_3)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_3), huGetNodeByIndex(__pyx_v_self->_c_trove, __pyx_t_8))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 300, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_r = __pyx_t_2;
+    __pyx_t_2 = 0;
+    goto __pyx_L0;
+
+    /* "humon.pyx":299
+ *             caddr, len_caddr = bidx, len(bidx)
+ *             return Node().c(c.huGetNodeByAddressN(self._c_trove, caddr, len_caddr))
+ *         elif isinstance(idx, int):             # <<<<<<<<<<<<<<
+ *             return Node().c(c.huGetNodeByIndex(self._c_trove, idx))
+ *         else:
+ */
+  }
+
+  /* "humon.pyx":302
+ *             return Node().c(c.huGetNodeByIndex(self._c_trove, idx))
+ *         else:
+ *             raise TypeError(idx)             # <<<<<<<<<<<<<<
  * 
  *     @property
  */
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 289, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_8 = __Pyx_PyInt_As_huSize_t(__pyx_v_idx); if (unlikely((__pyx_t_8 == ((huSize_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 289, __pyx_L1_error)
-  __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_3)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_3), huGetNodeByIndex(__pyx_v_self->_c_trove, __pyx_t_8))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 289, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_r = __pyx_t_2;
-  __pyx_t_2 = 0;
-  goto __pyx_L0;
+  /*else*/ {
+    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_TypeError, __pyx_v_idx); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 302, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __PYX_ERR(0, 302, __pyx_L1_error)
+  }
 
-  /* "humon.pyx":283
+  /* "humon.pyx":293
  *         return Node().c(c.huGetRootNode(self._c_trove))
  * 
  *     def get_node(self, idx: int | str) -> Node | None:             # <<<<<<<<<<<<<<
@@ -9137,8 +9359,8 @@ static PyObject *__pyx_pf_5humon_5Trove_10get_node(struct __pyx_obj_5humon_Trove
   return __pyx_r;
 }
 
-/* "humon.pyx":291
- *         return Node().c(c.huGetNodeByIndex(self._c_trove, idx))
+/* "humon.pyx":304
+ *             raise TypeError(idx)
  * 
  *     @property             # <<<<<<<<<<<<<<
  *     def source_text(self) -> str | None:
@@ -9170,7 +9392,7 @@ static PyObject *__pyx_pf_5humon_5Trove_11source_text___get__(struct __pyx_obj_5
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "humon.pyx":293
+  /* "humon.pyx":306
  *     @property
  *     def source_text(self) -> str | None:
  *         st = c.huGetTroveSourceText(self._c_trove)             # <<<<<<<<<<<<<<
@@ -9179,7 +9401,7 @@ static PyObject *__pyx_pf_5humon_5Trove_11source_text___get__(struct __pyx_obj_5
  */
   __pyx_v_st = huGetTroveSourceText(__pyx_v_self->_c_trove);
 
-  /* "humon.pyx":294
+  /* "humon.pyx":307
  *     def source_text(self) -> str | None:
  *         st = c.huGetTroveSourceText(self._c_trove)
  *         return to_pstr_l(st.ptr, st.size)             # <<<<<<<<<<<<<<
@@ -9187,14 +9409,14 @@ static PyObject *__pyx_pf_5humon_5Trove_11source_text___get__(struct __pyx_obj_5
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_5humon_to_pstr_l(__pyx_v_st.ptr, __pyx_v_st.size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 294, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5humon_to_pstr_l(__pyx_v_st.ptr, __pyx_v_st.size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 307, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "humon.pyx":291
- *         return Node().c(c.huGetNodeByIndex(self._c_trove, idx))
+  /* "humon.pyx":304
+ *             raise TypeError(idx)
  * 
  *     @property             # <<<<<<<<<<<<<<
  *     def source_text(self) -> str | None:
@@ -9212,7 +9434,7 @@ static PyObject *__pyx_pf_5humon_5Trove_11source_text___get__(struct __pyx_obj_5
   return __pyx_r;
 }
 
-/* "humon.pyx":296
+/* "humon.pyx":309
  *         return to_pstr_l(st.ptr, st.size)
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -9261,19 +9483,19 @@ static PyObject *__pyx_pf_5humon_5Trove_8metatags___get__(struct __pyx_obj_5humo
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "humon.pyx":298
+  /* "humon.pyx":311
  *     @property
  *     def metatags(self) -> dict[str, str]:
  *         metatags = {}             # <<<<<<<<<<<<<<
  *         cdef int num_metatags = c.huGetNumTroveMetatags(self._c_trove)
  *         cdef const c.huMetatag * cmetatag
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 298, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 311, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_metatags = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "humon.pyx":299
+  /* "humon.pyx":312
  *     def metatags(self) -> dict[str, str]:
  *         metatags = {}
  *         cdef int num_metatags = c.huGetNumTroveMetatags(self._c_trove)             # <<<<<<<<<<<<<<
@@ -9282,7 +9504,7 @@ static PyObject *__pyx_pf_5humon_5Trove_8metatags___get__(struct __pyx_obj_5humo
  */
   __pyx_v_num_metatags = huGetNumTroveMetatags(__pyx_v_self->_c_trove);
 
-  /* "humon.pyx":305
+  /* "humon.pyx":318
  *         cdef const c.huStringView * ak
  *         cdef const c.huStringView * av
  *         for i in range(num_metatags):             # <<<<<<<<<<<<<<
@@ -9294,7 +9516,7 @@ static PyObject *__pyx_pf_5humon_5Trove_8metatags___get__(struct __pyx_obj_5humo
   for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
     __pyx_v_i = __pyx_t_4;
 
-    /* "humon.pyx":306
+    /* "humon.pyx":319
  *         cdef const c.huStringView * av
  *         for i in range(num_metatags):
  *             cmetatag = c.huGetTroveMetatag(self._c_trove, i)             # <<<<<<<<<<<<<<
@@ -9303,7 +9525,7 @@ static PyObject *__pyx_pf_5humon_5Trove_8metatags___get__(struct __pyx_obj_5humo
  */
     __pyx_v_cmetatag = huGetTroveMetatag(__pyx_v_self->_c_trove, __pyx_v_i);
 
-    /* "humon.pyx":307
+    /* "humon.pyx":320
  *         for i in range(num_metatags):
  *             cmetatag = c.huGetTroveMetatag(self._c_trove, i)
  *             tk, tv = cmetatag.key, cmetatag.value             # <<<<<<<<<<<<<<
@@ -9315,7 +9537,7 @@ static PyObject *__pyx_pf_5humon_5Trove_8metatags___get__(struct __pyx_obj_5humo
     __pyx_v_tk = __pyx_t_5;
     __pyx_v_tv = __pyx_t_6;
 
-    /* "humon.pyx":308
+    /* "humon.pyx":321
  *             cmetatag = c.huGetTroveMetatag(self._c_trove, i)
  *             tk, tv = cmetatag.key, cmetatag.value
  *             ak, av = c.huGetString(tk), c.huGetString(tv)             # <<<<<<<<<<<<<<
@@ -9327,41 +9549,41 @@ static PyObject *__pyx_pf_5humon_5Trove_8metatags___get__(struct __pyx_obj_5humo
     __pyx_v_ak = __pyx_t_7;
     __pyx_v_av = __pyx_t_8;
 
-    /* "humon.pyx":309
+    /* "humon.pyx":322
  *             tk, tv = cmetatag.key, cmetatag.value
  *             ak, av = c.huGetString(tk), c.huGetString(tv)
  *             pak = to_pstr_l(ak.ptr, ak.size)             # <<<<<<<<<<<<<<
  *             pav = to_pstr_l(av.ptr, av.size)
  *             metatags[pak] = pav
  */
-    __pyx_t_1 = __pyx_f_5humon_to_pstr_l(__pyx_v_ak->ptr, __pyx_v_ak->size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 309, __pyx_L1_error)
+    __pyx_t_1 = __pyx_f_5humon_to_pstr_l(__pyx_v_ak->ptr, __pyx_v_ak->size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 322, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_XDECREF_SET(__pyx_v_pak, ((PyObject*)__pyx_t_1));
     __pyx_t_1 = 0;
 
-    /* "humon.pyx":310
+    /* "humon.pyx":323
  *             ak, av = c.huGetString(tk), c.huGetString(tv)
  *             pak = to_pstr_l(ak.ptr, ak.size)
  *             pav = to_pstr_l(av.ptr, av.size)             # <<<<<<<<<<<<<<
  *             metatags[pak] = pav
  *         return metatags
  */
-    __pyx_t_1 = __pyx_f_5humon_to_pstr_l(__pyx_v_av->ptr, __pyx_v_av->size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 310, __pyx_L1_error)
+    __pyx_t_1 = __pyx_f_5humon_to_pstr_l(__pyx_v_av->ptr, __pyx_v_av->size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 323, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_XDECREF_SET(__pyx_v_pav, ((PyObject*)__pyx_t_1));
     __pyx_t_1 = 0;
 
-    /* "humon.pyx":311
+    /* "humon.pyx":324
  *             pak = to_pstr_l(ak.ptr, ak.size)
  *             pav = to_pstr_l(av.ptr, av.size)
  *             metatags[pak] = pav             # <<<<<<<<<<<<<<
  *         return metatags
  * 
  */
-    if (unlikely((PyDict_SetItem(__pyx_v_metatags, __pyx_v_pak, __pyx_v_pav) < 0))) __PYX_ERR(0, 311, __pyx_L1_error)
+    if (unlikely((PyDict_SetItem(__pyx_v_metatags, __pyx_v_pak, __pyx_v_pav) < 0))) __PYX_ERR(0, 324, __pyx_L1_error)
   }
 
-  /* "humon.pyx":312
+  /* "humon.pyx":325
  *             pav = to_pstr_l(av.ptr, av.size)
  *             metatags[pak] = pav
  *         return metatags             # <<<<<<<<<<<<<<
@@ -9373,7 +9595,7 @@ static PyObject *__pyx_pf_5humon_5Trove_8metatags___get__(struct __pyx_obj_5humo
   __pyx_r = __pyx_v_metatags;
   goto __pyx_L0;
 
-  /* "humon.pyx":296
+  /* "humon.pyx":309
  *         return to_pstr_l(st.ptr, st.size)
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -9609,7 +9831,7 @@ static PyObject *__pyx_pf_5humon_5Trove_14__setstate_cython__(CYTHON_UNUSED stru
   return __pyx_r;
 }
 
-/* "humon.pyx":318
+/* "humon.pyx":331
  *     cdef const c.huNode * _c_node
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -9645,7 +9867,7 @@ static int __pyx_pf_5humon_4Node___cinit__(CYTHON_UNUSED struct __pyx_obj_5humon
   CYTHON_UNUSED void *__pyx_v__c_node;
   int __pyx_r;
 
-  /* "humon.pyx":319
+  /* "humon.pyx":332
  * 
  *     def __cinit__(self):
  *         _c_node = NULL             # <<<<<<<<<<<<<<
@@ -9654,7 +9876,7 @@ static int __pyx_pf_5humon_4Node___cinit__(CYTHON_UNUSED struct __pyx_obj_5humon
  */
   __pyx_v__c_node = NULL;
 
-  /* "humon.pyx":318
+  /* "humon.pyx":331
  *     cdef const c.huNode * _c_node
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -9667,7 +9889,7 @@ static int __pyx_pf_5humon_4Node___cinit__(CYTHON_UNUSED struct __pyx_obj_5humon
   return __pyx_r;
 }
 
-/* "humon.pyx":321
+/* "humon.pyx":334
  *         _c_node = NULL
  * 
  *     cdef Node c(self, const c.huNode * c_node):             # <<<<<<<<<<<<<<
@@ -9681,7 +9903,7 @@ static struct __pyx_obj_5humon_Node *__pyx_f_5humon_4Node_c(struct __pyx_obj_5hu
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("c", 1);
 
-  /* "humon.pyx":322
+  /* "humon.pyx":335
  * 
  *     cdef Node c(self, const c.huNode * c_node):
  *         if c_node == NULL:             # <<<<<<<<<<<<<<
@@ -9691,7 +9913,7 @@ static struct __pyx_obj_5humon_Node *__pyx_f_5humon_4Node_c(struct __pyx_obj_5hu
   __pyx_t_1 = (__pyx_v_c_node == NULL);
   if (__pyx_t_1) {
 
-    /* "humon.pyx":323
+    /* "humon.pyx":336
  *     cdef Node c(self, const c.huNode * c_node):
  *         if c_node == NULL:
  *             return None             # <<<<<<<<<<<<<<
@@ -9702,7 +9924,7 @@ static struct __pyx_obj_5humon_Node *__pyx_f_5humon_4Node_c(struct __pyx_obj_5hu
     __pyx_r = ((struct __pyx_obj_5humon_Node *)Py_None); __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "humon.pyx":322
+    /* "humon.pyx":335
  * 
  *     cdef Node c(self, const c.huNode * c_node):
  *         if c_node == NULL:             # <<<<<<<<<<<<<<
@@ -9711,7 +9933,7 @@ static struct __pyx_obj_5humon_Node *__pyx_f_5humon_4Node_c(struct __pyx_obj_5hu
  */
   }
 
-  /* "humon.pyx":324
+  /* "humon.pyx":337
  *         if c_node == NULL:
  *             return None
  *         self._c_node = c_node             # <<<<<<<<<<<<<<
@@ -9720,7 +9942,7 @@ static struct __pyx_obj_5humon_Node *__pyx_f_5humon_4Node_c(struct __pyx_obj_5hu
  */
   __pyx_v_self->_c_node = __pyx_v_c_node;
 
-  /* "humon.pyx":325
+  /* "humon.pyx":338
  *             return None
  *         self._c_node = c_node
  *         return self             # <<<<<<<<<<<<<<
@@ -9732,7 +9954,7 @@ static struct __pyx_obj_5humon_Node *__pyx_f_5humon_4Node_c(struct __pyx_obj_5hu
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "humon.pyx":321
+  /* "humon.pyx":334
  *         _c_node = NULL
  * 
  *     cdef Node c(self, const c.huNode * c_node):             # <<<<<<<<<<<<<<
@@ -9747,7 +9969,7 @@ static struct __pyx_obj_5humon_Node *__pyx_f_5humon_4Node_c(struct __pyx_obj_5hu
   return __pyx_r;
 }
 
-/* "humon.pyx":327
+/* "humon.pyx":340
  *         return self
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -9779,7 +10001,7 @@ static PyObject *__pyx_pf_5humon_4Node_6isnull___get__(struct __pyx_obj_5humon_N
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "humon.pyx":329
+  /* "humon.pyx":342
  *     @property
  *     def isnull(self) -> bool:
  *         return self._c_node == NULL             # <<<<<<<<<<<<<<
@@ -9787,13 +10009,13 @@ static PyObject *__pyx_pf_5humon_4Node_6isnull___get__(struct __pyx_obj_5humon_N
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong((__pyx_v_self->_c_node == NULL)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 329, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong((__pyx_v_self->_c_node == NULL)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 342, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "humon.pyx":327
+  /* "humon.pyx":340
  *         return self
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -9812,7 +10034,7 @@ static PyObject *__pyx_pf_5humon_4Node_6isnull___get__(struct __pyx_obj_5humon_N
   return __pyx_r;
 }
 
-/* "humon.pyx":331
+/* "humon.pyx":344
  *         return self._c_node == NULL
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -9849,20 +10071,20 @@ static PyObject *__pyx_pf_5humon_4Node_4kind___get__(struct __pyx_obj_5humon_Nod
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "humon.pyx":333
+  /* "humon.pyx":346
  *     @property
  *     def kind(self) -> NodeKind:
  *         if self.isnull:             # <<<<<<<<<<<<<<
  *             return NodeKind.NULLNODE
  *         return NodeKind(c.huGetNodeKind(self._c_node))
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 333, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 346, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 333, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 346, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "humon.pyx":334
+    /* "humon.pyx":347
  *     def kind(self) -> NodeKind:
  *         if self.isnull:
  *             return NodeKind.NULLNODE             # <<<<<<<<<<<<<<
@@ -9870,16 +10092,16 @@ static PyObject *__pyx_pf_5humon_4Node_4kind___get__(struct __pyx_obj_5humon_Nod
  * 
  */
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_NodeKind); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 334, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_NodeKind); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 347, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_NULLNODE); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 334, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_NULLNODE); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 347, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "humon.pyx":333
+    /* "humon.pyx":346
  *     @property
  *     def kind(self) -> NodeKind:
  *         if self.isnull:             # <<<<<<<<<<<<<<
@@ -9888,7 +10110,7 @@ static PyObject *__pyx_pf_5humon_4Node_4kind___get__(struct __pyx_obj_5humon_Nod
  */
   }
 
-  /* "humon.pyx":335
+  /* "humon.pyx":348
  *         if self.isnull:
  *             return NodeKind.NULLNODE
  *         return NodeKind(c.huGetNodeKind(self._c_node))             # <<<<<<<<<<<<<<
@@ -9896,9 +10118,9 @@ static PyObject *__pyx_pf_5humon_4Node_4kind___get__(struct __pyx_obj_5humon_Nod
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_NodeKind); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_NodeKind); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 348, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyInt_From_enum__huNodeKind_tag(huGetNodeKind(__pyx_v_self->_c_node)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_enum__huNodeKind_tag(huGetNodeKind(__pyx_v_self->_c_node)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 348, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   __pyx_t_6 = 0;
@@ -9919,7 +10141,7 @@ static PyObject *__pyx_pf_5humon_4Node_4kind___get__(struct __pyx_obj_5humon_Nod
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_6, 1+__pyx_t_6);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 335, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 348, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
@@ -9927,7 +10149,7 @@ static PyObject *__pyx_pf_5humon_4Node_4kind___get__(struct __pyx_obj_5humon_Nod
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "humon.pyx":331
+  /* "humon.pyx":344
  *         return self._c_node == NULL
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -9949,7 +10171,7 @@ static PyObject *__pyx_pf_5humon_4Node_4kind___get__(struct __pyx_obj_5humon_Nod
   return __pyx_r;
 }
 
-/* "humon.pyx":337
+/* "humon.pyx":350
  *         return NodeKind(c.huGetNodeKind(self._c_node))
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -9983,20 +10205,20 @@ static PyObject *__pyx_pf_5humon_4Node_6parent___get__(struct __pyx_obj_5humon_N
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "humon.pyx":339
+  /* "humon.pyx":352
  *     @property
  *     def parent(self) -> Node | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
  *             return None
  *         return Node().c(c.huGetParent(self._c_node))
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 339, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 352, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 339, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 352, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "humon.pyx":340
+    /* "humon.pyx":353
  *     def parent(self) -> Node | None:
  *         if self.isnull:
  *             return None             # <<<<<<<<<<<<<<
@@ -10007,7 +10229,7 @@ static PyObject *__pyx_pf_5humon_4Node_6parent___get__(struct __pyx_obj_5humon_N
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "humon.pyx":339
+    /* "humon.pyx":352
  *     @property
  *     def parent(self) -> Node | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
@@ -10016,7 +10238,7 @@ static PyObject *__pyx_pf_5humon_4Node_6parent___get__(struct __pyx_obj_5humon_N
  */
   }
 
-  /* "humon.pyx":341
+  /* "humon.pyx":354
  *         if self.isnull:
  *             return None
  *         return Node().c(c.huGetParent(self._c_node))             # <<<<<<<<<<<<<<
@@ -10024,16 +10246,16 @@ static PyObject *__pyx_pf_5humon_4Node_6parent___get__(struct __pyx_obj_5humon_N
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 341, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 354, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_1)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_1), huGetParent(__pyx_v_self->_c_node))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 341, __pyx_L1_error)
+  __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_1)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_1), huGetParent(__pyx_v_self->_c_node))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 354, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "humon.pyx":337
+  /* "humon.pyx":350
  *         return NodeKind(c.huGetNodeKind(self._c_node))
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -10053,7 +10275,7 @@ static PyObject *__pyx_pf_5humon_4Node_6parent___get__(struct __pyx_obj_5humon_N
   return __pyx_r;
 }
 
-/* "humon.pyx":343
+/* "humon.pyx":356
  *         return Node().c(c.huGetParent(self._c_node))
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -10086,20 +10308,20 @@ static PyObject *__pyx_pf_5humon_4Node_12num_children___get__(struct __pyx_obj_5
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "humon.pyx":345
+  /* "humon.pyx":358
  *     @property
  *     def num_children(self) -> Node | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
  *             return None
  *         return c.huGetNumChildren(self._c_node)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 345, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 358, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 345, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 358, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "humon.pyx":346
+    /* "humon.pyx":359
  *     def num_children(self) -> Node | None:
  *         if self.isnull:
  *             return None             # <<<<<<<<<<<<<<
@@ -10110,7 +10332,7 @@ static PyObject *__pyx_pf_5humon_4Node_12num_children___get__(struct __pyx_obj_5
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "humon.pyx":345
+    /* "humon.pyx":358
  *     @property
  *     def num_children(self) -> Node | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
@@ -10119,7 +10341,7 @@ static PyObject *__pyx_pf_5humon_4Node_12num_children___get__(struct __pyx_obj_5
  */
   }
 
-  /* "humon.pyx":347
+  /* "humon.pyx":360
  *         if self.isnull:
  *             return None
  *         return c.huGetNumChildren(self._c_node)             # <<<<<<<<<<<<<<
@@ -10127,13 +10349,13 @@ static PyObject *__pyx_pf_5humon_4Node_12num_children___get__(struct __pyx_obj_5
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_huSize_t(huGetNumChildren(__pyx_v_self->_c_node)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 347, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_huSize_t(huGetNumChildren(__pyx_v_self->_c_node)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 360, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "humon.pyx":343
+  /* "humon.pyx":356
  *         return Node().c(c.huGetParent(self._c_node))
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -10152,7 +10374,7 @@ static PyObject *__pyx_pf_5humon_4Node_12num_children___get__(struct __pyx_obj_5
   return __pyx_r;
 }
 
-/* "humon.pyx":349
+/* "humon.pyx":362
  *         return c.huGetNumChildren(self._c_node)
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -10185,20 +10407,20 @@ static PyObject *__pyx_pf_5humon_4Node_10node_index___get__(struct __pyx_obj_5hu
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "humon.pyx":351
+  /* "humon.pyx":364
  *     @property
  *     def node_index(self) -> int:
  *         if self.isnull:             # <<<<<<<<<<<<<<
  *             return -1
  *         return c.huGetNodeIndex(self._c_node)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 351, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 364, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 351, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 364, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "humon.pyx":352
+    /* "humon.pyx":365
  *     def node_index(self) -> int:
  *         if self.isnull:
  *             return -1             # <<<<<<<<<<<<<<
@@ -10210,7 +10432,7 @@ static PyObject *__pyx_pf_5humon_4Node_10node_index___get__(struct __pyx_obj_5hu
     __pyx_r = __pyx_int_neg_1;
     goto __pyx_L0;
 
-    /* "humon.pyx":351
+    /* "humon.pyx":364
  *     @property
  *     def node_index(self) -> int:
  *         if self.isnull:             # <<<<<<<<<<<<<<
@@ -10219,7 +10441,7 @@ static PyObject *__pyx_pf_5humon_4Node_10node_index___get__(struct __pyx_obj_5hu
  */
   }
 
-  /* "humon.pyx":353
+  /* "humon.pyx":366
  *         if self.isnull:
  *             return -1
  *         return c.huGetNodeIndex(self._c_node)             # <<<<<<<<<<<<<<
@@ -10227,13 +10449,13 @@ static PyObject *__pyx_pf_5humon_4Node_10node_index___get__(struct __pyx_obj_5hu
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_huSize_t(huGetNodeIndex(__pyx_v_self->_c_node)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 353, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_huSize_t(huGetNodeIndex(__pyx_v_self->_c_node)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 366, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "humon.pyx":349
+  /* "humon.pyx":362
  *         return c.huGetNumChildren(self._c_node)
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -10252,7 +10474,7 @@ static PyObject *__pyx_pf_5humon_4Node_10node_index___get__(struct __pyx_obj_5hu
   return __pyx_r;
 }
 
-/* "humon.pyx":355
+/* "humon.pyx":368
  *         return c.huGetNodeIndex(self._c_node)
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -10285,24 +10507,24 @@ static PyObject *__pyx_pf_5humon_4Node_11child_index___get__(struct __pyx_obj_5h
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "humon.pyx":357
+  /* "humon.pyx":370
  *     @property
  *     def child_index(self) -> int:
  *         if self.isnull:             # <<<<<<<<<<<<<<
  *             return -1
- *         return c.huGetChildOrdinal(self._c_node)
+ *         return c.huGetChildIndex(self._c_node)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 357, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 370, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 357, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 370, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "humon.pyx":358
+    /* "humon.pyx":371
  *     def child_index(self) -> int:
  *         if self.isnull:
  *             return -1             # <<<<<<<<<<<<<<
- *         return c.huGetChildOrdinal(self._c_node)
+ *         return c.huGetChildIndex(self._c_node)
  * 
  */
     __Pyx_XDECREF(__pyx_r);
@@ -10310,30 +10532,30 @@ static PyObject *__pyx_pf_5humon_4Node_11child_index___get__(struct __pyx_obj_5h
     __pyx_r = __pyx_int_neg_1;
     goto __pyx_L0;
 
-    /* "humon.pyx":357
+    /* "humon.pyx":370
  *     @property
  *     def child_index(self) -> int:
  *         if self.isnull:             # <<<<<<<<<<<<<<
  *             return -1
- *         return c.huGetChildOrdinal(self._c_node)
+ *         return c.huGetChildIndex(self._c_node)
  */
   }
 
-  /* "humon.pyx":359
+  /* "humon.pyx":372
  *         if self.isnull:
  *             return -1
- *         return c.huGetChildOrdinal(self._c_node)             # <<<<<<<<<<<<<<
+ *         return c.huGetChildIndex(self._c_node)             # <<<<<<<<<<<<<<
  * 
  *     def __eq__(self, rhs: Node):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_huSize_t(huGetChildOrdinal(__pyx_v_self->_c_node)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 359, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_huSize_t(huGetChildIndex(__pyx_v_self->_c_node)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 372, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "humon.pyx":355
+  /* "humon.pyx":368
  *         return c.huGetNodeIndex(self._c_node)
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -10352,8 +10574,8 @@ static PyObject *__pyx_pf_5humon_4Node_11child_index___get__(struct __pyx_obj_5h
   return __pyx_r;
 }
 
-/* "humon.pyx":361
- *         return c.huGetChildOrdinal(self._c_node)
+/* "humon.pyx":374
+ *         return c.huGetChildIndex(self._c_node)
  * 
  *     def __eq__(self, rhs: Node):             # <<<<<<<<<<<<<<
  *         cdef const c.huNode * pn = rhs._c_node
@@ -10371,7 +10593,7 @@ static PyObject *__pyx_pw_5humon_4Node_3__eq__(PyObject *__pyx_v_self, PyObject 
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__eq__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_rhs), __pyx_ptype_5humon_Node, 0, "rhs", 0))) __PYX_ERR(0, 361, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_rhs), __pyx_ptype_5humon_Node, 0, "rhs", 0))) __PYX_ERR(0, 374, __pyx_L1_error)
   __pyx_r = __pyx_pf_5humon_4Node_2__eq__(((struct __pyx_obj_5humon_Node *)__pyx_v_self), ((struct __pyx_obj_5humon_Node *)__pyx_v_rhs));
 
   /* function exit code */
@@ -10394,7 +10616,7 @@ static PyObject *__pyx_pf_5humon_4Node_2__eq__(struct __pyx_obj_5humon_Node *__p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__eq__", 1);
 
-  /* "humon.pyx":362
+  /* "humon.pyx":375
  * 
  *     def __eq__(self, rhs: Node):
  *         cdef const c.huNode * pn = rhs._c_node             # <<<<<<<<<<<<<<
@@ -10404,7 +10626,7 @@ static PyObject *__pyx_pf_5humon_4Node_2__eq__(struct __pyx_obj_5humon_Node *__p
   __pyx_t_1 = __pyx_v_rhs->_c_node;
   __pyx_v_pn = __pyx_t_1;
 
-  /* "humon.pyx":363
+  /* "humon.pyx":376
  *     def __eq__(self, rhs: Node):
  *         cdef const c.huNode * pn = rhs._c_node
  *         return self._c_node == pn             # <<<<<<<<<<<<<<
@@ -10412,14 +10634,14 @@ static PyObject *__pyx_pf_5humon_4Node_2__eq__(struct __pyx_obj_5humon_Node *__p
  *     def __getitem__(self, idx: str | int | tuple[str, int]) -> Node | None:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyBool_FromLong((__pyx_v_self->_c_node == __pyx_v_pn)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 363, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyBool_FromLong((__pyx_v_self->_c_node == __pyx_v_pn)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 376, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "humon.pyx":361
- *         return c.huGetChildOrdinal(self._c_node)
+  /* "humon.pyx":374
+ *         return c.huGetChildIndex(self._c_node)
  * 
  *     def __eq__(self, rhs: Node):             # <<<<<<<<<<<<<<
  *         cdef const c.huNode * pn = rhs._c_node
@@ -10437,7 +10659,7 @@ static PyObject *__pyx_pf_5humon_4Node_2__eq__(struct __pyx_obj_5humon_Node *__p
   return __pyx_r;
 }
 
-/* "humon.pyx":365
+/* "humon.pyx":378
  *         return self._c_node == pn
  * 
  *     def __getitem__(self, idx: str | int | tuple[str, int]) -> Node | None:             # <<<<<<<<<<<<<<
@@ -10484,20 +10706,20 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__getitem__", 1);
 
-  /* "humon.pyx":366
+  /* "humon.pyx":379
  * 
  *     def __getitem__(self, idx: str | int | tuple[str, int]) -> Node | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
  *             return None
  *         cdef const char * ckey
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 366, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 379, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 366, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 379, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "humon.pyx":367
+    /* "humon.pyx":380
  *     def __getitem__(self, idx: str | int | tuple[str, int]) -> Node | None:
  *         if self.isnull:
  *             return None             # <<<<<<<<<<<<<<
@@ -10508,7 +10730,7 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "humon.pyx":366
+    /* "humon.pyx":379
  * 
  *     def __getitem__(self, idx: str | int | tuple[str, int]) -> Node | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
@@ -10517,7 +10739,7 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
  */
   }
 
-  /* "humon.pyx":370
+  /* "humon.pyx":383
  *         cdef const char * ckey
  *         cdef const c.huNode * cnn
  *         if isinstance(idx, str):             # <<<<<<<<<<<<<<
@@ -10527,14 +10749,14 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
   __pyx_t_2 = PyUnicode_Check(__pyx_v_idx); 
   if (__pyx_t_2) {
 
-    /* "humon.pyx":371
+    /* "humon.pyx":384
  *         cdef const c.huNode * cnn
  *         if isinstance(idx, str):
  *             bidx = idx.encode('utf-8')             # <<<<<<<<<<<<<<
  *             ckey, len_ckey = bidx, len(bidx)
  *             return Node().c(c.huGetChildByKeyN(self._c_node, ckey, len_ckey))
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_idx, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 371, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_idx, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 384, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -10554,26 +10776,26 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
       PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_kp_u_utf_8};
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 371, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 384, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
     __pyx_v_bidx = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "humon.pyx":372
+    /* "humon.pyx":385
  *         if isinstance(idx, str):
  *             bidx = idx.encode('utf-8')
  *             ckey, len_ckey = bidx, len(bidx)             # <<<<<<<<<<<<<<
  *             return Node().c(c.huGetChildByKeyN(self._c_node, ckey, len_ckey))
  *         elif isinstance(idx, tuple):
  */
-    __pyx_t_6 = __Pyx_PyObject_AsString(__pyx_v_bidx); if (unlikely((!__pyx_t_6) && PyErr_Occurred())) __PYX_ERR(0, 372, __pyx_L1_error)
-    __pyx_t_7 = PyObject_Length(__pyx_v_bidx); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 372, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_AsString(__pyx_v_bidx); if (unlikely((!__pyx_t_6) && PyErr_Occurred())) __PYX_ERR(0, 385, __pyx_L1_error)
+    __pyx_t_7 = PyObject_Length(__pyx_v_bidx); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 385, __pyx_L1_error)
     __pyx_v_ckey = __pyx_t_6;
     __pyx_v_len_ckey = __pyx_t_7;
 
-    /* "humon.pyx":373
+    /* "humon.pyx":386
  *             bidx = idx.encode('utf-8')
  *             ckey, len_ckey = bidx, len(bidx)
  *             return Node().c(c.huGetChildByKeyN(self._c_node, ckey, len_ckey))             # <<<<<<<<<<<<<<
@@ -10581,16 +10803,16 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
  *             bkey = idx[0].encode('utf-8')
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 373, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 386, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_1)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_1), huGetChildByKeyN(__pyx_v_self->_c_node, __pyx_v_ckey, __pyx_v_len_ckey))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 373, __pyx_L1_error)
+    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_1)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_1), huGetChildByKeyN(__pyx_v_self->_c_node, __pyx_v_ckey, __pyx_v_len_ckey))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 386, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "humon.pyx":370
+    /* "humon.pyx":383
  *         cdef const char * ckey
  *         cdef const c.huNode * cnn
  *         if isinstance(idx, str):             # <<<<<<<<<<<<<<
@@ -10599,7 +10821,7 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
  */
   }
 
-  /* "humon.pyx":374
+  /* "humon.pyx":387
  *             ckey, len_ckey = bidx, len(bidx)
  *             return Node().c(c.huGetChildByKeyN(self._c_node, ckey, len_ckey))
  *         elif isinstance(idx, tuple):             # <<<<<<<<<<<<<<
@@ -10609,16 +10831,16 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
   __pyx_t_2 = PyTuple_Check(__pyx_v_idx); 
   if (__pyx_t_2) {
 
-    /* "humon.pyx":375
+    /* "humon.pyx":388
  *             return Node().c(c.huGetChildByKeyN(self._c_node, ckey, len_ckey))
  *         elif isinstance(idx, tuple):
  *             bkey = idx[0].encode('utf-8')             # <<<<<<<<<<<<<<
  *             ckey, len_ckey = bkey, len(bkey)
  *             cidx = idx[1]
  */
-    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_idx, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 375, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_idx, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 388, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_encode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 375, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_encode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 388, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_1 = NULL;
@@ -10639,38 +10861,38 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
       PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_kp_u_utf_8};
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 375, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 388, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
     __pyx_v_bkey = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "humon.pyx":376
+    /* "humon.pyx":389
  *         elif isinstance(idx, tuple):
  *             bkey = idx[0].encode('utf-8')
  *             ckey, len_ckey = bkey, len(bkey)             # <<<<<<<<<<<<<<
  *             cidx = idx[1]
  *             cnn = c.huGetFirstChildWithKeyN(self._c_node, ckey, len_ckey)
  */
-    __pyx_t_6 = __Pyx_PyObject_AsString(__pyx_v_bkey); if (unlikely((!__pyx_t_6) && PyErr_Occurred())) __PYX_ERR(0, 376, __pyx_L1_error)
-    __pyx_t_7 = PyObject_Length(__pyx_v_bkey); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 376, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_AsString(__pyx_v_bkey); if (unlikely((!__pyx_t_6) && PyErr_Occurred())) __PYX_ERR(0, 389, __pyx_L1_error)
+    __pyx_t_7 = PyObject_Length(__pyx_v_bkey); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 389, __pyx_L1_error)
     __pyx_v_ckey = __pyx_t_6;
     __pyx_v_len_ckey = __pyx_t_7;
 
-    /* "humon.pyx":377
+    /* "humon.pyx":390
  *             bkey = idx[0].encode('utf-8')
  *             ckey, len_ckey = bkey, len(bkey)
  *             cidx = idx[1]             # <<<<<<<<<<<<<<
  *             cnn = c.huGetFirstChildWithKeyN(self._c_node, ckey, len_ckey)
  *             for i in range(cidx):
  */
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_idx, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 377, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_idx, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 390, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_v_cidx = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "humon.pyx":378
+    /* "humon.pyx":391
  *             ckey, len_ckey = bkey, len(bkey)
  *             cidx = idx[1]
  *             cnn = c.huGetFirstChildWithKeyN(self._c_node, ckey, len_ckey)             # <<<<<<<<<<<<<<
@@ -10679,23 +10901,23 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
  */
     __pyx_v_cnn = huGetFirstChildWithKeyN(__pyx_v_self->_c_node, __pyx_v_ckey, __pyx_v_len_ckey);
 
-    /* "humon.pyx":379
+    /* "humon.pyx":392
  *             cidx = idx[1]
  *             cnn = c.huGetFirstChildWithKeyN(self._c_node, ckey, len_ckey)
  *             for i in range(cidx):             # <<<<<<<<<<<<<<
  *                 cnn = c.huGetNextSiblingWithKeyN(cnn, ckey, len_ckey)
  *             return Node().c(cnn)
  */
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_v_cidx); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 379, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_v_cidx); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 392, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     if (likely(PyList_CheckExact(__pyx_t_3)) || PyTuple_CheckExact(__pyx_t_3)) {
       __pyx_t_4 = __pyx_t_3; __Pyx_INCREF(__pyx_t_4);
       __pyx_t_7 = 0;
       __pyx_t_8 = NULL;
     } else {
-      __pyx_t_7 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 379, __pyx_L1_error)
+      __pyx_t_7 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 392, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_8 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_4); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 379, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_4); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 392, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     for (;;) {
@@ -10704,28 +10926,28 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_4);
             #if !CYTHON_ASSUME_SAFE_MACROS
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 379, __pyx_L1_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 392, __pyx_L1_error)
             #endif
             if (__pyx_t_7 >= __pyx_temp) break;
           }
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_3 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_7); __Pyx_INCREF(__pyx_t_3); __pyx_t_7++; if (unlikely((0 < 0))) __PYX_ERR(0, 379, __pyx_L1_error)
+          __pyx_t_3 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_7); __Pyx_INCREF(__pyx_t_3); __pyx_t_7++; if (unlikely((0 < 0))) __PYX_ERR(0, 392, __pyx_L1_error)
           #else
-          __pyx_t_3 = __Pyx_PySequence_ITEM(__pyx_t_4, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 379, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PySequence_ITEM(__pyx_t_4, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 392, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
           #endif
         } else {
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_4);
             #if !CYTHON_ASSUME_SAFE_MACROS
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 379, __pyx_L1_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 392, __pyx_L1_error)
             #endif
             if (__pyx_t_7 >= __pyx_temp) break;
           }
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_7); __Pyx_INCREF(__pyx_t_3); __pyx_t_7++; if (unlikely((0 < 0))) __PYX_ERR(0, 379, __pyx_L1_error)
+          __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_7); __Pyx_INCREF(__pyx_t_3); __pyx_t_7++; if (unlikely((0 < 0))) __PYX_ERR(0, 392, __pyx_L1_error)
           #else
-          __pyx_t_3 = __Pyx_PySequence_ITEM(__pyx_t_4, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 379, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PySequence_ITEM(__pyx_t_4, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 392, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
           #endif
         }
@@ -10735,7 +10957,7 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 379, __pyx_L1_error)
+            else __PYX_ERR(0, 392, __pyx_L1_error)
           }
           break;
         }
@@ -10744,7 +10966,7 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
       __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "humon.pyx":380
+      /* "humon.pyx":393
  *             cnn = c.huGetFirstChildWithKeyN(self._c_node, ckey, len_ckey)
  *             for i in range(cidx):
  *                 cnn = c.huGetNextSiblingWithKeyN(cnn, ckey, len_ckey)             # <<<<<<<<<<<<<<
@@ -10753,7 +10975,7 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
  */
       __pyx_v_cnn = huGetNextSiblingWithKeyN(__pyx_v_cnn, __pyx_v_ckey, __pyx_v_len_ckey);
 
-      /* "humon.pyx":379
+      /* "humon.pyx":392
  *             cidx = idx[1]
  *             cnn = c.huGetFirstChildWithKeyN(self._c_node, ckey, len_ckey)
  *             for i in range(cidx):             # <<<<<<<<<<<<<<
@@ -10763,7 +10985,7 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
     }
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "humon.pyx":381
+    /* "humon.pyx":394
  *             for i in range(cidx):
  *                 cnn = c.huGetNextSiblingWithKeyN(cnn, ckey, len_ckey)
  *             return Node().c(cnn)             # <<<<<<<<<<<<<<
@@ -10771,16 +10993,16 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
  * 
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_4 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 381, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 394, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_4)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_4), __pyx_v_cnn)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 381, __pyx_L1_error)
+    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_4)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_4), __pyx_v_cnn)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 394, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "humon.pyx":374
+    /* "humon.pyx":387
  *             ckey, len_ckey = bidx, len(bidx)
  *             return Node().c(c.huGetChildByKeyN(self._c_node, ckey, len_ckey))
  *         elif isinstance(idx, tuple):             # <<<<<<<<<<<<<<
@@ -10789,7 +11011,7 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
  */
   }
 
-  /* "humon.pyx":382
+  /* "humon.pyx":395
  *                 cnn = c.huGetNextSiblingWithKeyN(cnn, ckey, len_ckey)
  *             return Node().c(cnn)
  *         return Node().c(c.huGetChildByIndex(self._c_node, idx))             # <<<<<<<<<<<<<<
@@ -10797,17 +11019,17 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
  *     def get_node(self, idx: int | str) -> Node | None:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 382, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 395, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_9 = __Pyx_PyInt_As_huSize_t(__pyx_v_idx); if (unlikely((__pyx_t_9 == ((huSize_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 382, __pyx_L1_error)
-  __pyx_t_4 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_3)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_3), huGetChildByIndex(__pyx_v_self->_c_node, __pyx_t_9))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 382, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyInt_As_huSize_t(__pyx_v_idx); if (unlikely((__pyx_t_9 == ((huSize_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 395, __pyx_L1_error)
+  __pyx_t_4 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_3)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_3), huGetChildByIndex(__pyx_v_self->_c_node, __pyx_t_9))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 395, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_r = __pyx_t_4;
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "humon.pyx":365
+  /* "humon.pyx":378
  *         return self._c_node == pn
  * 
  *     def __getitem__(self, idx: str | int | tuple[str, int]) -> Node | None:             # <<<<<<<<<<<<<<
@@ -10832,7 +11054,7 @@ static PyObject *__pyx_pf_5humon_4Node_4__getitem__(struct __pyx_obj_5humon_Node
   return __pyx_r;
 }
 
-/* "humon.pyx":384
+/* "humon.pyx":397
  *         return Node().c(c.huGetChildByIndex(self._c_node, idx))
  * 
  *     def get_node(self, idx: int | str) -> Node | None:             # <<<<<<<<<<<<<<
@@ -10893,12 +11115,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 384, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 397, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_node") < 0)) __PYX_ERR(0, 384, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_node") < 0)) __PYX_ERR(0, 397, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -10909,7 +11131,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_node", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 384, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_node", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 397, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -10955,20 +11177,20 @@ static PyObject *__pyx_pf_5humon_4Node_6get_node(struct __pyx_obj_5humon_Node *_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_node", 1);
 
-  /* "humon.pyx":385
+  /* "humon.pyx":398
  * 
  *     def get_node(self, idx: int | str) -> Node | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
  *             return None
  *         cdef char * caddr = NULL
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 385, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 398, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 385, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 398, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "humon.pyx":386
+    /* "humon.pyx":399
  *     def get_node(self, idx: int | str) -> Node | None:
  *         if self.isnull:
  *             return None             # <<<<<<<<<<<<<<
@@ -10979,7 +11201,7 @@ static PyObject *__pyx_pf_5humon_4Node_6get_node(struct __pyx_obj_5humon_Node *_
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "humon.pyx":385
+    /* "humon.pyx":398
  * 
  *     def get_node(self, idx: int | str) -> Node | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
@@ -10988,7 +11210,7 @@ static PyObject *__pyx_pf_5humon_4Node_6get_node(struct __pyx_obj_5humon_Node *_
  */
   }
 
-  /* "humon.pyx":387
+  /* "humon.pyx":400
  *         if self.isnull:
  *             return None
  *         cdef char * caddr = NULL             # <<<<<<<<<<<<<<
@@ -10997,7 +11219,7 @@ static PyObject *__pyx_pf_5humon_4Node_6get_node(struct __pyx_obj_5humon_Node *_
  */
   __pyx_v_caddr = NULL;
 
-  /* "humon.pyx":388
+  /* "humon.pyx":401
  *             return None
  *         cdef char * caddr = NULL
  *         if isinstance(idx, str):             # <<<<<<<<<<<<<<
@@ -11007,14 +11229,14 @@ static PyObject *__pyx_pf_5humon_4Node_6get_node(struct __pyx_obj_5humon_Node *_
   __pyx_t_2 = PyUnicode_Check(__pyx_v_idx); 
   if (__pyx_t_2) {
 
-    /* "humon.pyx":389
+    /* "humon.pyx":402
  *         cdef char * caddr = NULL
  *         if isinstance(idx, str):
  *             bidx = idx.encode('utf-8')             # <<<<<<<<<<<<<<
  *             caddr, len_caddr = bidx, len(bidx)
  *             return Node().c(c.huGetNodeByRelativeAddressN(self._c_node, caddr, len_caddr))
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_idx, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 389, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_idx, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 402, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -11034,43 +11256,43 @@ static PyObject *__pyx_pf_5humon_4Node_6get_node(struct __pyx_obj_5humon_Node *_
       PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_kp_u_utf_8};
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 389, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 402, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
     __pyx_v_bidx = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "humon.pyx":390
+    /* "humon.pyx":403
  *         if isinstance(idx, str):
  *             bidx = idx.encode('utf-8')
  *             caddr, len_caddr = bidx, len(bidx)             # <<<<<<<<<<<<<<
  *             return Node().c(c.huGetNodeByRelativeAddressN(self._c_node, caddr, len_caddr))
- *         return Node().c(c.huGetChildByIndex(self._c_node, idx))
+ *         elif isinstance(idx, int):
  */
-    __pyx_t_6 = __Pyx_PyObject_AsWritableString(__pyx_v_bidx); if (unlikely((!__pyx_t_6) && PyErr_Occurred())) __PYX_ERR(0, 390, __pyx_L1_error)
-    __pyx_t_7 = PyObject_Length(__pyx_v_bidx); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 390, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_AsWritableString(__pyx_v_bidx); if (unlikely((!__pyx_t_6) && PyErr_Occurred())) __PYX_ERR(0, 403, __pyx_L1_error)
+    __pyx_t_7 = PyObject_Length(__pyx_v_bidx); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 403, __pyx_L1_error)
     __pyx_v_caddr = __pyx_t_6;
     __pyx_v_len_caddr = __pyx_t_7;
 
-    /* "humon.pyx":391
+    /* "humon.pyx":404
  *             bidx = idx.encode('utf-8')
  *             caddr, len_caddr = bidx, len(bidx)
  *             return Node().c(c.huGetNodeByRelativeAddressN(self._c_node, caddr, len_caddr))             # <<<<<<<<<<<<<<
- *         return Node().c(c.huGetChildByIndex(self._c_node, idx))
- * 
+ *         elif isinstance(idx, int):
+ *             return Node().c(c.huGetChildByIndex(self._c_node, idx))
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 391, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 404, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_1)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_1), huGetNodeByRelativeAddressN(__pyx_v_self->_c_node, __pyx_v_caddr, __pyx_v_len_caddr))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 391, __pyx_L1_error)
+    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_1)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_1), huGetNodeByRelativeAddressN(__pyx_v_self->_c_node, __pyx_v_caddr, __pyx_v_len_caddr))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 404, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "humon.pyx":388
+    /* "humon.pyx":401
  *             return None
  *         cdef char * caddr = NULL
  *         if isinstance(idx, str):             # <<<<<<<<<<<<<<
@@ -11079,25 +11301,59 @@ static PyObject *__pyx_pf_5humon_4Node_6get_node(struct __pyx_obj_5humon_Node *_
  */
   }
 
-  /* "humon.pyx":392
+  /* "humon.pyx":405
  *             caddr, len_caddr = bidx, len(bidx)
  *             return Node().c(c.huGetNodeByRelativeAddressN(self._c_node, caddr, len_caddr))
- *         return Node().c(c.huGetChildByIndex(self._c_node, idx))             # <<<<<<<<<<<<<<
+ *         elif isinstance(idx, int):             # <<<<<<<<<<<<<<
+ *             return Node().c(c.huGetChildByIndex(self._c_node, idx))
+ *         else:
+ */
+  __pyx_t_2 = PyInt_Check(__pyx_v_idx); 
+  if (likely(__pyx_t_2)) {
+
+    /* "humon.pyx":406
+ *             return Node().c(c.huGetNodeByRelativeAddressN(self._c_node, caddr, len_caddr))
+ *         elif isinstance(idx, int):
+ *             return Node().c(c.huGetChildByIndex(self._c_node, idx))             # <<<<<<<<<<<<<<
+ *         else:
+ *             raise TypeError(idx)
+ */
+    __Pyx_XDECREF(__pyx_r);
+    __pyx_t_3 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 406, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_8 = __Pyx_PyInt_As_huSize_t(__pyx_v_idx); if (unlikely((__pyx_t_8 == ((huSize_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 406, __pyx_L1_error)
+    __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_3)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_3), huGetChildByIndex(__pyx_v_self->_c_node, __pyx_t_8))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 406, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_r = __pyx_t_1;
+    __pyx_t_1 = 0;
+    goto __pyx_L0;
+
+    /* "humon.pyx":405
+ *             caddr, len_caddr = bidx, len(bidx)
+ *             return Node().c(c.huGetNodeByRelativeAddressN(self._c_node, caddr, len_caddr))
+ *         elif isinstance(idx, int):             # <<<<<<<<<<<<<<
+ *             return Node().c(c.huGetChildByIndex(self._c_node, idx))
+ *         else:
+ */
+  }
+
+  /* "humon.pyx":408
+ *             return Node().c(c.huGetChildByIndex(self._c_node, idx))
+ *         else:
+ *             raise TypeError(idx)             # <<<<<<<<<<<<<<
  * 
  *     def get_sibling(self, key: str | None = None) -> Node | None:
  */
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 392, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_8 = __Pyx_PyInt_As_huSize_t(__pyx_v_idx); if (unlikely((__pyx_t_8 == ((huSize_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 392, __pyx_L1_error)
-  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_3)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_3), huGetChildByIndex(__pyx_v_self->_c_node, __pyx_t_8))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 392, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
+  /*else*/ {
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_TypeError, __pyx_v_idx); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 408, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __PYX_ERR(0, 408, __pyx_L1_error)
+  }
 
-  /* "humon.pyx":384
+  /* "humon.pyx":397
  *         return Node().c(c.huGetChildByIndex(self._c_node, idx))
  * 
  *     def get_node(self, idx: int | str) -> Node | None:             # <<<<<<<<<<<<<<
@@ -11119,8 +11375,8 @@ static PyObject *__pyx_pf_5humon_4Node_6get_node(struct __pyx_obj_5humon_Node *_
   return __pyx_r;
 }
 
-/* "humon.pyx":394
- *         return Node().c(c.huGetChildByIndex(self._c_node, idx))
+/* "humon.pyx":410
+ *             raise TypeError(idx)
  * 
  *     def get_sibling(self, key: str | None = None) -> Node | None:             # <<<<<<<<<<<<<<
  *         if self.isnull:
@@ -11180,12 +11436,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_key);
           if (value) { values[0] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 394, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 410, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_sibling") < 0)) __PYX_ERR(0, 394, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_sibling") < 0)) __PYX_ERR(0, 410, __pyx_L3_error)
       }
     } else {
       switch (__pyx_nargs) {
@@ -11199,7 +11455,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_sibling", 0, 0, 1, __pyx_nargs); __PYX_ERR(0, 394, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_sibling", 0, 0, 1, __pyx_nargs); __PYX_ERR(0, 410, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -11244,20 +11500,20 @@ static PyObject *__pyx_pf_5humon_4Node_8get_sibling(struct __pyx_obj_5humon_Node
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_sibling", 1);
 
-  /* "humon.pyx":395
+  /* "humon.pyx":411
  * 
  *     def get_sibling(self, key: str | None = None) -> Node | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
  *             return None
  *         if c.huGetParent(self._c_node) == NULL:
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 395, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 411, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 395, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 411, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "humon.pyx":396
+    /* "humon.pyx":412
  *     def get_sibling(self, key: str | None = None) -> Node | None:
  *         if self.isnull:
  *             return None             # <<<<<<<<<<<<<<
@@ -11268,7 +11524,7 @@ static PyObject *__pyx_pf_5humon_4Node_8get_sibling(struct __pyx_obj_5humon_Node
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "humon.pyx":395
+    /* "humon.pyx":411
  * 
  *     def get_sibling(self, key: str | None = None) -> Node | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
@@ -11277,7 +11533,7 @@ static PyObject *__pyx_pf_5humon_4Node_8get_sibling(struct __pyx_obj_5humon_Node
  */
   }
 
-  /* "humon.pyx":397
+  /* "humon.pyx":413
  *         if self.isnull:
  *             return None
  *         if c.huGetParent(self._c_node) == NULL:             # <<<<<<<<<<<<<<
@@ -11287,7 +11543,7 @@ static PyObject *__pyx_pf_5humon_4Node_8get_sibling(struct __pyx_obj_5humon_Node
   __pyx_t_2 = (huGetParent(__pyx_v_self->_c_node) == NULL);
   if (__pyx_t_2) {
 
-    /* "humon.pyx":398
+    /* "humon.pyx":414
  *             return None
  *         if c.huGetParent(self._c_node) == NULL:
  *             return None             # <<<<<<<<<<<<<<
@@ -11298,7 +11554,7 @@ static PyObject *__pyx_pf_5humon_4Node_8get_sibling(struct __pyx_obj_5humon_Node
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "humon.pyx":397
+    /* "humon.pyx":413
  *         if self.isnull:
  *             return None
  *         if c.huGetParent(self._c_node) == NULL:             # <<<<<<<<<<<<<<
@@ -11307,7 +11563,7 @@ static PyObject *__pyx_pf_5humon_4Node_8get_sibling(struct __pyx_obj_5humon_Node
  */
   }
 
-  /* "humon.pyx":399
+  /* "humon.pyx":415
  *         if c.huGetParent(self._c_node) == NULL:
  *             return None
  *         if key is None:             # <<<<<<<<<<<<<<
@@ -11317,24 +11573,24 @@ static PyObject *__pyx_pf_5humon_4Node_8get_sibling(struct __pyx_obj_5humon_Node
   __pyx_t_2 = (__pyx_v_key == Py_None);
   if (__pyx_t_2) {
 
-    /* "humon.pyx":400
+    /* "humon.pyx":416
  *             return None
  *         if key is None:
  *             return Node().c(c.huGetNextSibling(self._c_node))             # <<<<<<<<<<<<<<
  *         cdef char * ckey = NULL
- *         bkey = key.encode('utf-8')
+ *         if isinstance(key, str):
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 400, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 416, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_1)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_1), huGetNextSibling(__pyx_v_self->_c_node))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 400, __pyx_L1_error)
+    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_1)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_1), huGetNextSibling(__pyx_v_self->_c_node))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 416, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "humon.pyx":399
+    /* "humon.pyx":415
  *         if c.huGetParent(self._c_node) == NULL:
  *             return None
  *         if key is None:             # <<<<<<<<<<<<<<
@@ -11343,80 +11599,114 @@ static PyObject *__pyx_pf_5humon_4Node_8get_sibling(struct __pyx_obj_5humon_Node
  */
   }
 
-  /* "humon.pyx":401
+  /* "humon.pyx":417
  *         if key is None:
  *             return Node().c(c.huGetNextSibling(self._c_node))
  *         cdef char * ckey = NULL             # <<<<<<<<<<<<<<
- *         bkey = key.encode('utf-8')
- *         ckey, len_ckey = bkey, len(bkey)
+ *         if isinstance(key, str):
+ *             bkey = key.encode('utf-8')
  */
   __pyx_v_ckey = NULL;
 
-  /* "humon.pyx":402
+  /* "humon.pyx":418
  *             return Node().c(c.huGetNextSibling(self._c_node))
  *         cdef char * ckey = NULL
- *         bkey = key.encode('utf-8')             # <<<<<<<<<<<<<<
- *         ckey, len_ckey = bkey, len(bkey)
- *         return Node().c(c.huGetNextSiblingWithKeyN(self._c_node, ckey, len_ckey))
+ *         if isinstance(key, str):             # <<<<<<<<<<<<<<
+ *             bkey = key.encode('utf-8')
+ *             ckey, len_ckey = bkey, len(bkey)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_key, __pyx_n_s_encode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 402, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = NULL;
-  __pyx_t_5 = 0;
-  #if CYTHON_UNPACK_METHODS
-  if (likely(PyMethod_Check(__pyx_t_1))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_1);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_1, function);
-      __pyx_t_5 = 1;
-    }
-  }
-  #endif
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_kp_u_utf_8};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
-    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 402, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  }
-  __pyx_v_bkey = __pyx_t_3;
-  __pyx_t_3 = 0;
+  __pyx_t_2 = PyUnicode_Check(__pyx_v_key); 
+  if (likely(__pyx_t_2)) {
 
-  /* "humon.pyx":403
+    /* "humon.pyx":419
  *         cdef char * ckey = NULL
- *         bkey = key.encode('utf-8')
- *         ckey, len_ckey = bkey, len(bkey)             # <<<<<<<<<<<<<<
- *         return Node().c(c.huGetNextSiblingWithKeyN(self._c_node, ckey, len_ckey))
- * 
+ *         if isinstance(key, str):
+ *             bkey = key.encode('utf-8')             # <<<<<<<<<<<<<<
+ *             ckey, len_ckey = bkey, len(bkey)
+ *             return Node().c(c.huGetNextSiblingWithKeyN(self._c_node, ckey, len_ckey))
  */
-  __pyx_t_6 = __Pyx_PyObject_AsWritableString(__pyx_v_bkey); if (unlikely((!__pyx_t_6) && PyErr_Occurred())) __PYX_ERR(0, 403, __pyx_L1_error)
-  __pyx_t_7 = PyObject_Length(__pyx_v_bkey); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 403, __pyx_L1_error)
-  __pyx_v_ckey = __pyx_t_6;
-  __pyx_v_len_ckey = __pyx_t_7;
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_key, __pyx_n_s_encode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 419, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_4 = NULL;
+    __pyx_t_5 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_1))) {
+      __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_1);
+      if (likely(__pyx_t_4)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+        __Pyx_INCREF(__pyx_t_4);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_1, function);
+        __pyx_t_5 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_kp_u_utf_8};
+      __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
+      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 419, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    }
+    __pyx_v_bkey = __pyx_t_3;
+    __pyx_t_3 = 0;
 
-  /* "humon.pyx":404
- *         bkey = key.encode('utf-8')
- *         ckey, len_ckey = bkey, len(bkey)
- *         return Node().c(c.huGetNextSiblingWithKeyN(self._c_node, ckey, len_ckey))             # <<<<<<<<<<<<<<
+    /* "humon.pyx":420
+ *         if isinstance(key, str):
+ *             bkey = key.encode('utf-8')
+ *             ckey, len_ckey = bkey, len(bkey)             # <<<<<<<<<<<<<<
+ *             return Node().c(c.huGetNextSiblingWithKeyN(self._c_node, ckey, len_ckey))
+ *         else:
+ */
+    __pyx_t_6 = __Pyx_PyObject_AsWritableString(__pyx_v_bkey); if (unlikely((!__pyx_t_6) && PyErr_Occurred())) __PYX_ERR(0, 420, __pyx_L1_error)
+    __pyx_t_7 = PyObject_Length(__pyx_v_bkey); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 420, __pyx_L1_error)
+    __pyx_v_ckey = __pyx_t_6;
+    __pyx_v_len_ckey = __pyx_t_7;
+
+    /* "humon.pyx":421
+ *             bkey = key.encode('utf-8')
+ *             ckey, len_ckey = bkey, len(bkey)
+ *             return Node().c(c.huGetNextSiblingWithKeyN(self._c_node, ckey, len_ckey))             # <<<<<<<<<<<<<<
+ *         else:
+ *             raise TypeError(key)
+ */
+    __Pyx_XDECREF(__pyx_r);
+    __pyx_t_3 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 421, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_3)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_3), huGetNextSiblingWithKeyN(__pyx_v_self->_c_node, __pyx_v_ckey, __pyx_v_len_ckey))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 421, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_r = __pyx_t_1;
+    __pyx_t_1 = 0;
+    goto __pyx_L0;
+
+    /* "humon.pyx":418
+ *             return Node().c(c.huGetNextSibling(self._c_node))
+ *         cdef char * ckey = NULL
+ *         if isinstance(key, str):             # <<<<<<<<<<<<<<
+ *             bkey = key.encode('utf-8')
+ *             ckey, len_ckey = bkey, len(bkey)
+ */
+  }
+
+  /* "humon.pyx":423
+ *             return Node().c(c.huGetNextSiblingWithKeyN(self._c_node, ckey, len_ckey))
+ *         else:
+ *             raise TypeError(key)             # <<<<<<<<<<<<<<
  * 
  *     @property
  */
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_5humon_Node)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 404, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_5humon_Node *)((struct __pyx_obj_5humon_Node *)__pyx_t_3)->__pyx_vtab)->c(((struct __pyx_obj_5humon_Node *)__pyx_t_3), huGetNextSiblingWithKeyN(__pyx_v_self->_c_node, __pyx_v_ckey, __pyx_v_len_ckey))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 404, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
+  /*else*/ {
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_TypeError, __pyx_v_key); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 423, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __PYX_ERR(0, 423, __pyx_L1_error)
+  }
 
-  /* "humon.pyx":394
- *         return Node().c(c.huGetChildByIndex(self._c_node, idx))
+  /* "humon.pyx":410
+ *             raise TypeError(idx)
  * 
  *     def get_sibling(self, key: str | None = None) -> Node | None:             # <<<<<<<<<<<<<<
  *         if self.isnull:
@@ -11437,8 +11727,8 @@ static PyObject *__pyx_pf_5humon_4Node_8get_sibling(struct __pyx_obj_5humon_Node
   return __pyx_r;
 }
 
-/* "humon.pyx":406
- *         return Node().c(c.huGetNextSiblingWithKeyN(self._c_node, ckey, len_ckey))
+/* "humon.pyx":425
+ *             raise TypeError(key)
  * 
  *     @property             # <<<<<<<<<<<<<<
  *     def address(self) -> str | None:
@@ -11472,20 +11762,20 @@ static PyObject *__pyx_pf_5humon_4Node_7address___get__(struct __pyx_obj_5humon_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "humon.pyx":408
+  /* "humon.pyx":427
  *     @property
  *     def address(self) -> str | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
  *             return None
  *         cdef c.huSize_t size = 0
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 408, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 427, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 408, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 427, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "humon.pyx":409
+    /* "humon.pyx":428
  *     def address(self) -> str | None:
  *         if self.isnull:
  *             return None             # <<<<<<<<<<<<<<
@@ -11496,7 +11786,7 @@ static PyObject *__pyx_pf_5humon_4Node_7address___get__(struct __pyx_obj_5humon_
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "humon.pyx":408
+    /* "humon.pyx":427
  *     @property
  *     def address(self) -> str | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
@@ -11505,7 +11795,7 @@ static PyObject *__pyx_pf_5humon_4Node_7address___get__(struct __pyx_obj_5humon_
  */
   }
 
-  /* "humon.pyx":410
+  /* "humon.pyx":429
  *         if self.isnull:
  *             return None
  *         cdef c.huSize_t size = 0             # <<<<<<<<<<<<<<
@@ -11514,7 +11804,7 @@ static PyObject *__pyx_pf_5humon_4Node_7address___get__(struct __pyx_obj_5humon_
  */
   __pyx_v_size = 0;
 
-  /* "humon.pyx":411
+  /* "humon.pyx":430
  *             return None
  *         cdef c.huSize_t size = 0
  *         cdef char * addr = NULL             # <<<<<<<<<<<<<<
@@ -11523,7 +11813,7 @@ static PyObject *__pyx_pf_5humon_4Node_7address___get__(struct __pyx_obj_5humon_
  */
   __pyx_v_addr = NULL;
 
-  /* "humon.pyx":412
+  /* "humon.pyx":431
  *         cdef c.huSize_t size = 0
  *         cdef char * addr = NULL
  *         c.huGetAddress(self._c_node, addr, & size)             # <<<<<<<<<<<<<<
@@ -11532,7 +11822,7 @@ static PyObject *__pyx_pf_5humon_4Node_7address___get__(struct __pyx_obj_5humon_
  */
   huGetAddress(__pyx_v_self->_c_node, __pyx_v_addr, (&__pyx_v_size));
 
-  /* "humon.pyx":413
+  /* "humon.pyx":432
  *         cdef char * addr = NULL
  *         c.huGetAddress(self._c_node, addr, & size)
  *         addr = <char *> malloc((size + 1) * sizeof(char))             # <<<<<<<<<<<<<<
@@ -11541,7 +11831,7 @@ static PyObject *__pyx_pf_5humon_4Node_7address___get__(struct __pyx_obj_5humon_
  */
   __pyx_v_addr = ((char *)malloc(((__pyx_v_size + 1) * (sizeof(char)))));
 
-  /* "humon.pyx":414
+  /* "humon.pyx":433
  *         c.huGetAddress(self._c_node, addr, & size)
  *         addr = <char *> malloc((size + 1) * sizeof(char))
  *         if addr == NULL:             # <<<<<<<<<<<<<<
@@ -11551,16 +11841,16 @@ static PyObject *__pyx_pf_5humon_4Node_7address___get__(struct __pyx_obj_5humon_
   __pyx_t_2 = (__pyx_v_addr == NULL);
   if (unlikely(__pyx_t_2)) {
 
-    /* "humon.pyx":415
+    /* "humon.pyx":434
  *         addr = <char *> malloc((size + 1) * sizeof(char))
  *         if addr == NULL:
  *             raise MemoryError()             # <<<<<<<<<<<<<<
  *         c.huGetAddress(self._c_node, addr, & size)
  *         return to_pstr_l_free(addr, size)
  */
-    PyErr_NoMemory(); __PYX_ERR(0, 415, __pyx_L1_error)
+    PyErr_NoMemory(); __PYX_ERR(0, 434, __pyx_L1_error)
 
-    /* "humon.pyx":414
+    /* "humon.pyx":433
  *         c.huGetAddress(self._c_node, addr, & size)
  *         addr = <char *> malloc((size + 1) * sizeof(char))
  *         if addr == NULL:             # <<<<<<<<<<<<<<
@@ -11569,7 +11859,7 @@ static PyObject *__pyx_pf_5humon_4Node_7address___get__(struct __pyx_obj_5humon_
  */
   }
 
-  /* "humon.pyx":416
+  /* "humon.pyx":435
  *         if addr == NULL:
  *             raise MemoryError()
  *         c.huGetAddress(self._c_node, addr, & size)             # <<<<<<<<<<<<<<
@@ -11578,7 +11868,7 @@ static PyObject *__pyx_pf_5humon_4Node_7address___get__(struct __pyx_obj_5humon_
  */
   huGetAddress(__pyx_v_self->_c_node, __pyx_v_addr, (&__pyx_v_size));
 
-  /* "humon.pyx":417
+  /* "humon.pyx":436
  *             raise MemoryError()
  *         c.huGetAddress(self._c_node, addr, & size)
  *         return to_pstr_l_free(addr, size)             # <<<<<<<<<<<<<<
@@ -11586,14 +11876,14 @@ static PyObject *__pyx_pf_5humon_4Node_7address___get__(struct __pyx_obj_5humon_
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_5humon_to_pstr_l_free(__pyx_v_addr, __pyx_v_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 417, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5humon_to_pstr_l_free(__pyx_v_addr, __pyx_v_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 436, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "humon.pyx":406
- *         return Node().c(c.huGetNextSiblingWithKeyN(self._c_node, ckey, len_ckey))
+  /* "humon.pyx":425
+ *             raise TypeError(key)
  * 
  *     @property             # <<<<<<<<<<<<<<
  *     def address(self) -> str | None:
@@ -11611,7 +11901,7 @@ static PyObject *__pyx_pf_5humon_4Node_7address___get__(struct __pyx_obj_5humon_
   return __pyx_r;
 }
 
-/* "humon.pyx":419
+/* "humon.pyx":438
  *         return to_pstr_l_free(addr, size)
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -11646,20 +11936,20 @@ static PyObject *__pyx_pf_5humon_4Node_3key___get__(struct __pyx_obj_5humon_Node
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "humon.pyx":421
+  /* "humon.pyx":440
  *     @property
  *     def key(self) -> str | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
  *             return None
  *         cdef const c.huToken * kt = c.huGetKey(self._c_node)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 421, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 440, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 421, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 440, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "humon.pyx":422
+    /* "humon.pyx":441
  *     def key(self) -> str | None:
  *         if self.isnull:
  *             return None             # <<<<<<<<<<<<<<
@@ -11670,7 +11960,7 @@ static PyObject *__pyx_pf_5humon_4Node_3key___get__(struct __pyx_obj_5humon_Node
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "humon.pyx":421
+    /* "humon.pyx":440
  *     @property
  *     def key(self) -> str | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
@@ -11679,7 +11969,7 @@ static PyObject *__pyx_pf_5humon_4Node_3key___get__(struct __pyx_obj_5humon_Node
  */
   }
 
-  /* "humon.pyx":423
+  /* "humon.pyx":442
  *         if self.isnull:
  *             return None
  *         cdef const c.huToken * kt = c.huGetKey(self._c_node)             # <<<<<<<<<<<<<<
@@ -11688,7 +11978,7 @@ static PyObject *__pyx_pf_5humon_4Node_3key___get__(struct __pyx_obj_5humon_Node
  */
   __pyx_v_kt = huGetKey(__pyx_v_self->_c_node);
 
-  /* "humon.pyx":424
+  /* "humon.pyx":443
  *             return None
  *         cdef const c.huToken * kt = c.huGetKey(self._c_node)
  *         if kt == NULL:             # <<<<<<<<<<<<<<
@@ -11698,7 +11988,7 @@ static PyObject *__pyx_pf_5humon_4Node_3key___get__(struct __pyx_obj_5humon_Node
   __pyx_t_2 = (__pyx_v_kt == NULL);
   if (__pyx_t_2) {
 
-    /* "humon.pyx":425
+    /* "humon.pyx":444
  *         cdef const c.huToken * kt = c.huGetKey(self._c_node)
  *         if kt == NULL:
  *             return None             # <<<<<<<<<<<<<<
@@ -11709,7 +11999,7 @@ static PyObject *__pyx_pf_5humon_4Node_3key___get__(struct __pyx_obj_5humon_Node
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "humon.pyx":424
+    /* "humon.pyx":443
  *             return None
  *         cdef const c.huToken * kt = c.huGetKey(self._c_node)
  *         if kt == NULL:             # <<<<<<<<<<<<<<
@@ -11718,7 +12008,7 @@ static PyObject *__pyx_pf_5humon_4Node_3key___get__(struct __pyx_obj_5humon_Node
  */
   }
 
-  /* "humon.pyx":426
+  /* "humon.pyx":445
  *         if kt == NULL:
  *             return None
  *         ks = c.huGetString(kt)             # <<<<<<<<<<<<<<
@@ -11727,7 +12017,7 @@ static PyObject *__pyx_pf_5humon_4Node_3key___get__(struct __pyx_obj_5humon_Node
  */
   __pyx_v_ks = huGetString(__pyx_v_kt);
 
-  /* "humon.pyx":427
+  /* "humon.pyx":446
  *             return None
  *         ks = c.huGetString(kt)
  *         return to_pstr_l(ks.ptr, ks.size)             # <<<<<<<<<<<<<<
@@ -11735,13 +12025,13 @@ static PyObject *__pyx_pf_5humon_4Node_3key___get__(struct __pyx_obj_5humon_Node
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_5humon_to_pstr_l(__pyx_v_ks->ptr, __pyx_v_ks->size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 427, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5humon_to_pstr_l(__pyx_v_ks->ptr, __pyx_v_ks->size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "humon.pyx":419
+  /* "humon.pyx":438
  *         return to_pstr_l_free(addr, size)
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -11760,7 +12050,7 @@ static PyObject *__pyx_pf_5humon_4Node_3key___get__(struct __pyx_obj_5humon_Node
   return __pyx_r;
 }
 
-/* "humon.pyx":429
+/* "humon.pyx":448
  *         return to_pstr_l(ks.ptr, ks.size)
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -11795,20 +12085,20 @@ static PyObject *__pyx_pf_5humon_4Node_5value___get__(struct __pyx_obj_5humon_No
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "humon.pyx":431
+  /* "humon.pyx":450
  *     @property
  *     def value(self) -> str | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
  *             return None
  *         cdef const c.huToken * vt = c.huGetValue(self._c_node)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 431, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 450, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 431, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 450, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "humon.pyx":432
+    /* "humon.pyx":451
  *     def value(self) -> str | None:
  *         if self.isnull:
  *             return None             # <<<<<<<<<<<<<<
@@ -11819,7 +12109,7 @@ static PyObject *__pyx_pf_5humon_4Node_5value___get__(struct __pyx_obj_5humon_No
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "humon.pyx":431
+    /* "humon.pyx":450
  *     @property
  *     def value(self) -> str | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
@@ -11828,7 +12118,7 @@ static PyObject *__pyx_pf_5humon_4Node_5value___get__(struct __pyx_obj_5humon_No
  */
   }
 
-  /* "humon.pyx":433
+  /* "humon.pyx":452
  *         if self.isnull:
  *             return None
  *         cdef const c.huToken * vt = c.huGetValue(self._c_node)             # <<<<<<<<<<<<<<
@@ -11837,7 +12127,7 @@ static PyObject *__pyx_pf_5humon_4Node_5value___get__(struct __pyx_obj_5humon_No
  */
   __pyx_v_vt = huGetValue(__pyx_v_self->_c_node);
 
-  /* "humon.pyx":434
+  /* "humon.pyx":453
  *             return None
  *         cdef const c.huToken * vt = c.huGetValue(self._c_node)
  *         if vt == NULL:             # <<<<<<<<<<<<<<
@@ -11847,7 +12137,7 @@ static PyObject *__pyx_pf_5humon_4Node_5value___get__(struct __pyx_obj_5humon_No
   __pyx_t_2 = (__pyx_v_vt == NULL);
   if (__pyx_t_2) {
 
-    /* "humon.pyx":435
+    /* "humon.pyx":454
  *         cdef const c.huToken * vt = c.huGetValue(self._c_node)
  *         if vt == NULL:
  *             return None             # <<<<<<<<<<<<<<
@@ -11858,7 +12148,7 @@ static PyObject *__pyx_pf_5humon_4Node_5value___get__(struct __pyx_obj_5humon_No
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "humon.pyx":434
+    /* "humon.pyx":453
  *             return None
  *         cdef const c.huToken * vt = c.huGetValue(self._c_node)
  *         if vt == NULL:             # <<<<<<<<<<<<<<
@@ -11867,7 +12157,7 @@ static PyObject *__pyx_pf_5humon_4Node_5value___get__(struct __pyx_obj_5humon_No
  */
   }
 
-  /* "humon.pyx":436
+  /* "humon.pyx":455
  *         if vt == NULL:
  *             return None
  *         vs = c.huGetString(vt)             # <<<<<<<<<<<<<<
@@ -11876,7 +12166,7 @@ static PyObject *__pyx_pf_5humon_4Node_5value___get__(struct __pyx_obj_5humon_No
  */
   __pyx_v_vs = huGetString(__pyx_v_vt);
 
-  /* "humon.pyx":437
+  /* "humon.pyx":456
  *             return None
  *         vs = c.huGetString(vt)
  *         return to_pstr_l(vs.ptr, vs.size)             # <<<<<<<<<<<<<<
@@ -11884,13 +12174,13 @@ static PyObject *__pyx_pf_5humon_4Node_5value___get__(struct __pyx_obj_5humon_No
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_5humon_to_pstr_l(__pyx_v_vs->ptr, __pyx_v_vs->size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 437, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5humon_to_pstr_l(__pyx_v_vs->ptr, __pyx_v_vs->size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 456, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "humon.pyx":429
+  /* "humon.pyx":448
  *         return to_pstr_l(ks.ptr, ks.size)
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -11909,7 +12199,7 @@ static PyObject *__pyx_pf_5humon_4Node_5value___get__(struct __pyx_obj_5humon_No
   return __pyx_r;
 }
 
-/* "humon.pyx":439
+/* "humon.pyx":458
  *         return to_pstr_l(vs.ptr, vs.size)
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -11943,20 +12233,20 @@ static PyObject *__pyx_pf_5humon_4Node_11source_text___get__(struct __pyx_obj_5h
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "humon.pyx":441
+  /* "humon.pyx":460
  *     @property
  *     def source_text(self) -> str | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
  *             return None
  *         st = c.huGetSourceText(self._c_node)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 441, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 460, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 441, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 460, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "humon.pyx":442
+    /* "humon.pyx":461
  *     def source_text(self) -> str | None:
  *         if self.isnull:
  *             return None             # <<<<<<<<<<<<<<
@@ -11967,7 +12257,7 @@ static PyObject *__pyx_pf_5humon_4Node_11source_text___get__(struct __pyx_obj_5h
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "humon.pyx":441
+    /* "humon.pyx":460
  *     @property
  *     def source_text(self) -> str | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
@@ -11976,7 +12266,7 @@ static PyObject *__pyx_pf_5humon_4Node_11source_text___get__(struct __pyx_obj_5h
  */
   }
 
-  /* "humon.pyx":443
+  /* "humon.pyx":462
  *         if self.isnull:
  *             return None
  *         st = c.huGetSourceText(self._c_node)             # <<<<<<<<<<<<<<
@@ -11985,7 +12275,7 @@ static PyObject *__pyx_pf_5humon_4Node_11source_text___get__(struct __pyx_obj_5h
  */
   __pyx_v_st = huGetSourceText(__pyx_v_self->_c_node);
 
-  /* "humon.pyx":444
+  /* "humon.pyx":463
  *             return None
  *         st = c.huGetSourceText(self._c_node)
  *         return to_pstr_l(st.ptr, st.size)             # <<<<<<<<<<<<<<
@@ -11993,13 +12283,13 @@ static PyObject *__pyx_pf_5humon_4Node_11source_text___get__(struct __pyx_obj_5h
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_5humon_to_pstr_l(__pyx_v_st.ptr, __pyx_v_st.size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 444, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5humon_to_pstr_l(__pyx_v_st.ptr, __pyx_v_st.size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 463, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "humon.pyx":439
+  /* "humon.pyx":458
  *         return to_pstr_l(vs.ptr, vs.size)
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -12018,7 +12308,7 @@ static PyObject *__pyx_pf_5humon_4Node_11source_text___get__(struct __pyx_obj_5h
   return __pyx_r;
 }
 
-/* "humon.pyx":446
+/* "humon.pyx":465
  *         return to_pstr_l(st.ptr, st.size)
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -12068,20 +12358,20 @@ static PyObject *__pyx_pf_5humon_4Node_8metatags___get__(struct __pyx_obj_5humon
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "humon.pyx":448
+  /* "humon.pyx":467
  *     @property
  *     def metatags(self) -> dict[str, str] | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
  *             return None
  *         metatags = {}
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 448, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_isnull); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 467, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 448, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 467, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "humon.pyx":449
+    /* "humon.pyx":468
  *     def metatags(self) -> dict[str, str] | None:
  *         if self.isnull:
  *             return None             # <<<<<<<<<<<<<<
@@ -12092,7 +12382,7 @@ static PyObject *__pyx_pf_5humon_4Node_8metatags___get__(struct __pyx_obj_5humon
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "humon.pyx":448
+    /* "humon.pyx":467
  *     @property
  *     def metatags(self) -> dict[str, str] | None:
  *         if self.isnull:             # <<<<<<<<<<<<<<
@@ -12101,19 +12391,19 @@ static PyObject *__pyx_pf_5humon_4Node_8metatags___get__(struct __pyx_obj_5humon
  */
   }
 
-  /* "humon.pyx":450
+  /* "humon.pyx":469
  *         if self.isnull:
  *             return None
  *         metatags = {}             # <<<<<<<<<<<<<<
  *         cdef int num_metatags = c.huGetNumMetatags(self._c_node)
  *         cdef const c.huMetatag * cmetatag
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 450, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 469, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_metatags = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "humon.pyx":451
+  /* "humon.pyx":470
  *             return None
  *         metatags = {}
  *         cdef int num_metatags = c.huGetNumMetatags(self._c_node)             # <<<<<<<<<<<<<<
@@ -12122,7 +12412,7 @@ static PyObject *__pyx_pf_5humon_4Node_8metatags___get__(struct __pyx_obj_5humon
  */
   __pyx_v_num_metatags = huGetNumMetatags(__pyx_v_self->_c_node);
 
-  /* "humon.pyx":457
+  /* "humon.pyx":476
  *         cdef const c.huStringView * ak
  *         cdef const c.huStringView * av
  *         for i in range(num_metatags):             # <<<<<<<<<<<<<<
@@ -12134,7 +12424,7 @@ static PyObject *__pyx_pf_5humon_4Node_8metatags___get__(struct __pyx_obj_5humon
   for (__pyx_t_5 = 0; __pyx_t_5 < __pyx_t_4; __pyx_t_5+=1) {
     __pyx_v_i = __pyx_t_5;
 
-    /* "humon.pyx":458
+    /* "humon.pyx":477
  *         cdef const c.huStringView * av
  *         for i in range(num_metatags):
  *             cmetatag = c.huGetMetatag(self._c_node, i)             # <<<<<<<<<<<<<<
@@ -12143,7 +12433,7 @@ static PyObject *__pyx_pf_5humon_4Node_8metatags___get__(struct __pyx_obj_5humon
  */
     __pyx_v_cmetatag = huGetMetatag(__pyx_v_self->_c_node, __pyx_v_i);
 
-    /* "humon.pyx":459
+    /* "humon.pyx":478
  *         for i in range(num_metatags):
  *             cmetatag = c.huGetMetatag(self._c_node, i)
  *             tk, tv = cmetatag.key, cmetatag.value             # <<<<<<<<<<<<<<
@@ -12155,7 +12445,7 @@ static PyObject *__pyx_pf_5humon_4Node_8metatags___get__(struct __pyx_obj_5humon
     __pyx_v_tk = __pyx_t_6;
     __pyx_v_tv = __pyx_t_7;
 
-    /* "humon.pyx":460
+    /* "humon.pyx":479
  *             cmetatag = c.huGetMetatag(self._c_node, i)
  *             tk, tv = cmetatag.key, cmetatag.value
  *             ak, av = c.huGetString(tk), c.huGetString(tv)             # <<<<<<<<<<<<<<
@@ -12167,40 +12457,40 @@ static PyObject *__pyx_pf_5humon_4Node_8metatags___get__(struct __pyx_obj_5humon
     __pyx_v_ak = __pyx_t_8;
     __pyx_v_av = __pyx_t_9;
 
-    /* "humon.pyx":461
+    /* "humon.pyx":480
  *             tk, tv = cmetatag.key, cmetatag.value
  *             ak, av = c.huGetString(tk), c.huGetString(tv)
  *             pak = to_pstr_l(ak.ptr, ak.size)             # <<<<<<<<<<<<<<
  *             pav = to_pstr_l(av.ptr, av.size)
  *             metatags[pak] = pav
  */
-    __pyx_t_1 = __pyx_f_5humon_to_pstr_l(__pyx_v_ak->ptr, __pyx_v_ak->size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 461, __pyx_L1_error)
+    __pyx_t_1 = __pyx_f_5humon_to_pstr_l(__pyx_v_ak->ptr, __pyx_v_ak->size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 480, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_XDECREF_SET(__pyx_v_pak, ((PyObject*)__pyx_t_1));
     __pyx_t_1 = 0;
 
-    /* "humon.pyx":462
+    /* "humon.pyx":481
  *             ak, av = c.huGetString(tk), c.huGetString(tv)
  *             pak = to_pstr_l(ak.ptr, ak.size)
  *             pav = to_pstr_l(av.ptr, av.size)             # <<<<<<<<<<<<<<
  *             metatags[pak] = pav
  *         return metatags
  */
-    __pyx_t_1 = __pyx_f_5humon_to_pstr_l(__pyx_v_av->ptr, __pyx_v_av->size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 462, __pyx_L1_error)
+    __pyx_t_1 = __pyx_f_5humon_to_pstr_l(__pyx_v_av->ptr, __pyx_v_av->size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 481, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_XDECREF_SET(__pyx_v_pav, ((PyObject*)__pyx_t_1));
     __pyx_t_1 = 0;
 
-    /* "humon.pyx":463
+    /* "humon.pyx":482
  *             pak = to_pstr_l(ak.ptr, ak.size)
  *             pav = to_pstr_l(av.ptr, av.size)
  *             metatags[pak] = pav             # <<<<<<<<<<<<<<
  *         return metatags
  */
-    if (unlikely((PyDict_SetItem(__pyx_v_metatags, __pyx_v_pak, __pyx_v_pav) < 0))) __PYX_ERR(0, 463, __pyx_L1_error)
+    if (unlikely((PyDict_SetItem(__pyx_v_metatags, __pyx_v_pak, __pyx_v_pav) < 0))) __PYX_ERR(0, 482, __pyx_L1_error)
   }
 
-  /* "humon.pyx":464
+  /* "humon.pyx":483
  *             pav = to_pstr_l(av.ptr, av.size)
  *             metatags[pak] = pav
  *         return metatags             # <<<<<<<<<<<<<<
@@ -12210,7 +12500,7 @@ static PyObject *__pyx_pf_5humon_4Node_8metatags___get__(struct __pyx_obj_5humon
   __pyx_r = __pyx_v_metatags;
   goto __pyx_L0;
 
-  /* "humon.pyx":446
+  /* "humon.pyx":465
  *         return to_pstr_l(st.ptr, st.size)
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -13030,6 +13320,8 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_encoding, __pyx_k_encoding, sizeof(__pyx_k_encoding), 0, 0, 1, 1},
     {&__pyx_n_s_enum, __pyx_k_enum, sizeof(__pyx_k_enum), 0, 0, 1, 1},
     {&__pyx_n_s_error_code, __pyx_k_error_code, sizeof(__pyx_k_error_code), 0, 0, 1, 1},
+    {&__pyx_n_s_from_file, __pyx_k_from_file, sizeof(__pyx_k_from_file), 0, 0, 1, 1},
+    {&__pyx_n_s_from_string, __pyx_k_from_string, sizeof(__pyx_k_from_string), 0, 0, 1, 1},
     {&__pyx_kp_u_gc, __pyx_k_gc, sizeof(__pyx_k_gc), 0, 1, 0, 0},
     {&__pyx_n_s_get, __pyx_k_get, sizeof(__pyx_k_get), 0, 0, 1, 1},
     {&__pyx_n_s_get_node, __pyx_k_get_node, sizeof(__pyx_k_get_node), 0, 0, 1, 1},
@@ -13090,14 +13382,13 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_kp_s_src_humon_humon_pyx, __pyx_k_src_humon_humon_pyx, sizeof(__pyx_k_src_humon_humon_pyx), 0, 0, 1, 0},
     {&__pyx_n_s_str, __pyx_k_str, sizeof(__pyx_k_str), 0, 0, 1, 1},
     {&__pyx_kp_s_str_None, __pyx_k_str_None, sizeof(__pyx_k_str_None), 0, 0, 1, 0},
+    {&__pyx_kp_s_str_Path, __pyx_k_str_Path, sizeof(__pyx_k_str_Path), 0, 0, 1, 0},
     {&__pyx_kp_s_stringsource, __pyx_k_stringsource, sizeof(__pyx_k_stringsource), 0, 0, 1, 0},
     {&__pyx_n_s_super, __pyx_k_super, sizeof(__pyx_k_super), 0, 0, 1, 1},
     {&__pyx_n_s_tab_size, __pyx_k_tab_size, sizeof(__pyx_k_tab_size), 0, 0, 1, 1},
     {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
     {&__pyx_n_s_to_file, __pyx_k_to_file, sizeof(__pyx_k_to_file), 0, 0, 1, 1},
     {&__pyx_n_s_to_string, __pyx_k_to_string, sizeof(__pyx_k_to_string), 0, 0, 1, 1},
-    {&__pyx_n_s_trove_from_file, __pyx_k_trove_from_file, sizeof(__pyx_k_trove_from_file), 0, 0, 1, 1},
-    {&__pyx_n_s_trove_from_string, __pyx_k_trove_from_string, sizeof(__pyx_k_trove_from_string), 0, 0, 1, 1},
     {&__pyx_n_s_use_colors, __pyx_k_use_colors, sizeof(__pyx_k_use_colors), 0, 0, 1, 1},
     {&__pyx_kp_u_utf_8, __pyx_k_utf_8, sizeof(__pyx_k_utf_8), 0, 1, 0, 0},
     {&__pyx_n_s_value, __pyx_k_value, sizeof(__pyx_k_value), 0, 0, 1, 1},
@@ -13109,9 +13400,9 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
 /* #### Code section: cached_builtins ### */
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
   __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 114, __pyx_L1_error)
-  __pyx_builtin_AssertionError = __Pyx_GetBuiltinName(__pyx_n_s_AssertionError); if (!__pyx_builtin_AssertionError) __PYX_ERR(0, 182, __pyx_L1_error)
-  __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(0, 236, __pyx_L1_error)
-  __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_builtin_AssertionError = __Pyx_GetBuiltinName(__pyx_n_s_AssertionError); if (!__pyx_builtin_AssertionError) __PYX_ERR(0, 192, __pyx_L1_error)
+  __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(0, 246, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -13149,74 +13440,74 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "humon.pyx":122
  *     return t
  * 
- * def trove_from_string(code: str, tab_size: int = 4) -> Trove:             # <<<<<<<<<<<<<<
- *     cdef const char * ccode
- *     bcode = code.encode('utf-8')
+ * def from_string(code: str, tab_size: int = 4) -> Trove:             # <<<<<<<<<<<<<<
+ *     if not isinstance(code, str):
+ *         raise TypeError(code)
  */
   __pyx_tuple__13 = PyTuple_Pack(8, __pyx_n_s_code, __pyx_n_s_tab_size, __pyx_n_s_ccode, __pyx_n_s_bcode, __pyx_n_s_len_ccode, __pyx_n_s_opts, __pyx_n_s_c_trove, __pyx_n_s_res); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__13);
   __Pyx_GIVEREF(__pyx_tuple__13);
-  __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_humon_humon_pyx, __pyx_n_s_trove_from_string, 122, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_humon_humon_pyx, __pyx_n_s_from_string, 122, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) __PYX_ERR(0, 122, __pyx_L1_error)
 
-  /* "humon.pyx":134
+  /* "humon.pyx":138
  *     return _make_trove(res, c_trove)
  * 
- * def trove_from_file(path: Path, encoding: Encoding = Encoding.UNKNOWN, tab_size: int = 4) -> Trove:             # <<<<<<<<<<<<<<
- *     cdef const char * cpath
- *     bpath = str(path).encode('utf-8')
+ * def from_file(path: str | Path, encoding: Encoding = Encoding.UNKNOWN, tab_size: int = 4) -> Trove:             # <<<<<<<<<<<<<<
+ *     if not isinstance(path, (str, Path)):
+ *         raise TypeError(path)
  */
-  __pyx_tuple__15 = PyTuple_Pack(10, __pyx_n_s_path, __pyx_n_s_encoding, __pyx_n_s_tab_size, __pyx_n_s_cpath, __pyx_n_s_bpath, __pyx_n_s_len_cpath, __pyx_n_s_opts, __pyx_n_s_c_trove, __pyx_n_s_res, __pyx_n_s_mpath); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_tuple__15 = PyTuple_Pack(10, __pyx_n_s_path, __pyx_n_s_encoding, __pyx_n_s_tab_size, __pyx_n_s_cpath, __pyx_n_s_bpath, __pyx_n_s_len_cpath, __pyx_n_s_opts, __pyx_n_s_c_trove, __pyx_n_s_res, __pyx_n_s_mpath); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__15);
   __Pyx_GIVEREF(__pyx_tuple__15);
-  __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_humon_humon_pyx, __pyx_n_s_trove_from_file, 134, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_humon_humon_pyx, __pyx_n_s_from_file, 138, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) __PYX_ERR(0, 138, __pyx_L1_error)
 
-  /* "humon.pyx":163
+  /* "humon.pyx":173
  *         c.huDestroyTrove(self._c_trove)
  * 
  *     def _arrange_color_table(self, color_table: dict | list | None) -> list[bytes]:             # <<<<<<<<<<<<<<
  *         arr = []
  *         if isinstance(color_table, dict):
  */
-  __pyx_tuple__17 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_color_table, __pyx_n_s_arr, __pyx_n_s_ce); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_tuple__17 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_color_table, __pyx_n_s_arr, __pyx_n_s_ce); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__17);
   __Pyx_GIVEREF(__pyx_tuple__17);
-  __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_humon_humon_pyx, __pyx_n_s_arrange_color_table, 163, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_humon_humon_pyx, __pyx_n_s_arrange_color_table, 173, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) __PYX_ERR(0, 173, __pyx_L1_error)
 
-  /* "humon.pyx":212
+  /* "humon.pyx":222
  *                                   print_bom)
  * 
  *     def to_string(self, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,             # <<<<<<<<<<<<<<
  *                   indent_size: int = 4, indent_with_tabs: bool = False,
  *                   use_colors: bool = False, color_table: dict | list | None = None,
  */
-  __pyx_tuple__19 = PyTuple_Pack(19, __pyx_n_s_self, __pyx_n_s_whitespace_format, __pyx_n_s_indent_size, __pyx_n_s_indent_with_tabs, __pyx_n_s_use_colors, __pyx_n_s_color_table, __pyx_n_s_print_comments, __pyx_n_s_newline, __pyx_n_s_print_bom, __pyx_n_s_opts, __pyx_n_s_cnewline, __pyx_n_s_bnewline, __pyx_n_s_len_cnewline, __pyx_n_s_b_color_table, __pyx_n_s_c_color_table, __pyx_n_s_res, __pyx_n_s_size, __pyx_n_s_humon_string, __pyx_n_s_e); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 212, __pyx_L1_error)
+  __pyx_tuple__19 = PyTuple_Pack(19, __pyx_n_s_self, __pyx_n_s_whitespace_format, __pyx_n_s_indent_size, __pyx_n_s_indent_with_tabs, __pyx_n_s_use_colors, __pyx_n_s_color_table, __pyx_n_s_print_comments, __pyx_n_s_newline, __pyx_n_s_print_bom, __pyx_n_s_opts, __pyx_n_s_cnewline, __pyx_n_s_bnewline, __pyx_n_s_len_cnewline, __pyx_n_s_b_color_table, __pyx_n_s_c_color_table, __pyx_n_s_res, __pyx_n_s_size, __pyx_n_s_humon_string, __pyx_n_s_e); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__19);
   __Pyx_GIVEREF(__pyx_tuple__19);
-  __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(9, 0, 0, 19, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__19, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_humon_humon_pyx, __pyx_n_s_to_string, 212, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) __PYX_ERR(0, 212, __pyx_L1_error)
+  __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(9, 0, 0, 19, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__19, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_humon_humon_pyx, __pyx_n_s_to_string, 222, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) __PYX_ERR(0, 222, __pyx_L1_error)
 
-  /* "humon.pyx":245
+  /* "humon.pyx":255
  *         return to_pstr_l_free(humon_string, size)
  * 
  *     def to_file(self, path: Path, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,             # <<<<<<<<<<<<<<
  *                 indent_size: int = 4, indent_with_tabs: bool = False,
  *                 use_colors: bool = False, color_table: dict | list | None = None,
  */
-  __pyx_tuple__21 = PyTuple_Pack(21, __pyx_n_s_self, __pyx_n_s_path, __pyx_n_s_whitespace_format, __pyx_n_s_indent_size, __pyx_n_s_indent_with_tabs, __pyx_n_s_use_colors, __pyx_n_s_color_table, __pyx_n_s_print_comments, __pyx_n_s_newline, __pyx_n_s_print_bom, __pyx_n_s_opts, __pyx_n_s_cnewline, __pyx_n_s_bnewline, __pyx_n_s_len_cnewline, __pyx_n_s_b_color_table, __pyx_n_s_c_color_table, __pyx_n_s_res, __pyx_n_s_cpath, __pyx_n_s_bpath, __pyx_n_s_len_cpath, __pyx_n_s_mpath); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 245, __pyx_L1_error)
+  __pyx_tuple__21 = PyTuple_Pack(21, __pyx_n_s_self, __pyx_n_s_path, __pyx_n_s_whitespace_format, __pyx_n_s_indent_size, __pyx_n_s_indent_with_tabs, __pyx_n_s_use_colors, __pyx_n_s_color_table, __pyx_n_s_print_comments, __pyx_n_s_newline, __pyx_n_s_print_bom, __pyx_n_s_opts, __pyx_n_s_cnewline, __pyx_n_s_bnewline, __pyx_n_s_len_cnewline, __pyx_n_s_b_color_table, __pyx_n_s_c_color_table, __pyx_n_s_res, __pyx_n_s_cpath, __pyx_n_s_bpath, __pyx_n_s_len_cpath, __pyx_n_s_mpath); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 255, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__21);
   __Pyx_GIVEREF(__pyx_tuple__21);
-  __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(10, 0, 0, 21, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_humon_humon_pyx, __pyx_n_s_to_file, 245, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) __PYX_ERR(0, 245, __pyx_L1_error)
+  __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(10, 0, 0, 21, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_humon_humon_pyx, __pyx_n_s_to_file, 255, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) __PYX_ERR(0, 255, __pyx_L1_error)
 
-  /* "humon.pyx":283
+  /* "humon.pyx":293
  *         return Node().c(c.huGetRootNode(self._c_trove))
  * 
  *     def get_node(self, idx: int | str) -> Node | None:             # <<<<<<<<<<<<<<
  *         cdef char * caddr = NULL
  *         if isinstance(idx, str):
  */
-  __pyx_tuple__23 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_idx, __pyx_n_s_caddr, __pyx_n_s_bidx, __pyx_n_s_len_caddr); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 283, __pyx_L1_error)
+  __pyx_tuple__23 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_idx, __pyx_n_s_caddr, __pyx_n_s_bidx, __pyx_n_s_len_caddr); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__23);
   __Pyx_GIVEREF(__pyx_tuple__23);
-  __pyx_codeobj__24 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__23, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_humon_humon_pyx, __pyx_n_s_get_node, 283, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__24)) __PYX_ERR(0, 283, __pyx_L1_error)
+  __pyx_codeobj__24 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__23, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_humon_humon_pyx, __pyx_n_s_get_node, 293, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__24)) __PYX_ERR(0, 293, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
@@ -13236,27 +13527,27 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__26);
   __pyx_codeobj__27 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__26, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 3, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__27)) __PYX_ERR(1, 3, __pyx_L1_error)
 
-  /* "humon.pyx":384
+  /* "humon.pyx":397
  *         return Node().c(c.huGetChildByIndex(self._c_node, idx))
  * 
  *     def get_node(self, idx: int | str) -> Node | None:             # <<<<<<<<<<<<<<
  *         if self.isnull:
  *             return None
  */
-  __pyx_codeobj__28 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__23, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_humon_humon_pyx, __pyx_n_s_get_node, 384, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__28)) __PYX_ERR(0, 384, __pyx_L1_error)
+  __pyx_codeobj__28 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__23, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_humon_humon_pyx, __pyx_n_s_get_node, 397, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__28)) __PYX_ERR(0, 397, __pyx_L1_error)
 
-  /* "humon.pyx":394
- *         return Node().c(c.huGetChildByIndex(self._c_node, idx))
+  /* "humon.pyx":410
+ *             raise TypeError(idx)
  * 
  *     def get_sibling(self, key: str | None = None) -> Node | None:             # <<<<<<<<<<<<<<
  *         if self.isnull:
  *             return None
  */
-  __pyx_tuple__29 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_key, __pyx_n_s_ckey, __pyx_n_s_bkey, __pyx_n_s_len_ckey); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(0, 394, __pyx_L1_error)
+  __pyx_tuple__29 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_key, __pyx_n_s_ckey, __pyx_n_s_bkey, __pyx_n_s_len_ckey); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(0, 410, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__29);
   __Pyx_GIVEREF(__pyx_tuple__29);
-  __pyx_codeobj__30 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__29, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_humon_humon_pyx, __pyx_n_s_get_sibling, 394, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__30)) __PYX_ERR(0, 394, __pyx_L1_error)
-  __pyx_tuple__31 = PyTuple_Pack(1, Py_None); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(0, 394, __pyx_L1_error)
+  __pyx_codeobj__30 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__29, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_humon_humon_pyx, __pyx_n_s_get_sibling, 410, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__30)) __PYX_ERR(0, 410, __pyx_L1_error)
+  __pyx_tuple__31 = PyTuple_Pack(1, Py_None); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(0, 410, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__31);
   __Pyx_GIVEREF(__pyx_tuple__31);
 
@@ -13347,15 +13638,15 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtabptr_5humon_Trove = &__pyx_vtable_5humon_Trove;
   __pyx_vtable_5humon_Trove._make_serialize_options = (void (*)(struct __pyx_obj_5humon_Trove *, huSerializeOptions *, PyObject *, PyObject *, PyObject *, PyObject *, PyObject *, PyObject *, huStringView *, PyObject *, char const *, PyObject *, PyObject *))__pyx_f_5humon_5Trove__make_serialize_options;
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_5humon_Trove = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5humon_Trove_spec, NULL); if (unlikely(!__pyx_ptype_5humon_Trove)) __PYX_ERR(0, 154, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5humon_Trove_spec, __pyx_ptype_5humon_Trove) < 0) __PYX_ERR(0, 154, __pyx_L1_error)
+  __pyx_ptype_5humon_Trove = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5humon_Trove_spec, NULL); if (unlikely(!__pyx_ptype_5humon_Trove)) __PYX_ERR(0, 164, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5humon_Trove_spec, __pyx_ptype_5humon_Trove) < 0) __PYX_ERR(0, 164, __pyx_L1_error)
   #else
   __pyx_ptype_5humon_Trove = &__pyx_type_5humon_Trove;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_5humon_Trove) < 0) __PYX_ERR(0, 154, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_5humon_Trove) < 0) __PYX_ERR(0, 164, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_5humon_Trove->tp_print = 0;
@@ -13365,26 +13656,26 @@ static int __Pyx_modinit_type_init_code(void) {
     __pyx_ptype_5humon_Trove->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
-  if (__Pyx_SetVtable(__pyx_ptype_5humon_Trove, __pyx_vtabptr_5humon_Trove) < 0) __PYX_ERR(0, 154, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_ptype_5humon_Trove, __pyx_vtabptr_5humon_Trove) < 0) __PYX_ERR(0, 164, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_MergeVtables(__pyx_ptype_5humon_Trove) < 0) __PYX_ERR(0, 154, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_ptype_5humon_Trove) < 0) __PYX_ERR(0, 164, __pyx_L1_error)
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Trove, (PyObject *) __pyx_ptype_5humon_Trove) < 0) __PYX_ERR(0, 154, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Trove, (PyObject *) __pyx_ptype_5humon_Trove) < 0) __PYX_ERR(0, 164, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_5humon_Trove) < 0) __PYX_ERR(0, 154, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_5humon_Trove) < 0) __PYX_ERR(0, 164, __pyx_L1_error)
   #endif
   __pyx_vtabptr_5humon_Node = &__pyx_vtable_5humon_Node;
   __pyx_vtable_5humon_Node.c = (struct __pyx_obj_5humon_Node *(*)(struct __pyx_obj_5humon_Node *, huNode const *))__pyx_f_5humon_4Node_c;
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_5humon_Node = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5humon_Node_spec, NULL); if (unlikely(!__pyx_ptype_5humon_Node)) __PYX_ERR(0, 315, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5humon_Node_spec, __pyx_ptype_5humon_Node) < 0) __PYX_ERR(0, 315, __pyx_L1_error)
+  __pyx_ptype_5humon_Node = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5humon_Node_spec, NULL); if (unlikely(!__pyx_ptype_5humon_Node)) __PYX_ERR(0, 328, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5humon_Node_spec, __pyx_ptype_5humon_Node) < 0) __PYX_ERR(0, 328, __pyx_L1_error)
   #else
   __pyx_ptype_5humon_Node = &__pyx_type_5humon_Node;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_5humon_Node) < 0) __PYX_ERR(0, 315, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_5humon_Node) < 0) __PYX_ERR(0, 328, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_5humon_Node->tp_print = 0;
@@ -13394,13 +13685,13 @@ static int __Pyx_modinit_type_init_code(void) {
     __pyx_ptype_5humon_Node->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
-  if (__Pyx_SetVtable(__pyx_ptype_5humon_Node, __pyx_vtabptr_5humon_Node) < 0) __PYX_ERR(0, 315, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_ptype_5humon_Node, __pyx_vtabptr_5humon_Node) < 0) __PYX_ERR(0, 328, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_MergeVtables(__pyx_ptype_5humon_Node) < 0) __PYX_ERR(0, 315, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_ptype_5humon_Node) < 0) __PYX_ERR(0, 328, __pyx_L1_error)
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Node, (PyObject *) __pyx_ptype_5humon_Node) < 0) __PYX_ERR(0, 315, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Node, (PyObject *) __pyx_ptype_5humon_Node) < 0) __PYX_ERR(0, 328, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_5humon_Node) < 0) __PYX_ERR(0, 315, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_5humon_Node) < 0) __PYX_ERR(0, 328, __pyx_L1_error)
   #endif
   __Pyx_RefNannyFinishContext();
   return 0;
@@ -14875,16 +15166,16 @@ if (!__Pyx_RefNanny) {
   /* "humon.pyx":122
  *     return t
  * 
- * def trove_from_string(code: str, tab_size: int = 4) -> Trove:             # <<<<<<<<<<<<<<
- *     cdef const char * ccode
- *     bcode = code.encode('utf-8')
+ * def from_string(code: str, tab_size: int = 4) -> Trove:             # <<<<<<<<<<<<<<
+ *     if not isinstance(code, str):
+ *         raise TypeError(code)
  */
   __pyx_t_5 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_code, __pyx_n_s_str) < 0) __PYX_ERR(0, 122, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_tab_size, __pyx_n_s_int) < 0) __PYX_ERR(0, 122, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_Trove) < 0) __PYX_ERR(0, 122, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_5humon_1trove_from_string, 0, __pyx_n_s_trove_from_string, NULL, __pyx_n_s_humon, __pyx_d, ((PyObject *)__pyx_codeobj__14)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_5humon_1from_string, 0, __pyx_n_s_from_string, NULL, __pyx_n_s_humon, __pyx_d, ((PyObject *)__pyx_codeobj__14)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (!__Pyx_CyFunction_InitDefaults(__pyx_t_3, sizeof(__pyx_defaults), 1)) __PYX_ERR(0, 122, __pyx_L1_error)
   if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_int_4)) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_int_4))) __PYX_ERR(0, 122, __pyx_L1_error)
@@ -14894,285 +15185,285 @@ if (!__Pyx_RefNanny) {
   __Pyx_CyFunction_SetDefaultsGetter(__pyx_t_3, __pyx_pf_5humon_4__defaults__);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_trove_from_string, __pyx_t_3) < 0) __PYX_ERR(0, 122, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_from_string, __pyx_t_3) < 0) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "humon.pyx":134
+  /* "humon.pyx":138
  *     return _make_trove(res, c_trove)
  * 
- * def trove_from_file(path: Path, encoding: Encoding = Encoding.UNKNOWN, tab_size: int = 4) -> Trove:             # <<<<<<<<<<<<<<
- *     cdef const char * cpath
- *     bpath = str(path).encode('utf-8')
+ * def from_file(path: str | Path, encoding: Encoding = Encoding.UNKNOWN, tab_size: int = 4) -> Trove:             # <<<<<<<<<<<<<<
+ *     if not isinstance(path, (str, Path)):
+ *         raise TypeError(path)
  */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_path, __pyx_n_s_Path) < 0) __PYX_ERR(0, 134, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_encoding, __pyx_n_s_Encoding) < 0) __PYX_ERR(0, 134, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_tab_size, __pyx_n_s_int) < 0) __PYX_ERR(0, 134, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_Trove) < 0) __PYX_ERR(0, 134, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5humon_3trove_from_file, 0, __pyx_n_s_trove_from_file, NULL, __pyx_n_s_humon, __pyx_d, ((PyObject *)__pyx_codeobj__16)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 134, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_path, __pyx_kp_s_str_Path) < 0) __PYX_ERR(0, 138, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_encoding, __pyx_n_s_Encoding) < 0) __PYX_ERR(0, 138, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_tab_size, __pyx_n_s_int) < 0) __PYX_ERR(0, 138, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_Trove) < 0) __PYX_ERR(0, 138, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5humon_3from_file, 0, __pyx_n_s_from_file, NULL, __pyx_n_s_humon, __pyx_d, ((PyObject *)__pyx_codeobj__16)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (!__Pyx_CyFunction_InitDefaults(__pyx_t_5, sizeof(__pyx_defaults1), 2)) __PYX_ERR(0, 134, __pyx_L1_error)
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Encoding); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
+  if (!__Pyx_CyFunction_InitDefaults(__pyx_t_5, sizeof(__pyx_defaults1), 2)) __PYX_ERR(0, 138, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Encoding); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_UNKNOWN); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_UNKNOWN); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_CyFunction_Defaults(__pyx_defaults1, __pyx_t_5)->__pyx_arg_encoding = __pyx_t_4;
   __Pyx_GIVEREF(__pyx_t_4);
   __pyx_t_4 = 0;
-  if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_int_4)) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_int_4))) __PYX_ERR(0, 134, __pyx_L1_error)
+  if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_int_4)) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_int_4))) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_INCREF(__pyx_int_4);
   __Pyx_CyFunction_Defaults(__pyx_defaults1, __pyx_t_5)->__pyx_arg_tab_size = ((PyObject*)__pyx_int_4);
   __Pyx_GIVEREF(__pyx_int_4);
   __Pyx_CyFunction_SetDefaultsGetter(__pyx_t_5, __pyx_pf_5humon_6__defaults__);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_trove_from_file, __pyx_t_5) < 0) __PYX_ERR(0, 134, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_from_file, __pyx_t_5) < 0) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "humon.pyx":163
+  /* "humon.pyx":173
  *         c.huDestroyTrove(self._c_trove)
  * 
  *     def _arrange_color_table(self, color_table: dict | list | None) -> list[bytes]:             # <<<<<<<<<<<<<<
  *         arr = []
  *         if isinstance(color_table, dict):
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_color_table, __pyx_kp_s_dict_list_None) < 0) __PYX_ERR(0, 163, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_list_bytes) < 0) __PYX_ERR(0, 163, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_5humon_5Trove_5_arrange_color_table, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Trove__arrange_color_table, NULL, __pyx_n_s_humon, __pyx_d, ((PyObject *)__pyx_codeobj__18)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 163, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_color_table, __pyx_kp_s_dict_list_None) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_list_bytes) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_5humon_5Trove_5_arrange_color_table, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Trove__arrange_color_table, NULL, __pyx_n_s_humon, __pyx_d, ((PyObject *)__pyx_codeobj__18)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_5humon_Trove, __pyx_n_s_arrange_color_table, __pyx_t_3) < 0) __PYX_ERR(0, 163, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_5humon_Trove, __pyx_n_s_arrange_color_table, __pyx_t_3) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_5humon_Trove);
 
-  /* "humon.pyx":212
+  /* "humon.pyx":222
  *                                   print_bom)
  * 
  *     def to_string(self, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,             # <<<<<<<<<<<<<<
  *                   indent_size: int = 4, indent_with_tabs: bool = False,
  *                   use_colors: bool = False, color_table: dict | list | None = None,
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_WhitespaceFormat); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 212, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_WhitespaceFormat); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_PRETTY); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 212, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_PRETTY); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_k__3 = __pyx_t_5;
   __Pyx_GIVEREF(__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "humon.pyx":213
+  /* "humon.pyx":223
  * 
  *     def to_string(self, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,
  *                   indent_size: int = 4, indent_with_tabs: bool = False,             # <<<<<<<<<<<<<<
  *                   use_colors: bool = False, color_table: dict | list | None = None,
  *                   print_comments: bool = True, newline = "\n",
  */
-  if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_int_4)) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_int_4))) __PYX_ERR(0, 213, __pyx_L1_error)
+  if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_int_4)) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_int_4))) __PYX_ERR(0, 223, __pyx_L1_error)
   __Pyx_INCREF(__pyx_int_4);
   __pyx_k__4 = ((PyObject*)__pyx_int_4);
   __Pyx_GIVEREF(__pyx_int_4);
 
-  /* "humon.pyx":212
+  /* "humon.pyx":222
  *                                   print_bom)
  * 
  *     def to_string(self, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,             # <<<<<<<<<<<<<<
  *                   indent_size: int = 4, indent_with_tabs: bool = False,
  *                   use_colors: bool = False, color_table: dict | list | None = None,
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_WhitespaceFormat); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 212, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_WhitespaceFormat); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_PRETTY); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 212, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_PRETTY); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "humon.pyx":213
+  /* "humon.pyx":223
  * 
  *     def to_string(self, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,
  *                   indent_size: int = 4, indent_with_tabs: bool = False,             # <<<<<<<<<<<<<<
  *                   use_colors: bool = False, color_table: dict | list | None = None,
  *                   print_comments: bool = True, newline = "\n",
  */
-  if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_int_4)) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_int_4))) __PYX_ERR(0, 213, __pyx_L1_error)
+  if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_int_4)) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_int_4))) __PYX_ERR(0, 223, __pyx_L1_error)
 
-  /* "humon.pyx":212
+  /* "humon.pyx":222
  *                                   print_bom)
  * 
  *     def to_string(self, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,             # <<<<<<<<<<<<<<
  *                   indent_size: int = 4, indent_with_tabs: bool = False,
  *                   use_colors: bool = False, color_table: dict | list | None = None,
  */
-  __pyx_t_5 = PyTuple_New(8); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 212, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(8); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_3);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_3)) __PYX_ERR(0, 212, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_3)) __PYX_ERR(0, 222, __pyx_L1_error);
   __Pyx_INCREF(__pyx_int_4);
   __Pyx_GIVEREF(__pyx_int_4);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_int_4)) __PYX_ERR(0, 212, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_int_4)) __PYX_ERR(0, 222, __pyx_L1_error);
   __Pyx_INCREF(Py_False);
   __Pyx_GIVEREF(Py_False);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 2, Py_False)) __PYX_ERR(0, 212, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 2, Py_False)) __PYX_ERR(0, 222, __pyx_L1_error);
   __Pyx_INCREF(Py_False);
   __Pyx_GIVEREF(Py_False);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 3, Py_False)) __PYX_ERR(0, 212, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 3, Py_False)) __PYX_ERR(0, 222, __pyx_L1_error);
   __Pyx_INCREF(Py_None);
   __Pyx_GIVEREF(Py_None);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 4, Py_None)) __PYX_ERR(0, 212, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 4, Py_None)) __PYX_ERR(0, 222, __pyx_L1_error);
   __Pyx_INCREF(Py_True);
   __Pyx_GIVEREF(Py_True);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 5, Py_True)) __PYX_ERR(0, 212, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 5, Py_True)) __PYX_ERR(0, 222, __pyx_L1_error);
   __Pyx_INCREF(__pyx_kp_u__5);
   __Pyx_GIVEREF(__pyx_kp_u__5);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 6, __pyx_kp_u__5)) __PYX_ERR(0, 212, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 6, __pyx_kp_u__5)) __PYX_ERR(0, 222, __pyx_L1_error);
   __Pyx_INCREF(Py_False);
   __Pyx_GIVEREF(Py_False);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 7, Py_False)) __PYX_ERR(0, 212, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 7, Py_False)) __PYX_ERR(0, 222, __pyx_L1_error);
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 212, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_whitespace_format, __pyx_n_s_WhitespaceFormat) < 0) __PYX_ERR(0, 212, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_indent_size, __pyx_n_s_int) < 0) __PYX_ERR(0, 212, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_indent_with_tabs, __pyx_n_s_bool) < 0) __PYX_ERR(0, 212, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_use_colors, __pyx_n_s_bool) < 0) __PYX_ERR(0, 212, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_color_table, __pyx_kp_s_dict_list_None) < 0) __PYX_ERR(0, 212, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_print_comments, __pyx_n_s_bool) < 0) __PYX_ERR(0, 212, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_print_bom, __pyx_n_s_bool) < 0) __PYX_ERR(0, 212, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_str) < 0) __PYX_ERR(0, 212, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_5humon_5Trove_7to_string, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Trove_to_string, NULL, __pyx_n_s_humon, __pyx_d, ((PyObject *)__pyx_codeobj__20)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 212, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_whitespace_format, __pyx_n_s_WhitespaceFormat) < 0) __PYX_ERR(0, 222, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_indent_size, __pyx_n_s_int) < 0) __PYX_ERR(0, 222, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_indent_with_tabs, __pyx_n_s_bool) < 0) __PYX_ERR(0, 222, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_use_colors, __pyx_n_s_bool) < 0) __PYX_ERR(0, 222, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_color_table, __pyx_kp_s_dict_list_None) < 0) __PYX_ERR(0, 222, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_print_comments, __pyx_n_s_bool) < 0) __PYX_ERR(0, 222, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_print_bom, __pyx_n_s_bool) < 0) __PYX_ERR(0, 222, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_str) < 0) __PYX_ERR(0, 222, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_5humon_5Trove_7to_string, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Trove_to_string, NULL, __pyx_n_s_humon, __pyx_d, ((PyObject *)__pyx_codeobj__20)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_4, __pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_4, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_5humon_Trove, __pyx_n_s_to_string, __pyx_t_4) < 0) __PYX_ERR(0, 212, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_5humon_Trove, __pyx_n_s_to_string, __pyx_t_4) < 0) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   PyType_Modified(__pyx_ptype_5humon_Trove);
 
-  /* "humon.pyx":245
+  /* "humon.pyx":255
  *         return to_pstr_l_free(humon_string, size)
  * 
  *     def to_file(self, path: Path, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,             # <<<<<<<<<<<<<<
  *                 indent_size: int = 4, indent_with_tabs: bool = False,
  *                 use_colors: bool = False, color_table: dict | list | None = None,
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_WhitespaceFormat); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 245, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_WhitespaceFormat); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 255, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_PRETTY); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 245, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_PRETTY); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 255, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_k__6 = __pyx_t_3;
   __Pyx_GIVEREF(__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "humon.pyx":246
+  /* "humon.pyx":256
  * 
  *     def to_file(self, path: Path, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,
  *                 indent_size: int = 4, indent_with_tabs: bool = False,             # <<<<<<<<<<<<<<
  *                 use_colors: bool = False, color_table: dict | list | None = None,
  *                 print_comments: bool = True, newline = "\n",
  */
-  if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_int_4)) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_int_4))) __PYX_ERR(0, 246, __pyx_L1_error)
+  if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_int_4)) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_int_4))) __PYX_ERR(0, 256, __pyx_L1_error)
   __Pyx_INCREF(__pyx_int_4);
   __pyx_k__7 = ((PyObject*)__pyx_int_4);
   __Pyx_GIVEREF(__pyx_int_4);
 
-  /* "humon.pyx":245
+  /* "humon.pyx":255
  *         return to_pstr_l_free(humon_string, size)
  * 
  *     def to_file(self, path: Path, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,             # <<<<<<<<<<<<<<
  *                 indent_size: int = 4, indent_with_tabs: bool = False,
  *                 use_colors: bool = False, color_table: dict | list | None = None,
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_WhitespaceFormat); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 245, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_WhitespaceFormat); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 255, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_PRETTY); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 245, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_PRETTY); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 255, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "humon.pyx":246
+  /* "humon.pyx":256
  * 
  *     def to_file(self, path: Path, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,
  *                 indent_size: int = 4, indent_with_tabs: bool = False,             # <<<<<<<<<<<<<<
  *                 use_colors: bool = False, color_table: dict | list | None = None,
  *                 print_comments: bool = True, newline = "\n",
  */
-  if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_int_4)) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_int_4))) __PYX_ERR(0, 246, __pyx_L1_error)
+  if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_int_4)) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_int_4))) __PYX_ERR(0, 256, __pyx_L1_error)
 
-  /* "humon.pyx":245
+  /* "humon.pyx":255
  *         return to_pstr_l_free(humon_string, size)
  * 
  *     def to_file(self, path: Path, whitespace_format: WhitespaceFormat = WhitespaceFormat.PRETTY,             # <<<<<<<<<<<<<<
  *                 indent_size: int = 4, indent_with_tabs: bool = False,
  *                 use_colors: bool = False, color_table: dict | list | None = None,
  */
-  __pyx_t_3 = PyTuple_New(8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 245, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 255, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_4);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4)) __PYX_ERR(0, 245, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4)) __PYX_ERR(0, 255, __pyx_L1_error);
   __Pyx_INCREF(__pyx_int_4);
   __Pyx_GIVEREF(__pyx_int_4);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_int_4)) __PYX_ERR(0, 245, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_int_4)) __PYX_ERR(0, 255, __pyx_L1_error);
   __Pyx_INCREF(Py_False);
   __Pyx_GIVEREF(Py_False);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 2, Py_False)) __PYX_ERR(0, 245, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 2, Py_False)) __PYX_ERR(0, 255, __pyx_L1_error);
   __Pyx_INCREF(Py_False);
   __Pyx_GIVEREF(Py_False);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 3, Py_False)) __PYX_ERR(0, 245, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 3, Py_False)) __PYX_ERR(0, 255, __pyx_L1_error);
   __Pyx_INCREF(Py_None);
   __Pyx_GIVEREF(Py_None);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 4, Py_None)) __PYX_ERR(0, 245, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 4, Py_None)) __PYX_ERR(0, 255, __pyx_L1_error);
   __Pyx_INCREF(Py_True);
   __Pyx_GIVEREF(Py_True);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 5, Py_True)) __PYX_ERR(0, 245, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 5, Py_True)) __PYX_ERR(0, 255, __pyx_L1_error);
   __Pyx_INCREF(__pyx_kp_u__5);
   __Pyx_GIVEREF(__pyx_kp_u__5);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 6, __pyx_kp_u__5)) __PYX_ERR(0, 245, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 6, __pyx_kp_u__5)) __PYX_ERR(0, 255, __pyx_L1_error);
   __Pyx_INCREF(Py_False);
   __Pyx_GIVEREF(Py_False);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 7, Py_False)) __PYX_ERR(0, 245, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 7, Py_False)) __PYX_ERR(0, 255, __pyx_L1_error);
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(9); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 245, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(9); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 255, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_path, __pyx_n_s_Path) < 0) __PYX_ERR(0, 245, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_whitespace_format, __pyx_n_s_WhitespaceFormat) < 0) __PYX_ERR(0, 245, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_indent_size, __pyx_n_s_int) < 0) __PYX_ERR(0, 245, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_indent_with_tabs, __pyx_n_s_bool) < 0) __PYX_ERR(0, 245, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_use_colors, __pyx_n_s_bool) < 0) __PYX_ERR(0, 245, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_color_table, __pyx_kp_s_dict_list_None) < 0) __PYX_ERR(0, 245, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_print_comments, __pyx_n_s_bool) < 0) __PYX_ERR(0, 245, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_print_bom, __pyx_n_s_bool) < 0) __PYX_ERR(0, 245, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_return, __pyx_n_s_ErrorCode) < 0) __PYX_ERR(0, 245, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5humon_5Trove_9to_file, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Trove_to_file, NULL, __pyx_n_s_humon, __pyx_d, ((PyObject *)__pyx_codeobj__22)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 245, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_path, __pyx_n_s_Path) < 0) __PYX_ERR(0, 255, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_whitespace_format, __pyx_n_s_WhitespaceFormat) < 0) __PYX_ERR(0, 255, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_indent_size, __pyx_n_s_int) < 0) __PYX_ERR(0, 255, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_indent_with_tabs, __pyx_n_s_bool) < 0) __PYX_ERR(0, 255, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_use_colors, __pyx_n_s_bool) < 0) __PYX_ERR(0, 255, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_color_table, __pyx_kp_s_dict_list_None) < 0) __PYX_ERR(0, 255, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_print_comments, __pyx_n_s_bool) < 0) __PYX_ERR(0, 255, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_print_bom, __pyx_n_s_bool) < 0) __PYX_ERR(0, 255, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_return, __pyx_n_s_ErrorCode) < 0) __PYX_ERR(0, 255, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5humon_5Trove_9to_file, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Trove_to_file, NULL, __pyx_n_s_humon, __pyx_d, ((PyObject *)__pyx_codeobj__22)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 255, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_5, __pyx_t_3);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_5humon_Trove, __pyx_n_s_to_file, __pyx_t_5) < 0) __PYX_ERR(0, 245, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_5humon_Trove, __pyx_n_s_to_file, __pyx_t_5) < 0) __PYX_ERR(0, 255, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   PyType_Modified(__pyx_ptype_5humon_Trove);
 
-  /* "humon.pyx":283
+  /* "humon.pyx":293
  *         return Node().c(c.huGetRootNode(self._c_trove))
  * 
  *     def get_node(self, idx: int | str) -> Node | None:             # <<<<<<<<<<<<<<
  *         cdef char * caddr = NULL
  *         if isinstance(idx, str):
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 283, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_idx, __pyx_kp_s_int_str) < 0) __PYX_ERR(0, 283, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Node_None) < 0) __PYX_ERR(0, 283, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_5humon_5Trove_11get_node, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Trove_get_node, NULL, __pyx_n_s_humon, __pyx_d, ((PyObject *)__pyx_codeobj__24)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 283, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_idx, __pyx_kp_s_int_str) < 0) __PYX_ERR(0, 293, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Node_None) < 0) __PYX_ERR(0, 293, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_5humon_5Trove_11get_node, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Trove_get_node, NULL, __pyx_n_s_humon, __pyx_d, ((PyObject *)__pyx_codeobj__24)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_4, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_5humon_Trove, __pyx_n_s_get_node, __pyx_t_4) < 0) __PYX_ERR(0, 283, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_5humon_Trove, __pyx_n_s_get_node, __pyx_t_4) < 0) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   PyType_Modified(__pyx_ptype_5humon_Trove);
 
@@ -15197,42 +15488,42 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_setstate_cython, __pyx_t_4) < 0) __PYX_ERR(1, 3, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "humon.pyx":384
+  /* "humon.pyx":397
  *         return Node().c(c.huGetChildByIndex(self._c_node, idx))
  * 
  *     def get_node(self, idx: int | str) -> Node | None:             # <<<<<<<<<<<<<<
  *         if self.isnull:
  *             return None
  */
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 384, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 397, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_idx, __pyx_kp_s_int_str) < 0) __PYX_ERR(0, 384, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_return, __pyx_kp_s_Node_None) < 0) __PYX_ERR(0, 384, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5humon_4Node_7get_node, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Node_get_node, NULL, __pyx_n_s_humon, __pyx_d, ((PyObject *)__pyx_codeobj__28)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 384, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_idx, __pyx_kp_s_int_str) < 0) __PYX_ERR(0, 397, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_return, __pyx_kp_s_Node_None) < 0) __PYX_ERR(0, 397, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5humon_4Node_7get_node, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Node_get_node, NULL, __pyx_n_s_humon, __pyx_d, ((PyObject *)__pyx_codeobj__28)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 397, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_4);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_5humon_Node, __pyx_n_s_get_node, __pyx_t_5) < 0) __PYX_ERR(0, 384, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_5humon_Node, __pyx_n_s_get_node, __pyx_t_5) < 0) __PYX_ERR(0, 397, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   PyType_Modified(__pyx_ptype_5humon_Node);
 
-  /* "humon.pyx":394
- *         return Node().c(c.huGetChildByIndex(self._c_node, idx))
+  /* "humon.pyx":410
+ *             raise TypeError(idx)
  * 
  *     def get_sibling(self, key: str | None = None) -> Node | None:             # <<<<<<<<<<<<<<
  *         if self.isnull:
  *             return None
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 394, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 410, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_key, __pyx_kp_s_str_None) < 0) __PYX_ERR(0, 394, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Node_None) < 0) __PYX_ERR(0, 394, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_5humon_4Node_9get_sibling, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Node_get_sibling, NULL, __pyx_n_s_humon, __pyx_d, ((PyObject *)__pyx_codeobj__30)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 394, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_key, __pyx_kp_s_str_None) < 0) __PYX_ERR(0, 410, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Node_None) < 0) __PYX_ERR(0, 410, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_5humon_4Node_9get_sibling, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Node_get_sibling, NULL, __pyx_n_s_humon, __pyx_d, ((PyObject *)__pyx_codeobj__30)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 410, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_4, __pyx_tuple__31);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_4, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_5humon_Node, __pyx_n_s_get_sibling, __pyx_t_4) < 0) __PYX_ERR(0, 394, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_5humon_Node, __pyx_n_s_get_sibling, __pyx_t_4) < 0) __PYX_ERR(0, 410, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   PyType_Modified(__pyx_ptype_5humon_Node);
 
@@ -16780,6 +17071,12 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func) {
     return __Pyx_PyObject_FastCall(func, arg + 1, 0 | __Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET);
 }
 
+/* PyObjectCallOneArg */
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg) {
+    PyObject *args[2] = {NULL, arg};
+    return __Pyx_PyObject_FastCall(func, args+1, 1 | __Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET);
+}
+
 /* PyIntBinop */
 #if !CYTHON_COMPILING_IN_PYPY
 static PyObject* __Pyx_PyInt_AddObjC(PyObject *op1, PyObject *op2, long intval, int inplace, int zerodivision_check) {
@@ -17091,12 +17388,6 @@ __Pyx_RaiseUnexpectedTypeError(const char *expected, PyObject *obj)
                  expected, obj_type_name);
     __Pyx_DECREF_TypeName(obj_type_name);
     return 0;
-}
-
-/* PyObjectCallOneArg */
-static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg) {
-    PyObject *args[2] = {NULL, arg};
-    return __Pyx_PyObject_FastCall(func, args+1, 1 | __Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET);
 }
 
 /* FixUpExtensionType */
